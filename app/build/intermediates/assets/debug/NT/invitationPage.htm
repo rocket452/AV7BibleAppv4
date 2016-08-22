@@ -1,0 +1,237 @@
+
+
+<html >
+   <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<link href="../CSS/styles.css" media="all" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <style type="text/css">
+
+         h1 { font-size: 16pt; font-weight:bold; text-align:center;}
+         p {  font-family: Georgia,Serif; font-size: 14pt;}
+		 li {		 
+			font-family: Georgia,Serif;
+			font-size: 14pt;
+		}
+		 .italic {font-size: 11pt; font-style: italic; }
+		 .lighter { opacity: 0.5; font-family: inherit; font-size: inherit;}
+		 .underline { text-decoration: underline; font-family: inherit; font-size: inherit;}
+		 .greek { color: green; }
+		 
+		 #chapterSelectTable {
+			  margin-left: auto;
+			  margin-right: auto;
+              border: 3px solid black;
+			  border-collapse: collapse;
+			  width: 95%;
+			  text-align: center;
+			  font-family: Georgia,Serif; font-size: 14pt;
+			  background-color: white;
+			
+		 }
+		 
+	
+		 
+		#chapterSelectTable td {
+		   height: 35px;
+		}
+		
+		#logoTable {
+		
+			position: fixed;
+			z-index: 1;
+		}
+		
+		a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+		h1 {
+		  /* text-align: center; */
+		  margin-left:auto;
+		  margin-right:auto;
+		  
+		}
+		
+		#verseNumber {
+			color: blue;
+			margin-right:7px;
+			font-style:italic;
+			font-family: Georgia,Serif; font-size: 10pt;
+		}
+		#bibleText {
+		 font-family: Georgia,Serif; font-size: 14pt;
+		 }
+		 
+		 #chapterTitle {
+		  text-align: center;
+		  font-weight:bold;
+		  
+		 }
+		 
+		 #italicText {
+				font-style:italic;
+				color:grey;
+		 }
+		 
+		 #wordsOfJesus {
+			color:darkred;
+		 }
+		 
+			 
+		 #plusSign {
+			color:blue;
+		 }
+		 
+		 #bibleReference {
+		 color:grey;
+				font-style:italic;
+			font-family: Georgia,Serif; font-size: 10pt;
+		 }
+		 
+	
+      </style>
+	  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	  <script src="../JS/javascript.js"></script>
+	  
+<script type="text/javascript">
+function insertFunction(text) {
+    //document.getElementById('mainContent').innerHTML = text
+	
+	
+	
+	var para = document.createElement("p");
+var node = document.createTextNode(text);
+para.appendChild(node);
+var element = document.getElementById("mainContent");
+
+wrapperDiv.appendChild(para);
+element.appendChild(element);
+
+}
+/*
+function insertFunction2(verse,text) {
+    //document.getElementById('mainContent').innerHTML = text
+	var wrapperDiv = document.createElement("div");
+	var lineBreak = document.createElement("p");
+//	wrapperDiv.style.display = "inline-flex";
+//	var para = document.createElement("p");
+	var verseElement = document.createElement("div");
+	var textElement = document.createElement("div");
+	//verseElement.style.float = "left";
+	//textElement.style.float = "right";
+	//verseElement.style.color ='blue';
+	  verseElement.setAttribute("id", "verseNumber");
+	  if(text.indexOf("Chapter") ==-1){
+	    textElement.setAttribute("id", "bibleText");
+		wrapperDiv.style.display = "inline-flex";
+		}
+	
+var verseNode = document.createTextNode(verse);
+
+//verseElement.appendChild(verseNode);
+verseElement.innerHTML = verse;
+
+//verseElement.innerHTML ="<span>test2</span>";
+//verseElement.innerHTML = "But <div id='italicText'>Jesus</div> answered and said: <div id='wordsOfJesus'>It is written: Mankind+ shall not live by bread alone, but by every word that proceeds out of the mouth of God.</div> [@Deuteronomy 8:3@]";
+var textNode = document.createTextNode(text);
+//textElement.appendChild(textNode);
+textElement.innerHTML  = text;
+var element = document.getElementById("mainContent");
+//para.appendChild(verseElement);
+//para.appendChild(textElement);
+//wrapperDiv.appendChild(para);
+wrapperDiv.appendChild(verseElement);
+wrapperDiv.appendChild(textElement);
+   
+element.appendChild(wrapperDiv);
+element.appendChild(document.createElement("br"));
+
+
+}
+*/
+
+function previousPage() {
+    window.history.back();
+}
+
+
+</script>
+	  
+   </head>
+   <body background="../images/avbackground.jpg" style="margin:0px; margin-bottom:50px;" onload="insertFunction2('verse',<b>+'test6'+</b>)">
+     <table id="logoTable" style="width:100%;">
+	<tr>
+		<td style="width:33%;"><img  style="width:100%;" id="av7IconImg"  src="../images/Av7BarIcon.png" onclick="goToTitleScreen()"/></td><td style="width:50%;"><img id="invitationImg" style="width:100%;"  src="../images/tib-logo.jpg" onclick="goToTableOfContents()"/></td>
+	</tr>
+   </table>
+   <br>
+   <div id="page1"  style="border: 2px solid white; background: #EEE7DA; margin-left: 2%; margin-right: 2%; padding:15px;
+    margin-bottom: 2%; margin-top: 63px;">
+      <h1>
+		
+	  </h1>
+   
+	  <div id="mainContent">
+	
+		
+		<div class="text-container">
+
+		<center><b>It is your choice and yours alone.</b><p>
+		<img src="../images/av7invite3.jpg" width=320>
+		<br><br><br><font class=title>
+		<b>God loves you.</font></b>
+		<p>
+		He wants to give you<br>
+		all of His richest blessings.
+		<p>
+		But the crucial question is,<br>
+		have you ever accepted His invitation<br>
+		to join His family?
+		<p>
+		Have you asked Him to show you<br>
+		His purpose and plan for your life?
+
+		<p>
+		The AV7 Bible is an easy-to-read<br>
+		accurate word-for-word translation<br>
+		that clearly and simply shows the way.
+		<p>
+		It is your choice<br>
+		to consider God's purpose for your life<br>
+		or to just ignore and disregard Him.
+		<p>
+		Your eternal destiny awaits. 
+		<p>
+		<hr size=4 width=85% color=darkblue><br>
+
+		<font class=title><b><i>
+		Now it's easy!</b></i></font></center>
+		<p>
+		Throughout history, mankind has often tried to make simple things more complicated and more difficult than they really need to be.
+		<p>
+		Man-made religion is a good example.
+		<p>
+		From the beginning of time, God created mankind for fellowship with Himself, and all He ever asked was for His children to accept His invitation to join His family and follow His perfect plan and purpose for their life.
+		<p>
+		<li>You do not have to join any particular church.
+		<li>You do not have to pay any dues or fees.
+		<li>You do not have to conform to a lot of man-made rules or rituals. 
+		<p>
+		All you need to do is accept God's invitation and earnestly seek to discover and follow His perfect plan for your life.
+		<p>
+		Just invest a few minutes each day focusing on the 
+		Most Essential Truth in the Word of God and He will 
+		show you the way.
+		<p><center>
+		<b>It is your choice and yours alone.</b>
+		<hr size=4 width=80% color=darkblue></center>
+
+    
+	 </div>
+	  
+	  </div>
+	
+   </body>
+</html>

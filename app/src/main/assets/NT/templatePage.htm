@@ -1,0 +1,384 @@
+
+
+<html >
+   <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<link href="../CSS/styles.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="../CSS/font-awesome.css" media="all" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <style type="text/css">
+
+      
+         p {  font-family: Georgia,Serif; font-size: 14pt;}
+		 li {		 
+			font-family: Georgia,Serif;
+			font-size: 14pt;
+		}
+		 .italic {font-size: 11pt; font-style: italic; }
+		 .lighter { opacity: 0.5; font-family: inherit; font-size: inherit;}
+		 .underline { text-decoration: underline; font-family: inherit; font-size: inherit;}
+		 .greek { color: green; }
+		 
+		 #chapterSelectTable {
+			  margin-left: auto;
+			  margin-right: auto;
+              border: 3px solid black;
+			  border-collapse: collapse;
+			  width: 95%;
+			  text-align: center;
+			  font-family: Georgia,Serif; font-size: 14pt;
+			  background-color: white;
+			
+		 }
+		 
+		  #chapterSelectTable tr, td {
+	
+              border: 3px solid black;
+			
+		 }
+		 
+		#chapterSelectTable td {
+		   height: 35px;
+		}
+		
+		#logoTable {
+		
+			position: fixed;
+			z-index: 1;
+		}
+		
+
+
+		h1 {
+		  /* text-align: center; */
+		  margin-left:auto;
+		  margin-right:auto;
+		  
+		}
+		
+	
+		#bibleText {
+		 font-family: Georgia,Serif; 
+		
+		 }
+		 
+		 #chapterTitle {
+		  text-align: center;
+		  font-weight:bold;
+		  
+		 }
+		 
+	
+		 
+		 #wordsOfJesus {
+			color:darkred;
+		 }
+		 
+			 
+		 #plusSign {
+			color:blue;
+		 }
+		 
+	
+		 #mainContent {
+		  font-size: 14pt;
+		}
+		
+	
+		
+      </style>
+	  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	  <script src="../JS/javascript.js"></script>
+	  
+<script type="text/javascript">
+function insertFunctionold(text) {
+    //document.getElementById('mainContent').innerHTML = text
+	
+	
+	
+	var para = document.createElement("p");
+var node = document.createTextNode(text);
+para.appendChild(node);
+var element = document.getElementById("mainContent");
+
+wrapperDiv.appendChild(para);
+element.appendChild(element);
+
+}
+
+function insertFunction2(verse,text) {
+    //document.getElementById('mainContent').innerHTML = text
+	var wrapperDiv = document.createElement("div");
+	var lineBreak = document.createElement("p");
+//	wrapperDiv.style.display = "inline-flex";
+//	var para = document.createElement("p");
+	var verseElement = document.createElement("div");
+	var textElement = document.createElement("div");
+	//verseElement.style.float = "left";
+	//textElement.style.float = "right";
+	//verseElement.style.color ='blue';
+	  verseElement.setAttribute("id", "verseNumber");
+	  if(text.indexOf("Chapter") ==-1){
+	    textElement.setAttribute("id", "bibleText");
+		wrapperDiv.style.display = "inline-flex";
+		}
+	
+var verseNode = document.createTextNode(verse);
+
+//verseElement.appendChild(verseNode);
+verseElement.innerHTML = verse;
+
+//verseElement.innerHTML ="<span>test2</span>";
+//verseElement.innerHTML = "But <div id='italicText'>Jesus</div> answered and said: <div id='wordsOfJesus'>It is written: Mankind+ shall not live by bread alone, but by every word that proceeds out of the mouth of God.</div> [@Deuteronomy 8:3@]";
+var textNode = document.createTextNode(text);
+//textElement.appendChild(textNode);
+textElement.innerHTML  = text;
+var element = document.getElementById("mainContent");
+//para.appendChild(verseElement);
+//para.appendChild(textElement);
+//wrapperDiv.appendChild(para);
+//wrapperDiv.appendChild(verseElement);
+wrapperDiv.appendChild(textElement);
+    
+element.appendChild(wrapperDiv);
+element.appendChild(document.createElement("br"));
+
+
+}
+
+
+function insertFunction(text) {
+  
+	var wrapperDiv = document.createElement("div");
+
+	var textElement = document.createElement("div");
+
+
+//	  if(text.indexOf("Chapter") ==-1){
+//	    textElement.setAttribute("id", "bibleText");
+//		wrapperDiv.style.display = "inline-flex";
+//		}
+	
+
+textElement.innerHTML  = text;
+var element = document.getElementById("mainContent");
+
+wrapperDiv.appendChild(textElement);
+    
+element.appendChild(wrapperDiv);
+//element.appendChild(document.createElement("br"));
+
+
+}
+
+function insertPreviousChapter(text) {
+  
+	var wrapperDiv = document.createElement("div");
+
+	var textElement = document.createElement("div");
+
+
+
+
+textElement.innerHTML  = text;
+var element = document.getElementById("previousChapterAnchor");
+
+wrapperDiv.appendChild(textElement);
+    
+element.appendChild(wrapperDiv);
+//element.appendChild(document.createElement("br"));
+
+
+}
+
+function insertBeforeFunction(text) {
+
+//var tempScrollTop = $(window).scrollTop();
+  
+	var wrapperDiv = document.createElement("div");
+
+	var textElement = document.createElement("div");
+
+
+//	  if(text.indexOf("Chapter") ==-1){
+//	    textElement.setAttribute("id", "bibleText");
+//		wrapperDiv.style.display = "inline-flex";
+//		}
+	
+textElement.setAttribute("id", "bibleText");
+textElement.innerHTML  = text;
+var element = document.getElementById("mainContent");
+
+wrapperDiv.appendChild(textElement);
+    
+element.insertBefore(wrapperDiv,element.childNodes[0]);
+//element.appendChild(document.createElement("br"));
+
+//$(window).scrollTop($("#bibleText").offset().top);
+}
+
+
+function insertPreviousChapterAnchor() {
+  
+var wrapperDiv = document.createElement("div");
+
+	var textElement = document.createElement("div");
+
+
+textElement.setAttribute("id", "previousChapterAnchor");
+//textElement.innerHTML  = "TESTING";
+var element = document.getElementById("mainContent");
+
+wrapperDiv.appendChild(textElement);
+    
+//element.insertBefore(wrapperDiv,element.childNodes[0]);
+element.appendChild(wrapperDiv);
+
+}
+
+function insertBeforePreviousChapterAnchor() {
+  
+var wrapperDiv = document.createElement("div");
+
+	var textElement = document.createElement("div");
+
+
+textElement.setAttribute("id", "previousChapterAnchor");
+//textElement.innerHTML  = "TESTING2";
+var element = document.getElementById("mainContent");
+
+wrapperDiv.appendChild(textElement);
+    
+element.insertBefore(wrapperDiv,element.childNodes[0]);
+//element.appendChild(wrapperDiv);
+
+}
+
+function scrollToAnchor() {
+var anchorPosition = $('#previousChapterAnchor').position().top - ($('#bibleText').height()+10);
+$(window).scrollTop(anchorPosition);
+//$('#previousChapterAnchor')[0].scrollIntoView( true );
+
+
+document.getElementById("previousChapterAnchor").remove();
+}
+
+
+
+function adjustFont(fontInput){
+
+
+
+	
+	//var textNode = document.createTextNode("hello");
+	//var element = document.getElementById("mainContent");
+//	element.appendChild(textNode);
+		
+	
+//	document.getElementById("mainContent").style.color = "red";
+//	document.getElementById("mainContent").style.fontSize = "150%";
+	//document.getElementById("bibleText").setAttribute('style', 'color:red;');
+
+	//$('#mainContent').addClass('importantRule');
+
+//$('#mainContent').find('#verseNumber').css({"color": "red", "border": "2px solid red"});
+//document.getElementById("verseNumber").setAttribute('style', 'font-size:5pt !important');
+	
+	 document.getElementById("mainContent").setAttribute('style', 'font-size:' + fontInput + 'pt !important');
+	// document.getElementsByTagName("h1").setAttribute('style', 'font-size:' + fontInput+4 + 'pt !important');
+//	 document.getElementById("italicText").setAttribute('style', 'font-size:' + fontInput + 'pt !important');
+//	  document.getElementById("verseNumber").setAttribute('style', 'font-size: 5pt !important');
+	//$('#verseNumber').css("font-size","5pt !important");
+	addNewStyle('#verseNumber {font-size: ' + (fontInput-4) + 'pt !important;}')
+	addNewStyle('#bibleReference {font-size: ' + (fontInput-4) + 'pt !important;}')
+	addNewStyle('h1 {font-size: ' + (parseInt(fontInput)+2) + 'pt !important;}')
+//	  document.getElementById("mainContent").style.setProperty("font-size","3pt","important");
+	
+																		
+	
+	
+//		element.style.fontSize =  "100pt";
+		//document.getElementsByClassName("mainContent").style.fontSize =  fontInput + "px";
+//	document.getElementById("mainContent2").innerHTML = fontInput + "pt";
+	//document.getElementById("mainContent2").style.fontSize = fontInput + "pt";
+	
+	//elems = document.getElementById("mainContent");
+	
+	//for (var i = 0; i < elems.length; i++) {
+		//document.getElementById("mainContent")[i].style.fontSize = ((fontInput)+2) +  "pt";
+	//}
+	
+	
+}
+
+function addNewStyle(newStyle) {
+    var styleElement = document.getElementById('styles_js');
+    if (!styleElement) {
+        styleElement = document.createElement('style');
+        styleElement.type = 'text/css';
+        styleElement.id = 'styles_js';
+        document.getElementsByTagName('head')[0].appendChild(styleElement);
+    }
+    styleElement.appendChild(document.createTextNode(newStyle));
+}
+
+
+
+
+
+	  $( document ).ready(function() {
+	  
+	  //detect Scroll to bottom
+ window.onscroll = function(ev) {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+           //document.getElementById("mainContent").style.color = "green";
+		   loadNextChapter('','');
+		   
+    }
+};
+
+//detect scroll to top
+$(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+      // document.getElementById("mainContent").style.color = "yellow";
+	   loadPreviousChapter('','');
+   }
+});
+});
+
+</script>
+	  
+   </head>
+   <body background="../images/avbackground.jpg" style="margin:0px; margin-bottom:50px;" onload="onLoadFunction('verse',<b>+'test6'+</b>)">
+     <table id="logoTable" style="width:100%;">
+	<tr>
+		<td style="width:33%;"><img  style="width:100%;" id="av7IconImg"  src="../images/Av7BarIcon.png" onclick="goToTitleScreen()"/></td><td style="width:50%;"><img id="invitationImg" style="width:100%;"  src="../images/tib-logo.jpg" onclick="goToTableOfContents()"/></td>
+	</tr>
+   </table>
+   <br>
+   <div id="page1"  style="border: 2px solid white; background: #EEE7DA; padding: 15px;
+    margin-left: 2%; margin-right: 2%;  margin-bottom: 2%; margin-top: 63px; font-family:Serif;">
+      <h1>
+		
+	  </h1>
+	  
+	   
+	  <div id="mainContent">
+	
+      </div>
+	  
+	  </div>
+	 
+	 
+	<table id="footerTable">
+		<tr >
+			<td onclick="goBack()"><i style="margin-left: 15%;" class="fa fa-arrow-left"></i></td>
+			<td  onclick="goBack()">Back</td>
+			<td style="background-color:#996E43; border: 1px solid gainsboro;"><a href="GoDeeperPage.htm">Go Deeper</a></td>
+			<td style="background-color:#000287; border: 1px solid gainsboro;" onclick="sendShareEmail()">Share This</td>
+			<td onclick="openHelpPage()">Help</td>
+			<td onclick="openOptionsMenu()"><i class="fa fa-cog"/></td>
+		</tr>
+   </table>
+   </body>
+</html>

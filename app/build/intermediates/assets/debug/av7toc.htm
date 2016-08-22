@@ -1,0 +1,215 @@
+
+<html >
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link href="CSS/styles.css" media="all" rel="stylesheet" type="text/css" />
+<title>AV7 ~ The Invitation Bible Table of Contents </title>
+<style>
+#tableOfContentsTable,#tableOfContentsTable th,#tableOfContentsTable td{
+	border: solid black;
+
+	 font-weight: bold;
+	 font-family: customFontAvenirNextLTProCn;
+	
+	 font-weight: normal;
+
+	font-style: normal;	
+	 
+ }
+ #tableOfContentsTable td {
+	 border-right-width: 1px;
+     border-left-width: 1px;
+	 border-bottom-width: .5px;
+	 border-top-width: .5px;
+	 text-align: center;
+	   vertical-align: bottom;
+ 
+ }
+ 
+
+
+ @font-face {
+   font-family: customFontAdineKirnberg;
+   src: url(fonts/AdineKirnberg.ttf);
+}
+
+
+#tableOfContentsTable {
+	  border: 5px solid black;
+	  background: black;
+	  table-layout: fixed;
+	  
+	}
+	
+	#firstRow td {
+		border-right-width: 2px;
+		border-left-width: 1px;
+		border-bottom-width: 2px;
+		border-top-width: 1px;
+	}
+	
+	img {
+	
+	}
+	
+	 #invitationBibleTextBox {
+		   font-size: 57px;
+	 }
+	
+	@media only screen and (min-width : 320px) and (max-width : 560px) {
+	
+	 #invitationBibleTextBox {
+		font-size: 10vw;
+	 }
+
+	}
+	
+	a{
+		text-decoration:none;
+		color: black;
+		 
+	}
+	
+	table {
+	
+		/*font-size: 2em;  */
+	}
+	
+	#tableOfContentsTable{
+      
+		  height: 85%;
+		}
+		
+	
+	
+		#tableOfContentsTable{
+          width: 100%;
+		}
+		#tableOfContentsTable td{
+		  font-size: 20px;
+		}
+	
+	
+
+</style>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="JS/javascript.js"></script>
+
+
+</head>
+<body bgcolor=black style="margin:0; font-size:100%;">
+     <table id="logoTable" style="width:100%; position: static;">
+	<tr>
+		<td style="width:33%;"><img  style="width:100%;" id="av7IconImg"  src="./images/Av7BarIcon.png" onclick="goToTitleScreen()"/></td><td style="width:50%;"><img id="invitationImg" style="width:100%;"  src="./images/tib-logo.jpg" onclick="goToTableOfContents()"/></td>
+	</tr>
+   </table>
+<table style="margin-left:auto; margin-right:auto;  border:0; " id="tableOfContentsTable" >
+
+  <tr bgcolor="#E7BE19" id="firstRow">
+    <td colspan=5><a href="NT/invitationPage.htm">INVITATION</a></td>
+    <td colspan=5><a href="NT/purposePage.htm">PURPOSE</a></td> 
+	<td colspan=5><a href="NT/essentialPage.htm">ESSENTIAL</a></td> 
+  </tr>
+  <tr>
+    <td bgcolor="#A10306" colspan=3 ><a onclick="goToChapter('JOH',0)" style="color: white;">JOHN</a></td>
+    <td bgcolor="#A10306" colspan=3 ><a onclick="goToChapter('MAT',0)" style="color: white;">MATT</a></td> 
+    <td bgcolor="#A10306" colspan=3 ><a onclick="goToChapter('MAR',0)" style="color: white;"> MARK</a></td>
+	<td bgcolor="#A10306" colspan=3 ><a onclick="goToChapter('LUK',0)" style="color: white;">LUKE</a></td>
+	<td bgcolor="#E9CFB6" colspan=3><a onclick="goToChapter('ACT',0)">ACTS</a></td>
+  </tr>
+   <tr bgcolor="#E9CFB6">
+    <td colspan=3 ><a onclick="goToChapter('ROM',0)">ROM</a></td>
+    <td colspan=3 ><a onclick="goToChapter('1CO',0)">1-COR</a></td> 
+    <td colspan=3 ><a onclick="goToChapter('2CO',0)">2-COR</a></td>
+	<td colspan=3 ><a onclick="goToChapter('GAL',0)">GAL</a></td>
+	<td colspan=3 ><a onclick="goToChapter('EPH',0)">EPH</a></td>
+  </tr>
+   <tr bgcolor="#E9CFB6">
+    <td colspan=3 ><a onclick="goToChapter('PHP',0)">PHP</a></td>
+    <td colspan=3 ><a onclick="goToChapter('COL',0)">COL</a></td> 
+    <td colspan=3 ><a onclick="goToChapter('1TH',0)">1-TH</a></td>
+	<td colspan=3 ><a onclick="goToChapter('2TH',0)">2-TH</a></td>
+	<td colspan=3 ><a onclick="goToChapter('1TI',0)">1-TIM</a></td>
+  </tr>
+   <tr bgcolor="#E9CFB6">
+    <td colspan=3 ><a onclick="goToChapter('2TI',0)">2-TIM</a></td>
+    <td colspan=3 ><a onclick="goToChapter('TTS',0)">TITUS</a></td> 
+    <td colspan=3 ><a onclick="goToChapter('PHM',1)">PHM</a></td>
+	<td colspan=3 ><a onclick="goToChapter('HEB',0)">HEBR</a></td>
+	<td colspan=3 ><a onclick="goToChapter('JAM',0)">JAMES</a></td>
+  </tr>
+   <tr  bgcolor="#E9CFB6">
+    <td colspan=3 ><a onclick="goToChapter('1PE',0)">1-PETR</a></td>
+    <td colspan=3 ><a onclick="goToChapter('2PE',0)">2-PETR</a></td> 
+    <td colspan=3 ><a onclick="goToChapter('1JO',0)">123-JN</a></td>
+	<td colspan=3 ><a onclick="goToChapter('JUD',1)">JUDE</a></td>
+	<td colspan=3 ><a onclick="goToChapter('REV',0)">REVEL</a></td>
+  </tr>
+   <tr bgcolor="#630264">
+    <td colspan=3 ><a onclick="goToChapter('GEN',1)" style="color: white;">GEN</a></td>
+    <td colspan=3 ><a onclick="goToChapter('EXO',1)" style="color: white;">EXO</a></td> 
+    <td colspan=3 ><a onclick="goToChapter('LEV',1)" style="color: white;">LEV</a></td>
+	<td colspan=3 ><a onclick="goToChapter('NUM',1)" style="color: white;">NUM</a></td>
+	<td colspan=3 ><a onclick="goToChapter('DEU',1)" style="color: white;">DEUT</a></td>
+  </tr>
+   <tr bgcolor="#E9CFB6">
+    <td colspan=3 ><a onclick="goToChapter('JOS',1)">JOSH</a></td>
+    <td colspan=3 ><a onclick="goToChapter('DEU',1)">JDGS</a></td> 
+    <td colspan=3 ><a onclick="goToChapter('RUT',1)">RUTH</a></td>
+	<td colspan=3 ><a onclick="goToChapter('1SA',1)">1-SAM</a></td>
+	<td colspan=3 ><a onclick="goToChapter('2SA',1)">2-SAM</a></td>
+  </tr>
+   <tr bgcolor="#E9CFB6">
+    <td colspan=3 ><a onclick="goToChapter('1KI',1)">1-KGS</a></td>
+    <td colspan=3 ><a onclick="goToChapter('2KI',1)">2-KGS</a></td> 
+    <td colspan=3 ><a onclick="goToChapter('1CH',1)">1-CHR</a></td>
+	<td colspan=3 ><a onclick="goToChapter('2CH',1)">2-CHR</a></td>
+	<td colspan=3 ><a onclick="goToChapter('EZR',1)">EZRA</a></td>
+  </tr>
+   <tr bgcolor="#E9CFB6">
+    <td colspan=3 ><a onclick="goToChapter('NEH',1)">NEHM</a></td>
+    <td colspan=3 ><a onclick="goToChapter('EST',1)">ESTHR</a></td> 
+    <td colspan=3 ><a onclick="goToChapter('JOB',1)">JOB</a></td>
+	<td colspan=3 ><a onclick="goToChapter('PSA',1)">PSALM</a></td>
+	<td colspan=3 ><a onclick="goToChapter('PRO',0)">PROV</a></td>
+  </tr>
+   <tr bgcolor="#E9CFB6">
+    <td colspan=3 ><a onclick="goToChapter('ECC',1)">ECCL</a></td>
+    <td colspan=3 ><a onclick="goToChapter('SOS',1)">SOS</a></td> 
+    <td colspan=3 ><a onclick="goToChapter('ISA',1)">ISAIAH</a></td>
+	<td colspan=3 ><a onclick="goToChapter('JER',1)">JEREM</a></td>
+	<td colspan=3 ><a onclick="goToChapter('LAM',1)">LAMN</a></td>
+  </tr>
+   <tr bgcolor="#E9CFB6">
+    <td colspan=3 ><a onclick="goToChapter('EZE',1)">EZEK</a></td>
+    <td colspan=3 ><a onclick="goToChapter('DAN',1)">DAN</a></td> 
+    <td colspan=3 ><a onclick="goToChapter('HOS',1)">HOSEA</a></td>
+	<td colspan=3 ><a onclick="goToChapter('JOE',1)">JOEL</a></td>
+	<td colspan=3 ><a onclick="goToChapter('AMO',1)">AMOS</a></td>
+  </tr>
+   <tr bgcolor="#E9CFB6">
+    <td colspan=3 ><a onclick="goToChapter('OBA',1)">OBAD</a></td>
+    <td colspan=3 ><a onclick="goToChapter('JON',0)">JONAH</a></td> 
+    <td colspan=3 ><a onclick="goToChapter('MIC',1)">MICAH</a></td>
+	<td colspan=3 ><a onclick="goToChapter('NAH',1)">NAHM</a></td>
+	<td colspan=3 ><a onclick="goToChapter('HAB',1)">HABAK</a></td>
+  </tr>
+   <tr bgcolor="#E9CFB6">
+    <td colspan=3 ><a onclick="goToChapter('ZEP',1)">ZEPH</a></td>
+    <td colspan=3 ><a onclick="goToChapter('HAG',1)">HAGG</a></td> 
+    <td colspan=3 ><a onclick="goToChapter('ZEC',1)">ZECH</a></td>
+	<td colspan=3 ><a onclick="goToChapter('MAL',1)">MALAC</a></td>
+	<td colspan=3 bgcolor="#1F61B0"><a href="whyPage.htm"  style="color: white;">WHY?</a></td>
+  </tr>
+   <tr bgcolor="#176A16" >
+    <td colspan=15 style="border-top-width: 5px;"><a style="color: white;" href="10reasons.htm">10 Reasons to choose the AV7 Bible!</a></td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+</body></html>

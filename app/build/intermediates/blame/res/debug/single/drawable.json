@@ -1,0 +1,138 @@
+[
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\button1s.jpg",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\src\\main\\res\\drawable\\button1s.jpg"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\share_btn.jpg",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\src\\main\\res\\drawable\\share_btn.jpg"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\button3s.jpg",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\src\\main\\res\\drawable\\button3s.jpg"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_action.png",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\src\\main\\res\\drawable\\ic_action.png"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\spinner_border.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\src\\main\\res\\drawable\\spinner_border.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\app_vert_cover.png",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\src\\main\\res\\drawable\\app_vert_cover.png"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\button2s.jpg",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\src\\main\\res\\drawable\\button2s.jpg"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_full_material.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\drawable\\abc_ratingbar_full_material.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_dark.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\drawable\\abc_dialog_material_background_dark.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\app_cover.jpg",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\src\\main\\res\\drawable\\app_cover.jpg"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\toc_btn.jpg",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\src\\main\\res\\drawable\\toc_btn.jpg"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\drawable\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_light.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\drawable\\abc_dialog_material_background_light.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\av7opentop.jpg",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\src\\main\\res\\drawable\\av7opentop.jpg"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\app_iconorg.png",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\src\\main\\res\\drawable\\app_iconorg.png"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\buy_btn.jpg",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\src\\main\\res\\drawable\\buy_btn.jpg"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\app_icon.png",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\src\\main\\res\\drawable\\app_icon.png"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\popup_background.xml",
+        "source": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\src\\main\\res\\drawable\\popup_background.xml"
+    }
+]

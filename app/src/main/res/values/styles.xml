@@ -1,0 +1,15 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Animation">
+        <item name="android:windowEnterAnimation">@anim/popup_animation_show</item>
+        <item name="android:windowExitAnimation">@anim/popup_animation_hide</item>
+    </style>
+
+
+
+</resources>

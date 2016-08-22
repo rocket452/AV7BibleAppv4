@@ -1,0 +1,190 @@
+
+/* */
+    #mainImage {
+			 border: 2px solid gray;
+			 width: 25%;
+			 margin: 0 auto;
+			 background-color:black;
+    }
+	
+        
+		
+	@media screen and (max-width: 1000px) {
+		#mainImage{
+          width: 100%;
+		}
+		
+		#tableOfContentsTable{
+          width: 100%;
+		}
+	}
+		 
+    img {
+		 width: 99%;
+		 margin: 0 auto;
+	}
+	
+	#logoTable {
+		/*white-space: nowrap; causes problems in 4.2.2 and below 
+		padding: 3px; */
+		background: black;
+		/*border-radius: 25px;
+		height: 65px; */
+		width: 100%;
+		box-shadow: 2px 2px 5px #888888;
+		border: 1px solid gold;
+		box-shadow: 2px 2px 5px gray;
+		position: fixed;
+		z-index: 1;
+		
+	}
+	
+	#logoTableAV7Cell {
+		
+		padding-left:15px;
+		padding-right:15px;
+		color: #B49F4E;
+		-webkit-text-stroke: 1px black;
+		text-shadow: 1px 1px 1px black;
+		font: 80px 'ChunkFiveRegular';
+		font-size: 10vmin;
+		font-family: customFontSerpentineBold;
+		background: #1B7CC9;
+		border-radius: 25px;
+
+		width: 1%;
+		border: 1px solid rgba(2, 0, 0, 0.28);
+		box-shadow: 2px 2px 5px gray;
+	}
+	
+	#logoTableInvitationTextCell {
+	
+		font-family: customFontChampagne;
+		color: white;
+		font-size:57px;
+		font-size:8vmin;
+		padding-top: 5px;
+		padding-left: 10px;
+
+	}
+	
+	 @font-face {
+		font-family: customFontSerpentineBold;
+		src: url('../fonts/SerpentineBold.eot'); /* IE9 Compat Modes */
+		src: url('../fonts/SerpentineBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		url(../fonts/SerpentineBold.ttf);
+	}
+
+
+	 @font-face {
+	   font-family: customFontChampagne;
+	   src: url('../fonts/cac_champagne.eot'); /* IE9 Compat Modes */
+		src: url('../fonts/cac_champagne.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		url(../fonts/cac_champagne.ttf);
+	}
+	 @font-face {
+		font-family: customFontAvenirNextLTProCn;
+		src: url('../fonts/AvenirNextLTPro-DemiCn.eot'); /* IE9 Compat Modes */
+		src: url('../fonts/AvenirNextLTPro-DemiCn.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		url(../fonts/AvenirNextLTPro-DemiCn.ttf);
+	}
+	
+	
+	* { 
+		-moz-box-sizing: border-box; 
+		-webkit-box-sizing: border-box; 
+		box-sizing: border-box; 
+	}
+	
+	body {
+	
+		margin: 0; 
+	}
+	
+		#verseNumber {
+			color: blue;
+			margin-right:7px;
+			font-style:italic;
+			font-family: Georgia,Serif; 
+			font-size: 12pt; 
+		}
+		
+		   #bibleText {
+         font-family: Georgia,Serif; font-size: 14pt;
+         }
+		
+		 #bibleReference {
+			color:grey;
+			font-style:italic;
+			font-family: Georgia,Serif;
+			font-size: 10pt;
+		 }
+		
+		#footerTable{
+			
+			width:100%;
+			z-index: 99;   
+			background-color: white;
+			z-index: 99;
+			position: fixed;
+			bottom: 0px;
+	
+			margin-bottom: 0px;
+					border: 2px solid gold;
+			color: white;
+			background: gray;
+		
+		}
+		
+		#footerTable td{
+			
+			font-size:19px;
+			border:none;
+			text-align: center;
+	
+		}
+		
+		a {
+			color: inherit; /* blue colors for links too */
+			text-decoration: inherit; /* no underline */
+		}
+		
+		 #italicText {
+			font-style:italic;
+			color:grey;
+		 }
+		 
+		 h1 {
+			margin-left:auto;
+			margin-right:auto;
+			 text-align:center;
+			 font-size: larger;
+		 }
+		 
+		 p {  font-family: Georgia,Serif; font-size: 14pt;}
+		 
+		   #chapterTitle {
+         text-align: center;
+         font-weight:bold;
+         }
+		 
+		#wordsOfJesus {
+			color:darkred;
+         }
+		 
+		    
+         #plusSign {
+         color:blue;
+         }
+    
+	#wrapperDiv {
+		border: 2px solid white;
+		background: #EEE7DA; 
+		padding: 15px;
+         margin-left: 2%;
+		 margin-right: 2%; 
+		 margin-bottom: 2%;
+		 margin-top: 63px;
+		 text-align:center;"
+		
+	}

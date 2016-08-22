@@ -1,0 +1,314 @@
+
+
+<html >
+   <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<link href="../CSS/styles.css" media="all" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <style type="text/css">
+
+         h1 { font-size: 16pt; font-weight:bold; text-align:center;}
+         p {  font-family: Georgia,Serif; font-size: 14pt;}
+	
+		 .italic {font-size: 11pt; font-style: italic; }
+		 .lighter { opacity: 0.5; font-family: inherit; font-size: inherit;}
+		 .underline { text-decoration: underline; font-family: inherit; font-size: inherit;}
+		 .greek { color: green; }
+		 
+		 #chapterSelectTable {
+			  margin-left: auto;
+			  margin-right: auto;
+              border: 3px solid black;
+			  border-collapse: collapse;
+			  width: 95%;
+			  text-align: center;
+			  font-family: Georgia,Serif; font-size: 14pt;
+			  background-color: white;
+			
+		 }
+		 
+			 
+		#chapterSelectTable td {
+		   height: 35px;
+		}
+		
+		#logoTable {
+		
+			position: fixed;
+			z-index: 1;
+		}
+		
+		a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+		h1 {
+		  /* text-align: center; */
+		  margin-left:auto;
+		  margin-right:auto;
+		  
+		}
+		
+		#verseNumber {
+			color: blue;
+			margin-right:7px;
+			font-style:italic;
+			font-family: Georgia,Serif; font-size: 10pt;
+		}
+		#bibleText {
+		 font-family: Georgia,Serif; font-size: 14pt;
+		 }
+		 
+		 #chapterTitle {
+		  text-align: center;
+		  font-weight:bold;
+		  
+		 }
+		 
+		 #italicText {
+				font-style:italic;
+				color:grey;
+		 }
+		 
+		 #wordsOfJesus {
+			color:darkred;
+		 }
+		 
+			 
+		 #plusSign {
+			color:blue;
+		 }
+		 
+		 #bibleReference {
+		 color:grey;
+				font-style:italic;
+			font-family: Georgia,Serif; font-size: 10pt;
+		 }
+		 
+		 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: gray;
+	font-family: sans-serif;
+}
+
+li {
+    float: left;
+	border-right: 1px solid whitesmoke;
+	   display: inline-block;
+    color: whitesmoke;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+		 
+	
+      </style>
+	  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	  <script src="../JS/javascript.js"></script>
+	  
+<script type="text/javascript">
+function insertFunction(text) {
+    //document.getElementById('mainContent').innerHTML = text
+	
+	
+	
+	var para = document.createElement("p");
+var node = document.createTextNode(text);
+para.appendChild(node);
+var element = document.getElementById("mainContent");
+
+wrapperDiv.appendChild(para);
+element.appendChild(element);
+
+}
+/*
+function insertFunction2(verse,text) {
+    //document.getElementById('mainContent').innerHTML = text
+	var wrapperDiv = document.createElement("div");
+	var lineBreak = document.createElement("p");
+//	wrapperDiv.style.display = "inline-flex";
+//	var para = document.createElement("p");
+	var verseElement = document.createElement("div");
+	var textElement = document.createElement("div");
+	//verseElement.style.float = "left";
+	//textElement.style.float = "right";
+	//verseElement.style.color ='blue';
+	  verseElement.setAttribute("id", "verseNumber");
+	  if(text.indexOf("Chapter") ==-1){
+	    textElement.setAttribute("id", "bibleText");
+		wrapperDiv.style.display = "inline-flex";
+		}
+	
+var verseNode = document.createTextNode(verse);
+
+//verseElement.appendChild(verseNode);
+verseElement.innerHTML = verse;
+
+//verseElement.innerHTML ="<span>test2</span>";
+//verseElement.innerHTML = "But <div id='italicText'>Jesus</div> answered and said: <div id='wordsOfJesus'>It is written: Mankind+ shall not live by bread alone, but by every word that proceeds out of the mouth of God.</div> [@Deuteronomy 8:3@]";
+var textNode = document.createTextNode(text);
+//textElement.appendChild(textNode);
+textElement.innerHTML  = text;
+var element = document.getElementById("mainContent");
+//para.appendChild(verseElement);
+//para.appendChild(textElement);
+//wrapperDiv.appendChild(para);
+wrapperDiv.appendChild(verseElement);
+wrapperDiv.appendChild(textElement);
+   
+element.appendChild(wrapperDiv);
+element.appendChild(document.createElement("br"));
+
+
+}
+*/
+
+function previousPage() {
+    window.history.back();
+}
+
+
+</script>
+	  
+   </head>
+   <body background="../images/avbackground.jpg" style="margin:0px; margin-bottom:50px;" onload="insertFunction2('verse',<b>+'test6'+</b>)">
+ <ul>
+	<li><i style="font-size: 18px;"class="fa fa-home"></i></li> 
+  <li><a class="active" href="#home">SHARE</a></li>
+  <li><a href="#news">GET A COPY</a></li>
+  <li><a href="#contact">INVITATION</a></li>
+  <li><a href="#about">PURPOSE</a></li>
+    <li><a href="#about">ESSENTIAL</a></li>
+</ul>
+
+   <br>
+   <div id="page1"  style="border: 2px solid white; background: #EEE7DA; padding: 15px;
+    margin-left: 2%; margin-right: 2%;  margin-bottom: 2%; margin-top: 63px;">
+      <h1>
+		
+	  </h1>
+   
+	  <div id="mainContent">
+	  
+				  
+				<center><font class=T14>
+			Have you ever read<br>
+			the greatest source of wisdom<br>
+			known to mankind?
+			<p>
+			How much of it have you read?</center>
+
+			<center>
+			<p><font class=T1>
+			<i>Scroll down to read the <br>
+			<b>Top 30</b>&nbsp; Most Essential Truths<br>
+			in less than 3 minutes.
+			<p>
+			Press the play button </i> &#9654;<i> below to listen 
+			to a 15-minute introduction to these Truths.<p>
+			<audio src="../media/met1.mp3" controls preload></audio>
+			<p>
+			Press the play button </i> &#9654;<i> below to listen 
+			to the &nbsp;<b>Top 50</b>&nbsp; Most Essential Truths. 
+			<p>
+			<audio src="../media/met2.mp3" controls preload></audio>
+			<p>
+			<a href=met2.htm><font color=darkred>
+			Or tap this link to read the<br>
+			<b>Top 108</b>&nbsp; Most Essential Truths<br>
+			and how these Truths were selected.</a></font>
+			<p>
+
+			<a href=met3.htm><font color=darkred>
+			Or tap this link to get the book<br> 
+			that presents and explains all<br><b>249</b>&nbsp;
+			Most Essential Truths.</a></i></font>
+			<br><br>
+			<hr size=4 width=70% color=darkred>
+			<p>
+
+			<br><font class=t14><b>
+			The 10 Commandments<br>
+			are The Foundation<br>
+			of <u>all</u> Truth<br></b></font>
+			<font class=T3><i>Exodus 20:2-17</i></font> 
+
+			</center><p>
+
+			<b>#1</b>&nbsp; I Am the Lord your God . . . you shall have no other gods before me. 
+			<p>
+			<b>#2</b>&nbsp; You shall not worship idols. 
+			<p>
+			<b>#3</b>&nbsp; You shall not take the name of the Lord your God in vain. 
+			<p>
+			<b>#4</b>&nbsp; Remember the Sabbath day to keep it holy. 
+			<p>
+			<b>#5</b>&nbsp; Honor your father and your mother. 
+			<p>
+			<b>#6</b>&nbsp; You shall not murder. 
+			<p>
+			<b>#7</b>&nbsp; You shall not commit adultery. 
+			<p>
+			<b>#8</b>&nbsp; You shall not steal. 
+			<p>
+			<b>#9</b>&nbsp; You shall not bear false witness. 
+			<p>
+			<b>#10</b>&nbsp; You shall not covet. 
+
+			<hr size=4 width=70% color=darkred>
+			<p>
+			<b>#11</b>&nbsp; Mankind shall not live by bread alone, but by every word that proceeds out of the mouth of God. <font class=T3><i>Matthew 4:4, Deuteronomy 8:3 </i></font>
+			<p>
+			<b>#17</b>&nbsp; God so loved the world, that He gave His Only Begotten Son, so that whoever believes in Him should not perish, but have eternal life. <font class=T3><i>John 3:16 </i></font>
+			<p>
+			<b>#42</b>&nbsp; Let your light so shine before people that they may see your good works and glorify~ your Father in heaven. <font class=T3><i>Matthew 5:16</i></font> 
+			<p>
+			<b>#58</b>&nbsp; If you forgive others for their trespasses~ then your heavenly Father will also forgive you. <font class=T3><i>Matthew 6:14</i></font> 
+			<p>
+			<b>#65</b>&nbsp; No one can serve two masters. You cannot serve God and worldly treasures. <font class=T3><i>Matthew 6:24</i></font> 
+			<p>
+			<b>#73</b>&nbsp; Seek first the kingdom of God and His righteousness and all these things will be added to you. <font class=T3><i>Matthew 6:33</i></font> 
+			<p>
+			<b>#82</b>&nbsp; Therefore all things whatsoever you would that others should do to you, you do to them. For this is the sum of the law and the prophets. <font class=T3><i>Matthew 7:12</i></font> 
+			<p>
+			<b>#122</b>&nbsp; Out of the abundance of the heart the mouth speaks. A good person out of the good treasure of the heart brings forth good things. An evil person out of evil treasure brings forth evil things. <font class=T3><i>Matthew 12:34-35, Psalm 19:14 Proverbs 10:11</i></font> 
+			<p>
+			<b>#123</b>&nbsp; For every idle word that people speak, they will give an account of it on the day of judgment. <font class=T3><i>Matthew 12:36</i></font> 
+			<p>
+			<b>#124</b>&nbsp; Blessed are those who hear the Word of God and keep it. <font class=T3><i>Luke 11:28, Proverbs 8:32</i></font> 
+			<p>
+
+			<b>#130</b>&nbsp; Be of good cheer~. I Am with you. Do not be afraid. <font class=T3><i>Matthew 14:27</i></font> 
+
+			<p>
+			<b>#162</b>&nbsp; I have come so that they might have life and have it more abundantly. <font class=T3><i>John 10:10, Jeremiah 29:11</i></font> 
+			<p>
+			<b>#201</b>&nbsp; You shall love the Lord your God with all your heart and with all your soul and with all your mind and with all your strength. This is the first and great commandment. <font class=T3><i>Matthew 22:37-38, Mark 12:30, Deuteronomy 6:5</i></font> 
+			<p>
+			<b>#202</b>&nbsp; The second is like it: You shall love your neighbor as yourself. There is no other commandment greater than these. On these two commandments hang all the law and the prophets. <font class=T3><i>Matthew 19:19, Matthew 22:39-40, Mark 12:31</i></font> 
+			<p>
+			<b>#223</b>&nbsp; All people will know that you are my disciples if you have love toward one another. <font class=T3><i>John 13:34-35</i></font> 
+			<p>
+			<b>#226</b>&nbsp; I am the way, the truth, and the life. No one comes to the Father, but by me. <font class=T3><i>John 14:6</i></font> 
+			<p>
+			<b>#236</b>&nbsp; This is my commandment: That you love one another as I have loved you. <font class=T3><i>John 15:12</i></font> 
+			<p>
+			<b>#247</b>&nbsp; Go and teach all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all things whatsoever I have commanded you. Behold I am with you always, even to the end of the world. Amen.  <font class=T3><i>Matthew 28:19-20, Mark 16:15</i></font> 
+			<p>
+			<b>#248</b>&nbsp; Those who believe and are baptized will be saved, but those who do not believe will be damned. <font class=T3><i>Mark 16:16</i></font> 
+			<p>
+			<b>#249</b>&nbsp; Behold I stand at the door and knock. If anyone will hear my voice and open the door, I will come in to them and dine with them and they with me. <font class=T3><i>Revelation 3:20</i></font> 
+
+				
+	 </div>
+	  
+	  </div>
+	
+   </body>
+</html>
