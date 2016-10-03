@@ -127,7 +127,7 @@ public class BibleContent extends Activity {
         //resultSet = getBibleText(selectedChapter);
         //Toast.makeText(getApplicationContext(), "Book: '" + bookName + "'  Chap: '" + selectedChapter + "'", Toast.LENGTH_LONG).show();
         if(bookName == "VSQ" && selectedChapter == ""){ //Search Page
-            resultSet = getSearchResults(searchString);
+            resultSet = getSearchResults(searchString,"");
         }
         else {
             resultSet = getBibleText(bookName, selectedChapter);
@@ -184,13 +184,18 @@ public class BibleContent extends Activity {
                     }
 
                     webView.loadUrl("javascript:insertTable('" + textResult + "')");
-                } else {
+                }
+                else {
                     // textResult = "slaughter of the infants, and the beginning of Jesus's ministry.";
                     // textResult = "<ul><li>Genealogy and birth 1:1-2:23</li><li>John the Baptist\\'s ministry 3:1-12</li><li>Jesus baptism and temptation 3:13-4:11</li><li>Jesus public ministry in Galilee 4:12-18:35</li><";
                     webView.loadUrl("javascript:insertBody('" + textResult + "')");
                 }
 
-            } else {
+            }
+            else if (chapterResult.equals("-1") || chapterResult.equals("-2")){
+                webView.loadUrl("javascript:insertBody('<p>" + textResult + "</p>')");
+            }
+            else {
                 webView.loadUrl("javascript:insertFunction('" + combinedResult + "')");
             }
 
@@ -417,6 +422,47 @@ public class BibleContent extends Activity {
         }
 
         @JavascriptInterface   // must be added for API 17 or higher
+        public void searchForText(final String searchString1, final String searchString2) {
+
+            //Toast.makeText(context, "SearchForText!", Toast.LENGTH_LONG).show();
+
+            webView.post(new Runnable() {
+                public void run() {
+                    Cursor resultSet = getSearchResults(searchString1, searchString2);
+
+                    String bookResult;
+                    String chapterResult;
+                    String verseResult;
+                    String textResult;
+                    String combinedResult;
+
+
+                    while(resultSet.moveToNext())
+
+                    {
+                        bookResult = resultSet.getString(resultSet.getColumnIndex("Book"));
+                        chapterResult = resultSet.getString(resultSet.getColumnIndex("Chapter"));
+                        if (chapterResult.substring(0,1).equals("0")){
+                            chapterResult = chapterResult.substring(1);
+                        }
+                        verseResult = resultSet.getString(resultSet.getColumnIndex("Verse"));
+                        textResult = resultSet.getString(resultSet.getColumnIndex("Text"));
+
+                        combinedResult = "<span id=\"verseNumber\">" + bookResult + " " + chapterResult + ":" + verseResult + "</span>" + textResult;
+
+
+                        // textResult = "water";
+                        webView.loadUrl("javascript:insertBody('<p>" + combinedResult + "</p>')");
+                    }
+
+                    resultSet.close();
+                }
+            });
+            //InsertBibleTxt(resultSet);
+
+        }
+
+        @JavascriptInterface   // must be added for API 17 or higher
         public void goToChapter(String bookName, String chapterNumber) {
 
             //Toast.makeText(context, "test function: "+ chapterNumber, Toast.LENGTH_SHORT).show();
@@ -444,6 +490,11 @@ public class BibleContent extends Activity {
             webView.post(new Runnable() {
                 public void run() {
 
+
+                    if (nextChapterCounter.equals("-1") || nextChapterCounter.equals("-2")){
+                        //
+                        return;
+                    }
 
                     // int nextChapterInt =    Integer.parseInt(extras.getString("SelectedChapter"))+1;
                     nextChapterCounter = Integer.toString(Integer.parseInt(nextChapterCounter) + 1);
@@ -639,8 +690,19 @@ public class BibleContent extends Activity {
         while(i <= numberOfChapters){
 
             if (j == 1) sb.append("<tr>");
+
+            //not all books have Why and Keys pages yet
+            if(bookName.equals("PRO")) {
+                if (i == 1) {
+                    sb.append("<td class=\"whyPage\" ><a onclick=\"goToChapter(\\'" + bookName + "\\'," + -2 + ")\">Why</a></td>");
+                    sb.append("<td class=\"keysPage\" ><a onclick=\"goToChapter(\\'" + bookName + "\\'," + -1 + ")\">Keys</a></td>");
+                    j = j + 2;
+                }
+            }
+
            // sb.append("<td ><a onclick=\\'goToChapter(\\'MAT\\'," + i + ")\\'>" + i + "</a></td>");
-            sb.append("<td ><a onclick=\"goToChapter(\\'" + bookName + "\\'," + i + ")\">" + i + "</a></td>");
+           sb.append("<td ><a onclick=\"goToChapter(\\'" + bookName + "\\'," + i + ")\">" + i + "</a></td>");
+
             if (j == 7){
                 sb.append("</tr>");
                 j = 0;
@@ -692,7 +754,7 @@ public class BibleContent extends Activity {
 
     }
 
-    protected Cursor getSearchResults(String searchString) {
+    protected Cursor getSearchResults(String searchString1, String searchString2) {
 
         //The Android's default system path of your application database.
         String DB_PATH = "/data/data/com.av7bible.av7bibleappv2/databases/";
@@ -705,7 +767,8 @@ public class BibleContent extends Activity {
         myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
 
         //  Cursor resultSet = myDataBase.rawQuery("Select * from Bible where Book = \"" + bookName + "\" and chapter = \"" + selectedChapter + "\"", null);
-        Cursor resultSet = myDataBase.rawQuery("select * from bible where text like '%" + searchString + "%'",null);
+        //Cursor resultSet = myDataBase.rawQuery("select * from bible where text like '%" + searchString + "%'",null);                                                        //exclude unfinished books
+        Cursor resultSet = myDataBase.rawQuery("select * from bible where text like '%" + searchString1 + "%' and text like '%" + searchString2 + "%' and Chapter > '00' and not text like '%<p>%'",null);
 
         return resultSet;
     }

@@ -129,6 +129,8 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
         @JavascriptInterface   // must be added for API 17 or higher
         public void searchForText(final String searchString) {
 
+            Toast.makeText(context, "SearchForTextTOC!", Toast.LENGTH_LONG).show();
+
            webView.post(new Runnable() {
                 public void run() {
                      Cursor resultSet = getSearchResults(searchString);
@@ -163,9 +165,6 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
                 }
                 });
                 //InsertBibleTxt(resultSet);
-
-
-
 
             }
 
@@ -230,8 +229,6 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
 
         //  Cursor resultSet = myDataBase.rawQuery("Select * from Bible where Book = \"" + bookName + "\" and chapter = \"" + selectedChapter + "\"", null);
         Cursor resultSet = myDataBase.rawQuery("select * from bible where text like '%" + searchString + "%' and Chapter <> '00'",null);
-
-
 
         return resultSet;
     }
