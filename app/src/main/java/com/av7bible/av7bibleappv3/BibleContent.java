@@ -416,7 +416,7 @@ public class BibleContent extends Activity {
 
         @JavascriptInterface   // must be added for API 17 or higher
         public void openOptionsMenu() {
-            //  Toast.makeText(context, "New Thing3!", Toast.LENGTH_SHORT).show();
+            //  Toast.makeText(context, "New Thing3!", Toast.LENGTH_SHORT).show();zzz
             //   showHelpPopup((Activity) context);
             showHelpPopup(BibleContent.this);
         }
