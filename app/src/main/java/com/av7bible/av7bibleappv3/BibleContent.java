@@ -762,7 +762,7 @@ public class BibleContent extends Activity {
 
     protected Cursor getSearchResults(String searchString1, String searchString2) {
 
-        //The Android's default system path of your application database.
+        //The Android's default system path of your application database.z
         String DB_PATH = "/data/data/com.av7bible.av7bibleappv2/databases/";
 
         String DB_NAME = "newDb";
