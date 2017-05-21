@@ -158,6 +158,12 @@ public class BibleContent extends Activity {
             chapterResult = resultSet.getString(resultSet.getColumnIndex("Chapter"));
             verseResult = resultSet.getString(resultSet.getColumnIndex("Verse"));
             textResult = resultSet.getString(resultSet.getColumnIndex("Text"));
+
+         //   if(textResult.contains("'")) {
+                textResult = textResult.replaceAll("'", "\\\\'");
+            textResult = textResult.replaceAll(",", "\\\\,");
+        //    }
+
             //combinedResult = verseResult + "   " + textResult + "\n";
             verseNumber = verseResult;
             verseResult = "<span id=\"verseNumber\">" + verseResult + "</span>";
@@ -416,7 +422,7 @@ public class BibleContent extends Activity {
 
         @JavascriptInterface   // must be added for API 17 or higher
         public void openOptionsMenu() {
-            //  Toast.makeText(context, "New Thing3!", Toast.LENGTH_SHORT).show();zzz
+            //  Toast.makeText(context, "New Thing3!", Toast.LENGTH_SHORT).show();
             //   showHelpPopup((Activity) context);
             showHelpPopup(BibleContent.this);
         }
@@ -692,13 +698,13 @@ public class BibleContent extends Activity {
             if (j == 1) sb.append("<tr>");
 
             //not all books have Why and Keys pages yet
-            if(bookName.equals("PRO")) {
+       //     if(bookName.equals("PRO")) {
                 if (i == 1) {
                     sb.append("<td class=\"whyPage\" ><a onclick=\"goToChapter(\\'" + bookName + "\\'," + -2 + ")\">Why</a></td>");
                     sb.append("<td class=\"keysPage\" ><a onclick=\"goToChapter(\\'" + bookName + "\\'," + -1 + ")\">Keys</a></td>");
                     j = j + 2;
                 }
-            }
+         //   }
 
            // sb.append("<td ><a onclick=\\'goToChapter(\\'MAT\\'," + i + ")\\'>" + i + "</a></td>");
            sb.append("<td ><a onclick=\"goToChapter(\\'" + bookName + "\\'," + i + ")\">" + i + "</a></td>");
