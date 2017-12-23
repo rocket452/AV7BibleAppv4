@@ -44,6 +44,13 @@ public class BibleContent extends Activity {
     String previousChapterCounter = "";
     String searchStringFromExtras = "";
 
+    //The Android's default system path of your application database.
+    String DB_PATH = "/data/data/com.av7bible.av7bibleappv2/databases/";
+    String DB_NAME = "newDb";
+    SQLiteDatabase myDataBase;
+    String myPath = DB_PATH + DB_NAME;
+
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.webview_layout);
@@ -376,17 +383,7 @@ public class BibleContent extends Activity {
 
     protected Cursor getNumberOfChapters(String bookName) {
 
-        //The Android's default system path of your application database.
-        String DB_PATH = "/data/data/com.av7bible.av7bibleappv2/databases/";
-
-
-        String DB_NAME = "newDb";
-
-        SQLiteDatabase myDataBase;
-
-        String myPath = DB_PATH + DB_NAME;
         myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
-
 
         Cursor numberOfChapters = myDataBase.rawQuery("Select Max(chapter+0) from Bible where  Book = \"" + bookName + "\"", null);
 
@@ -697,9 +694,8 @@ public class BibleContent extends Activity {
 
             if (j == 1) sb.append("<tr>");
 
-            //not all books have Why and Keys pages yet
-       //     if(bookName.equals("PRO")) {
-                if (i == 1 ) {
+            //not all books have Why and Keys pages yet so we have to check
+                if (i == 1 && hasWhyKeys(bookName)) {
                     sb.append("<td class=\"whyPage\" ><a onclick=\"goToChapter(\\'" + bookName + "\\'," + -2 + ")\">Why</a></td>");
                     sb.append("<td class=\"keysPage\" ><a onclick=\"goToChapter(\\'" + bookName + "\\'," + -1 + ")\">Keys</a></td>");
                     j = j + 2;
@@ -725,6 +721,17 @@ public class BibleContent extends Activity {
 
 
         return sb.toString();
+    }
+
+    private boolean hasWhyKeys(String bookName) {
+
+        myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+
+        Cursor hasWhyKeys = myDataBase.rawQuery("SELECT EXISTS(SELECT 1 FROM bible WHERE book=\"" + bookName + "\" and chapter = '-2' LIMIT 1);", null);
+
+        hasWhyKeys.moveToFirst();
+
+        return Integer.parseInt(hasWhyKeys.getString(0)) != 0;
     }
 
     public class SpinnerActivity extends Activity implements AdapterView.OnItemSelectedListener {
