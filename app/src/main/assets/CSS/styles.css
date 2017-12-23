@@ -101,81 +101,82 @@
 		margin: 0; 
 	}
 	
-		#verseNumber {
-			color: blue;
-			margin-right:7px;
-			font-family: Georgia,Serif; 
-			font-size: 12pt; 
-		}
-		
-		   #bibleText {
-         font-family: Georgia,Serif; font-size: 14pt;
-         }
-		
-		 #bibleReference {
-			color:grey;
-			font-style:italic;
-			font-family: Georgia,Serif;
-			font-size: 10pt;
-		 }
-		
-		#footerTable{
-			
-			width:100%;
-			z-index: 99;   
-			background-color: white;
-			z-index: 99;
-			position: fixed;
-			bottom: 0px;
+	#verseNumber {
+		color: blue;
+		margin-right:7px;
+		font-family: Georgia,Serif; 
+		font-size: 12pt; 
+	}
 	
-			margin-bottom: 0px;
-					border: 2px solid gold;
-			color: white;
-			background: gray;
-		
-		}
-		
-		#footerTable td{
-			
-			font-size:19px;
-			border:none;
-			text-align: center;
+	   #bibleText {
+	 font-family: Georgia,Serif; font-size: 14pt;
+	 }
 	
-		}
+	 #bibleReference {
+		color:grey;
+		font-style:italic;
+		font-family: Georgia,Serif;
+		font-size: 10pt;
+	 }
+	
+	#footerTable{
 		
-		a {
-			color: inherit; /* blue colors for links too */
-			text-decoration: inherit; /* no underline */
-		}
+		width:100%;
+		z-index: 99;   
+		background-color: white;
+		z-index: 99;
+		position: fixed;
+		bottom: 0px;
+
+		margin-bottom: 0px;
+				border: 2px solid gold;
+		color: white;
+		background: gray;
+	
+	}
+	
+	#footerTable td{
 		
-		 #italicText {
-			font-style:italic;
-			color:grey;
-		 }
+		font-size:19px;
+		border:none;
+		text-align: center;
+
+	}
+	
+	a {
+		color: inherit; /* blue colors for links too */
+		text-decoration: inherit; /* no underline */
+	}
+	
+	 #italicText,.itx {
+		font-style:italic;
+		color:grey;
+	 }
+	 
+	 h1 {
+		margin-left:auto;
+		margin-right:auto;
+		 text-align:center;
+		 font-size: larger;
+	 }
+	 
+	 p {  font-family: Georgia,Serif; font-size: 14pt;}
+	 
+	   #chapterTitle {
+	 text-align: center;
+	 font-weight:bold;
+	 }
+	 
+	#wordsOfJesus {
+		color:darkred;
+	 }
+	 
+		
+	 #plusSign,.plus {
+	 color:blue;
+	 }
 		 
-		 h1 {
-			margin-left:auto;
-			margin-right:auto;
-			 text-align:center;
-			 font-size: larger;
-		 }
-		 
-		 p {  font-family: Georgia,Serif; font-size: 14pt;}
-		 
-		   #chapterTitle {
-         text-align: center;
-         font-weight:bold;
-         }
-		 
-		#wordsOfJesus {
-			color:darkred;
-         }
-		 
-		    
-         #plusSign {
-         color:blue;
-         }
-    
+	    
 	#wrapperDiv {
 		border: 2px solid white;
 		background: #EEE7DA; 
@@ -200,4 +201,6 @@
 	    font-weight:bold;
 		font-size:smaller;
 	}
+	
+
 	

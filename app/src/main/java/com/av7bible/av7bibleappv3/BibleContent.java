@@ -388,7 +388,7 @@ public class BibleContent extends Activity {
         myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
 
 
-        Cursor numberOfChapters = myDataBase.rawQuery("Select Max(chapter) from Bible where  Book = \"" + bookName + "\"", null);
+        Cursor numberOfChapters = myDataBase.rawQuery("Select Max(chapter+0) from Bible where  Book = \"" + bookName + "\"", null);
 
         return numberOfChapters;
     }
@@ -699,7 +699,7 @@ public class BibleContent extends Activity {
 
             //not all books have Why and Keys pages yet
        //     if(bookName.equals("PRO")) {
-                if (i == 1) {
+                if (i == 1 ) {
                     sb.append("<td class=\"whyPage\" ><a onclick=\"goToChapter(\\'" + bookName + "\\'," + -2 + ")\">Why</a></td>");
                     sb.append("<td class=\"keysPage\" ><a onclick=\"goToChapter(\\'" + bookName + "\\'," + -1 + ")\">Keys</a></td>");
                     j = j + 2;
@@ -762,7 +762,7 @@ public class BibleContent extends Activity {
 
     protected Cursor getSearchResults(String searchString1, String searchString2) {
 
-        //The Android's default system path of your application database.z
+        //The Android's default system path of your application database.
         String DB_PATH = "/data/data/com.av7bible.av7bibleappv2/databases/";
 
         String DB_NAME = "newDb";

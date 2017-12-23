@@ -13,7 +13,7 @@
         android:label="Tests for com.av7bible.av7bibleappv2"
         android:targetPackage="com.av7bible.av7bibleappv2" />
 
-    <application>
+    <application android:debuggable="true" >
         <uses-library android:name="android.test.runner" />
     </application>
 

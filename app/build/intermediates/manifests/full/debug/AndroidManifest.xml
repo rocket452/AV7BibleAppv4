@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.av7bible.av7bibleappv2"
-    android:versionCode="20"
-    android:versionName=".88" >
+    android:versionCode="22"
+    android:versionName=".91" >
 
     <uses-sdk
         android:minSdkVersion="17"
@@ -11,9 +11,12 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name="android.support.multidex.MultiDexApplication"
         android:allowBackup="true"
+        android:debuggable="true"
         android:icon="@drawable/app_icon"
         android:label=""
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.av7bible.av7bibleappv3.MainActivity"
@@ -42,6 +45,10 @@
         <activity
             android:name="com.av7bible.av7bibleappv3.HelpPage"
             android:finishOnTaskLaunch="true" />
+
+        <meta-data
+            android:name="android.support.VERSION"
+            android:value="25.4.0" />
     </application>
 
 </manifest>
