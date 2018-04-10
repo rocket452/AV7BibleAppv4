@@ -160,11 +160,21 @@ function previousPage() {
     window.history.back();
 }
 
+function toggleDiv(id) {
+    var div = document.getElementById(id);
+    div.style.display = div.style.display == "none" ? "block" : "none";
+	
+	var elem = document.getElementById("btnSearchTips");
+    if (elem.value=="Search Tips") elem.value = "Hide Tips";
+    else elem.value = "Search Tips";
+}
+
+
 
 </script>
 	  
    </head>
-   <body background="../images/avbackground.jpg" style="margin:0px; margin-bottom:50px;" >
+   <body background="../images/avbackground.jpg" style="margin:0px; margin-bottom:50px;" onload="clearCachedExtras()">
      <table id="logoTable" style="width:100%;">
 	<tr>
 		<td style="width:33%;"><img  style="width:100%;" id="av7IconImg"  src="../images/Av7BarIcon.png" onclick="goToTitleScreen()"/></td><td style="width:50%;"><img id="invitationImg" style="width:100%;"  src="../images/tib-logo.jpg" onclick="goToTableOfContents()"/></td>
@@ -180,10 +190,7 @@ function previousPage() {
 	  <div>
 	  
 		
-			<p>The New Authorized Version Foundation hopes to add and continually increase the amount of information provided here for 
-			deeper contemplation on each book of the Bible, drawing mainly from the insights provided by Matthew Henry's Commentary.</p>
-		
-			<p>In the meantime, we welcome your questions, suggestions, and comments.</p>
+
 					<!--
 			<p>Please enter your email address</p>
 			<input type="text" name="LastName" value=""><br>
@@ -194,35 +201,25 @@ function previousPage() {
 			<center><input type="button" style="font-size: large; margin: 10px;" value="Send" onclick="goBack()">or<input type="button" style="font-size: large; margin: 10px;" value="Go Back" onclick="goBack()"></center>
 -->
 
-<form action=https://www.bluehost.com/bluemail method=POST>
- <input type=hidden name=sendtoemail value=av7@av7.org>
-
- Please enter your email address:<br>
- <input type=text name=mailfrom size=19 maxlength=90><br>
-Questions, suggestions, or comments:<br>
- <textarea name=comments cols=36 rows=7 wrap=virtual></textarea><br><center>
- <input type=submit value=Send> &nbsp; &nbsp; or &nbsp; &nbsp;
- <input type=button value="Go Back" onclick="goBack()">
-</center>
-</form>     
+    
 
 
-<p><hr size=4 width=80% color=red></p>
+
 
 <p>An upgrade with extensive search capabilities is being developed. Try this simple preview</p>
-         <p><span style="font-size: large;">Enter Text:</span></p>
-		 <p><input type="text" id="SearchText1" value="" style="font-size: large;"></p>
-	     <p><input type="text" id="SearchText2" value="" style="font-size: large;"></p>
-         <br>
+         <p><span style="font-size: large;">Search the entire AV7 Bible for any word or phrase:</span></p>
+		 <p><input type="text" id="SearchText1" value="" style="font-size: large; width: 100%;" placeholder="Enter a single word or phrase here"></p>
+	     <p><input type="text" id="SearchText2" value="" style="font-size: large; width: 100%;" placeholder="Enter a second word to search here"></p>
          <br>
          <button type="button" onclick="searchForText(document.getElementById('SearchText1').value,document.getElementById('SearchText2').value);" id="SearchBtn" style="font-size: large;">Search</button>
 	 </div>
-		   <div id="mainContent" >
-		   
-			<p><center>Here are some search tips</center></p>
-		
+		<p>For a gallery of search tips:</p>
+	
+		   <input type="button" value="Search Tips" id="btnSearchTips" onclick="toggleDiv('searchTips');" style="font-size: large;"/>
+			
+			<div id="searchTips" style="display:none;">
 			<ol>
-			   <li> Search for a single word or name.&nbsp; Try entering the word &nbsp;
+						   <li> Search for a single word or name.&nbsp; Try entering the word &nbsp;
 				  [<b><u>friends</u></b>]&nbsp; and press [<b><u>Search</u></b>]<br>
 			   </li>
 		
@@ -247,8 +244,27 @@ Questions, suggestions, or comments:<br>
 				  &nbsp;and chapter number&nbsp; [<b><u>15</u></b>]
 			   </li>
 			</ol>
-				
-         </div>
+					</div>
+       <div id="mainContent" />
+	   
+	  <p><hr size=4 width=80% color=red></p>
+	  
+	  			<p>The New Authorized Version Foundation hopes to add and continually increase the amount of information provided here for 
+			deeper contemplation on each book of the Bible, drawing mainly from the insights provided by Matthew Henry's Commentary.</p>
+		
+			<p>In the meantime, we welcome your questions, suggestions, and comments.</p>
+	  
+	  <form action=https://www.bluehost.com/bluemail method=POST>
+ <input type=hidden name=sendtoemail value=av7@av7.org>
+
+ Please enter your email address:<br>
+ <input type=text name=mailfrom size=19 maxlength=90><br>
+Questions, suggestions, or comments:<br>
+ <textarea name=comments cols=36 rows=7 wrap=virtual></textarea><br><center>
+ <input type=submit value=Send> &nbsp; &nbsp; or &nbsp; &nbsp;
+ <input type=button value="Go Back" onclick="goBack()">
+</center>
+</form> 
 	  
 	  </div>
 	 

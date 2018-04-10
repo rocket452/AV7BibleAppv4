@@ -5,8 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -24,9 +26,8 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.Toast;
+
 import java.io.File;
-
-
 
 
 /**
@@ -120,8 +121,10 @@ public class BibleContent extends Activity {
             bookName = bookNameParam;
             selectedChapter = chapterNumberParam;
         } else {
-            bookName = extras.getString("BookName");
-            selectedChapter = extras.getString("SelectedChapter");
+            if(extras != null) {
+                bookName = extras.getString("BookName");
+                selectedChapter = extras.getString("SelectedChapter");
+            }
         }
 
 
@@ -133,18 +136,17 @@ public class BibleContent extends Activity {
         Cursor resultSet = null;
         //resultSet = getBibleText(selectedChapter);
         //Toast.makeText(getApplicationContext(), "Book: '" + bookName + "'  Chap: '" + selectedChapter + "'", Toast.LENGTH_LONG).show();
-        if(bookName == "VSQ" && selectedChapter == ""){ //Search Page
-            resultSet = getSearchResults(searchString,"");
-        }
-        else {
+        if (bookName == "VSQ" && selectedChapter == "") { //Search Page
+            resultSet = getSearchResults(searchString, "");
+        } else {
             resultSet = getBibleText(bookName, selectedChapter);
         }
 
         InsertBibleTxt(resultSet);
 
         resultSet.close();
-    }
 
+    }
 
 
     protected void InsertBibleTxt(Cursor resultSet) {
@@ -166,10 +168,10 @@ public class BibleContent extends Activity {
             verseResult = resultSet.getString(resultSet.getColumnIndex("Verse"));
             textResult = resultSet.getString(resultSet.getColumnIndex("Text"));
 
-         //   if(textResult.contains("'")) {
-                textResult = textResult.replaceAll("'", "\\\\'");
+            //   if(textResult.contains("'")) {
+            textResult = textResult.replaceAll("'", "\\\\'");
             textResult = textResult.replaceAll(",", "\\\\,");
-        //    }
+            //    }
 
             //combinedResult = verseResult + "   " + textResult + "\n";
             verseNumber = verseResult;
@@ -197,18 +199,15 @@ public class BibleContent extends Activity {
                     }
 
                     webView.loadUrl("javascript:insertTable('" + textResult + "')");
-                }
-                else {
+                } else {
                     // textResult = "slaughter of the infants, and the beginning of Jesus's ministry.";
                     // textResult = "<ul><li>Genealogy and birth 1:1-2:23</li><li>John the Baptist\\'s ministry 3:1-12</li><li>Jesus baptism and temptation 3:13-4:11</li><li>Jesus public ministry in Galilee 4:12-18:35</li><";
                     webView.loadUrl("javascript:insertBody('" + textResult + "')");
                 }
 
-            }
-            else if (chapterResult.equals("-1") || chapterResult.equals("-2")){
+            } else if (chapterResult.equals("-1") || chapterResult.equals("-2")) {
                 webView.loadUrl("javascript:insertBody('<p>" + textResult + "</p>')");
-            }
-            else {
+            } else {
                 webView.loadUrl("javascript:insertFunction('" + combinedResult + "')");
             }
 
@@ -440,12 +439,12 @@ public class BibleContent extends Activity {
                     String combinedResult;
 
 
-                    while(resultSet.moveToNext())
+                    while (resultSet.moveToNext())
 
                     {
                         bookResult = resultSet.getString(resultSet.getColumnIndex("Book"));
                         chapterResult = resultSet.getString(resultSet.getColumnIndex("Chapter"));
-                        if (chapterResult.substring(0,1).equals("0")){
+                        if (chapterResult.substring(0, 1).equals("0")) {
                             chapterResult = chapterResult.substring(1);
                         }
                         verseResult = resultSet.getString(resultSet.getColumnIndex("Verse"));
@@ -454,6 +453,13 @@ public class BibleContent extends Activity {
                         combinedResult = "<span id=\"verseNumber\">" + bookResult + " " + chapterResult + ":" + verseResult + "</span>" + textResult;
 
 
+                        combinedResult = combinedResult.replace("=\'", "=\"");
+                        combinedResult = combinedResult.replace("'>", "\">");
+                        combinedResult = combinedResult.replace("'", "&quot;");
+
+                        // combinedResult =  combinedResult.substring(1, combinedResult.length()-1);
+
+                        Log.d("InsertText", combinedResult);
                         // textResult = "water";
                         webView.loadUrl("javascript:insertBody('<p>" + combinedResult + "</p>')");
                     }
@@ -494,7 +500,7 @@ public class BibleContent extends Activity {
                 public void run() {
 
 
-                    if (nextChapterCounter.equals("-1") || nextChapterCounter.equals("-2")){
+                    if (nextChapterCounter.equals("-1") || nextChapterCounter.equals("-2")) {
                         //
                         return;
                     }
@@ -546,13 +552,13 @@ public class BibleContent extends Activity {
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("message/rfc822");
             //i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"rocket452@hotmail.com"});
-            i.putExtra(Intent.EXTRA_SUBJECT, "'Enter Your Name' has "+
-                            "shared 'How to Compare Bible Versions' with you!"
+            i.putExtra(Intent.EXTRA_SUBJECT, "'Enter Your Name' has " +
+                    "shared 'How to Compare Bible Versions' with you!"
             );
 
-            i.putExtra(Intent.EXTRA_TEXT   ,
-                    "'Enter Your Name' has invited you to click this link"+
-                            " to download a free copy of the book, 'How "+
+            i.putExtra(Intent.EXTRA_TEXT,
+                    "'Enter Your Name' has invited you to click this link" +
+                            " to download a free copy of the book, 'How " +
                             " http://www.vsiq.com/avx/compare.php " +
                             "to Compare Bible Versions'"
             );
@@ -567,7 +573,7 @@ public class BibleContent extends Activity {
         }
 
         @JavascriptInterface   // must be added for API 17 or higher
-           public void goToTitleScreen() {
+        public void goToTitleScreen() {
 
             //Toast.makeText(context, "Open Help", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(BibleContent.this, MainActivity.class);
@@ -587,6 +593,29 @@ public class BibleContent extends Activity {
         }
 
 
+        @JavascriptInterface
+        public void clearCachedExtras() {
+
+          //  Bundle extras = getIntent().getExtras();
+
+            getIntent().removeExtra("BookName");
+            getIntent().removeExtra("SelectedChapter");
+
+
+        }
+
+        @JavascriptInterface   // must be added for API 17 or higher
+        public void sendEmailJSInterface() {
+              Toast.makeText(context, "sendEmailJSInterface!", Toast.LENGTH_LONG).show();
+
+            Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+            emailIntent.setType("application/image");
+            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"testemail"});
+            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,"Test Subject");
+            emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "From My App");
+            emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file:///mnt/sdcard/Myimage.jpeg"));
+            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+        }
 
     }
 
@@ -596,8 +625,6 @@ public class BibleContent extends Activity {
         view.removeAllViews();
         super.finish();
     }
-
-
 
 
     // The method that displays the popup.
@@ -648,9 +675,9 @@ public class BibleContent extends Activity {
 
         spinner.setAdapter(adapter);
         //End Spinner
-      //  spinner.setSelection(4);
+        //  spinner.setSelection(4);
         spinner.setSelection(adapter.getPosition(currentSelectedFont));
-   //     spinner.setSelection(adapter.getPosition("11"));
+        //     spinner.setSelection(adapter.getPosition("11"));
         spinner.setOnItemSelectedListener(new SpinnerActivity());
         // Getting a reference to Close button, and close the popup when clicked.
         Button close = (Button) layout.findViewById(R.id.close);
@@ -665,8 +692,8 @@ public class BibleContent extends Activity {
                     @Override
                     public void run() {
                         //Toast.makeText(getApplicationContext(), "Font Selected: "+(Integer.parseInt(spinner.getSelectedItem().toString())+2), Toast.LENGTH_SHORT).show();
-                       // webView.loadUrl("javascript:" + "var elems = document.getElementsByTagName('p');" + "for (var i = 0; i < elems.length; i++) {" + "		document.getElementsByTagName('p')[i].style.fontSize = '" + spinner.getSelectedItem() + "pt';" + "}" + "elems = document.getElementsByTagName('h1');" + "for (var i = 0; i < elems.length; i++) {" + "		document.getElementsByTagName('h1')[i].style.fontSize = '" + (Integer.parseInt(spinner.getSelectedItem().toString()) + 2) + "pt';" + "}" + "elems = document.getElementsByClassName('italic');" + "for (var i = 0; i < elems.length; i++) {" + "		document.getElementsByClassName('italic')[i].style.fontSize = '" + (Integer.parseInt(spinner.getSelectedItem().toString()) - 3) + " +pt';" + "}");
-                        Log.i("TextResult", "Selected Font: " + spinner.getSelectedItem() );
+                        // webView.loadUrl("javascript:" + "var elems = document.getElementsByTagName('p');" + "for (var i = 0; i < elems.length; i++) {" + "		document.getElementsByTagName('p')[i].style.fontSize = '" + spinner.getSelectedItem() + "pt';" + "}" + "elems = document.getElementsByTagName('h1');" + "for (var i = 0; i < elems.length; i++) {" + "		document.getElementsByTagName('h1')[i].style.fontSize = '" + (Integer.parseInt(spinner.getSelectedItem().toString()) + 2) + "pt';" + "}" + "elems = document.getElementsByClassName('italic');" + "for (var i = 0; i < elems.length; i++) {" + "		document.getElementsByClassName('italic')[i].style.fontSize = '" + (Integer.parseInt(spinner.getSelectedItem().toString()) - 3) + " +pt';" + "}");
+                        Log.i("TextResult", "Selected Font: " + spinner.getSelectedItem());
 
                         webView.loadUrl("javascript:adjustFont('" + spinner.getSelectedItem() + "')");
 
@@ -678,10 +705,9 @@ public class BibleContent extends Activity {
         });
 
 
-
     }
 
-    String generateChapterSelectTableHTML(String bookName, int numberOfChapters){
+    String generateChapterSelectTableHTML(String bookName, int numberOfChapters) {
 
         StringBuilder sb = new StringBuilder();
         // adds 9 character string at beginning
@@ -690,22 +716,22 @@ public class BibleContent extends Activity {
         int i = 1;
         int j = 1;
 
-        while(i <= numberOfChapters){
+        while (i <= numberOfChapters) {
 
             if (j == 1) sb.append("<tr>");
 
             //not all books have Why and Keys pages yet so we have to check
-                if (i == 1 && hasWhyKeys(bookName)) {
-                    sb.append("<td class=\"whyPage\" ><a onclick=\"goToChapter(\\'" + bookName + "\\'," + -2 + ")\">Why</a></td>");
-                    sb.append("<td class=\"keysPage\" ><a onclick=\"goToChapter(\\'" + bookName + "\\'," + -1 + ")\">Keys</a></td>");
-                    j = j + 2;
-                }
-         //   }
+            if (i == 1 && hasWhyKeys(bookName)) {
+                sb.append("<td class=\"whyPage\" ><a onclick=\"goToChapter(\\'" + bookName + "\\'," + -2 + ")\">Why</a></td>");
+                sb.append("<td class=\"keysPage\" ><a onclick=\"goToChapter(\\'" + bookName + "\\'," + -1 + ")\">Keys</a></td>");
+                j = j + 2;
+            }
+            //   }
 
-           // sb.append("<td ><a onclick=\\'goToChapter(\\'MAT\\'," + i + ")\\'>" + i + "</a></td>");
-           sb.append("<td ><a onclick=\"goToChapter(\\'" + bookName + "\\'," + i + ")\">" + i + "</a></td>");
+            // sb.append("<td ><a onclick=\\'goToChapter(\\'MAT\\'," + i + ")\\'>" + i + "</a></td>");
+            sb.append("<td ><a onclick=\"goToChapter(\\'" + bookName + "\\'," + i + ")\">" + i + "</a></td>");
 
-            if (j == 7){
+            if (j == 7) {
                 sb.append("</tr>");
                 j = 0;
             }
@@ -714,7 +740,7 @@ public class BibleContent extends Activity {
         }
 
         //make sure we end with a closing </tr>
-        if (sb.toString().endsWith("</tr>") != true){
+        if (sb.toString().endsWith("</tr>") != true) {
 
             sb.append("</tr>");
         }
@@ -743,7 +769,7 @@ public class BibleContent extends Activity {
                                    int pos, long id) {
             // An item was selected. You can retrieve the selected item using
 
-           // Toast.makeText(parent.getContext(),	"OnItemSelectedListener : " + parent.getItemAtPosition(pos).toString(),	Toast.LENGTH_SHORT).show();
+            // Toast.makeText(parent.getContext(),	"OnItemSelectedListener : " + parent.getItemAtPosition(pos).toString(),	Toast.LENGTH_SHORT).show();
             currentSelectedFont = parent.getItemAtPosition(pos).toString();
 
             SharedPreferences.Editor editor = savedSettings.edit();
@@ -753,7 +779,7 @@ public class BibleContent extends Activity {
             editor.commit();
 
 			/* Font Comparisons
-			 * 4.5vmin = 14pt
+             * 4.5vmin = 14pt
 			 * 5.0vmin = 16pt
 			 *
 			 * */
@@ -779,9 +805,17 @@ public class BibleContent extends Activity {
         String myPath = DB_PATH + DB_NAME;
         myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
 
-        //  Cursor resultSet = myDataBase.rawQuery("Select * from Bible where Book = \"" + bookName + "\" and chapter = \"" + selectedChapter + "\"", null);
-        //Cursor resultSet = myDataBase.rawQuery("select * from bible where text like '%" + searchString + "%'",null);                                                        //exclude unfinished books
-        Cursor resultSet = myDataBase.rawQuery("select * from bible where text like '%" + searchString1 + "%' and text like '%" + searchString2 + "%' and Chapter > '00' and not text like '%<p>%'",null);
+
+        String[] a = new String[4];
+        //   a[0]       = "%one's%";
+        a[0] = "%" + searchString1 + "%";
+        a[1] = "%" + searchString2 + "%";
+        a[2] = "00";
+        a[3] = "%<p>%";
+        // String query = "SELECT * FROM bible WHERE text LIKE ?";
+        String query = "select * from bible where text like ? and text like ? and Chapter > ? and not text like ?";
+        Cursor resultSet = myDataBase.rawQuery(query, a);
+
 
         return resultSet;
     }

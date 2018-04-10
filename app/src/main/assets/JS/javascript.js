@@ -53,6 +53,10 @@ function sendShareEmail() {
     JSInterface.sendShareEmail();
 }
 
+function clearCachedExtras() {
+    JSInterface.clearCachedExtras();
+}
+
 function adjustFont(fontInput) {
 
     document.body.setAttribute('style', 'font-size:' + fontInput + 'pt !important;');
@@ -114,6 +118,9 @@ function insertHeaderAndFooterNoOptions() {
 function insertBody(input) {
 
     var textElement = document.createElement("span");
+	
+	//input = input.toString().replace("&quot;","'");
+	input = input.toString().replace(new RegExp("&quot;", 'g'), "'");
     textElement.innerHTML = input;
 
     var mainContent = document.getElementById("mainContent");

@@ -60,7 +60,12 @@ public class MainActivity extends Activity {
 
         sendEmails.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent i = new Intent(Intent.ACTION_SEND);
+
+                Intent intent = new Intent(MainActivity.this, SharePage.class);
+                startActivity(intent);
+
+
+            /*    Intent i = new Intent(Intent.ACTION_SEND);
                 i.setType("message/rfc822");
                 //i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"rocket452@hotmail.com"});
                 i.putExtra(Intent.EXTRA_SUBJECT, "'Enter Your Name' has "+
@@ -78,7 +83,7 @@ public class MainActivity extends Activity {
                     startActivity(Intent.createChooser(i, "Send mail..."));
                 } catch (android.content.ActivityNotFoundException ex) {
                     Toast.makeText(getApplicationContext(), "NO email client installed", Toast.LENGTH_SHORT).show();
-                }
+                }*/
 
             }});
 

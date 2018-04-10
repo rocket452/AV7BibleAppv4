@@ -33,6 +33,8 @@
         <activity android:name="com.av7bible.av7bibleappv3.GoToAmazon"
             android:finishOnTaskLaunch="true"/>
         <activity android:name="com.av7bible.av7bibleappv3.HelpPage" android:finishOnTaskLaunch="true"/>
+        <activity android:name="com.av7bible.av7bibleappv3.SharePage" android:finishOnTaskLaunch="true"/>
+
 
 
     </application>
