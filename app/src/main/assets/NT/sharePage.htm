@@ -1,0 +1,148 @@
+<html >
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      <link href="../CSS/styles.css" media="all" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <style type="text/css">
+         h1 { font-size: 16pt; font-weight:bold; text-align:center;}
+         p {  font-family: Georgia,Serif; font-size: 14pt;}
+         li {		 
+         font-family: Georgia,Serif;
+         font-size: 14pt;
+         }
+         .italic {font-size: 11pt; font-style: italic; }
+         .lighter { opacity: 0.5; font-family: inherit; font-size: inherit;}
+         .underline { text-decoration: underline; font-family: inherit; font-size: inherit;}
+         .greek { color: green; }
+         #chapterSelectTable {
+         margin-left: auto;
+         margin-right: auto;
+         border: 3px solid black;
+         border-collapse: collapse;
+         width: 95%;
+         text-align: center;
+         font-family: Georgia,Serif; font-size: 14pt;
+         background-color: white;
+         }
+         #chapterSelectTable tr, td {
+         border: 3px solid black;
+         }
+         #chapterSelectTable td {
+         height: 35px;
+         }
+         #logoTable {
+         position: fixed;
+         z-index: 1;
+         }
+         a {
+         color: inherit; /* blue colors for links too */
+         text-decoration: inherit; /* no underline */
+         }
+         h1 {
+         /* text-align: center; */
+         margin-left:auto;
+         margin-right:auto;
+         }
+         #verseNumber {
+         color: blue;
+         margin-right:7px;
+         font-style:italic;
+         font-family: Georgia,Serif; font-size: 10pt;
+         }
+         #bibleText {
+         font-family: Georgia,Serif; font-size: 14pt;
+         }
+         #chapterTitle {
+         text-align: center;
+         font-weight:bold;
+         }
+         #italicText {
+         font-style:italic;
+         color:grey;
+         }
+         #wordsOfJesus {
+         color:darkred;
+         }
+         #plusSign {
+         color:blue;
+         }
+         #bibleReference {
+         color:grey;
+         font-style:italic;
+         font-family: Georgia,Serif; font-size: 10pt;
+         }
+      </style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script src="../JS/javascript.js"></script>
+      <script type="text/javascript">
+         function insertFunction(text) {
+             //document.getElementById('mainContent').innerHTML = text
+         	
+         	
+         	
+         	var para = document.createElement("p");
+         var node = document.createTextNode(text);
+         para.appendChild(node);
+         var element = document.getElementById("mainContent");
+         
+         wrapperDiv.appendChild(para);
+         element.appendChild(element);
+         
+         }
+         
+         
+         function previousPage() {
+             window.history.back();
+         }
+         
+         function toggleDiv(id) {
+             var div = document.getElementById(id);
+             div.style.display = div.style.display == "none" ? "block" : "none";
+         	
+         	var elem = document.getElementById("btnSearchTips");
+             if (elem.value=="Search Tips") elem.value = "Hide Tips";
+             else elem.value = "Search Tips";
+         }
+         
+         
+         
+      </script>
+   </head>
+   <body background="../images/avbackground.jpg" style="margin:0px; margin-bottom:50px;" onload="clearCachedExtras()">
+      <table id="logoTable" style="width:100%;">
+         <tr>
+            <td style="width:33%;"><img  style="width:100%;" id="av7IconImg"  src="../images/Av7BarIcon.png" onclick="goToTitleScreen()"/></td>
+            <td style="width:50%;"><img id="invitationImg" style="width:100%;"  src="../images/tib-logo.jpg" onclick="goToTableOfContents()"/></td>
+         </tr>
+      </table>
+      <br>
+      <div id="page1"  style="border: 2px solid white; background: #EEE7DA; padding: 15px;
+         margin-left: 2%; margin-right: 2%;  margin-bottom: 2%; margin-top: 63px;">
+      <h1>
+      </h1>
+      <div id="mainContent" />
+         <center>
+         To share the <b><u>FREE</u></b> online edition<br> 
+         of <b>The AV7 Invitation Bible</b><br>
+         with friends,&nbsp; please enter<br>
+         your email address and the<br>
+         email addresses of friends below<br>
+         and we will send an invitation<br>
+         to them from you.<br>
+         <form action=https://www.bluehost.com/bluemail method=POST>
+            <input type=hidden name=sendtoemail value=av7@av7.org>
+            <input type=hidden name=redirect value=http://www.av7bible.com>
+            Please enter your email address:<br>
+            <input type=text name=mailfrom size=19 maxlength=90><br>
+            Enter your friends' email addresses:<br>
+            <textarea name=comments cols=34 rows=3 wrap=virtual></textarea>
+            <br>
+            <center>
+               <input type=submit value=Send> &nbsp; &nbsp; or &nbsp; &nbsp;
+               <input type=button value="Go Back" onClick="goBack()">
+            </center>
+            <p>
+         </form>
+      </div>
+   </body>
+</html>
