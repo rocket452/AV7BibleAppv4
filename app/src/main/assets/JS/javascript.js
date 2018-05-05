@@ -81,13 +81,13 @@ function insertHeaderAndFooter() {
         "<td style='width:50%;'><img id='invitationImg' style='width:100%;'  src='images/tib-logo.jpg' onclick='goToTableOfContents()'/></td>" +
         "</tr>" +
         "</table>");
-
+		
     $("#footerInclude").append("<table id='footerTable'>" +
         "<tr >" +
         "<td onclick='goBack()'><i style='margin-left: 15%;' class='fa fa-arrow-left'></i></td>" +
         "<td  onclick='goBack()'>Back</td>" +
-        "<td style='background-color:#996E43; border: 1px solid gainsboro;'><a style='color: inherit; text-decoration: inherit;' href='GoDeeperPage.htm'>Go Deeper</a></td>" +
-        "<td style='background-color:#000287; border: 1px solid gainsboro;' onclick='sendShareEmail()'>Share This</td>" +
+        "<td style='background-color:#439943; border: 1px solid gainsboro;'><a style='color: inherit; text-decoration: inherit;' href='NT/GoDeeperPage.htm'>Search</a></td>" +
+        "<td style='background-color:#000287; border: 1px solid gainsboro;'><a style='color: inherit; text-decoration: inherit;' href='NT/sharePage.htm'>Share This</a></td>" +
         "<td onclick='openHelpPage()'>Help</td>" +
         "<td onclick='openOptionsMenu()'><i class='fa fa-cog'/></td>" +
         "</tr>" +

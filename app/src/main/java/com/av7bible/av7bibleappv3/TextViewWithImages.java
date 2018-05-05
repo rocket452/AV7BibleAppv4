@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.text.Spannable;
 import android.text.style.ImageSpan;
 import android.util.AttributeSet;
+import android.view.KeyEvent;
 import android.widget.TextView;
 
 //this class allows images to be intermixed with text in the layout xmls
@@ -70,4 +71,6 @@ public class TextViewWithImages extends TextView {
         addImages(context, spannable, height);
         return spannable;
     }
+
+
 }

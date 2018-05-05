@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
@@ -63,7 +62,7 @@ public class BibleContent extends Activity {
         savedSettings = this.getSharedPreferences("AV7BibleAppPreferences", Context.MODE_PRIVATE);
         currentSelectedFont = savedSettings.getString("savedFont", "12");
         // Toast.makeText(getApplicationContext(), "Current Select Font " + description, Toast.LENGTH_SHORT).show();
-        JavaScriptInterface JSInterface = new JavaScriptInterface(this);
+       JavaScriptInterface JSInterface = new JavaScriptInterface(this);
 
         webView.addJavascriptInterface(JSInterface, "JSInterface");
 
@@ -813,12 +812,14 @@ public class BibleContent extends Activity {
         a[2] = "00";
         a[3] = "%<p>%";
         // String query = "SELECT * FROM bible WHERE text LIKE ?";
-        String query = "select * from bible where text like ? and text like ? and Chapter > ? and not text like ?";
+        String query = "SELECT * FROM bible WHERE text LIKE ? AND text LIKE ? AND Chapter > ? AND NOT text LIKE ? ORDER BY rowid DESC";
+
         Cursor resultSet = myDataBase.rawQuery(query, a);
 
 
         return resultSet;
     }
+
 
 
 }

@@ -16,6 +16,7 @@
         android:debuggable="true"
         android:icon="@drawable/app_icon"
         android:label=""
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.av7bible.av7bibleappv3.MainActivity"
