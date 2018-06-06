@@ -4,16 +4,16 @@ ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1
 INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
 INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
 INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
-MERGED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\3ca98316e9b08f00ccaf22238f7afd68\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:multidex:1.0.2] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\e22922d84da3c295181f5ee8a97b5bac\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\d6547fd81503e8c1208d54c5bed5c871\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\1224c194cd9c2921dfaba0f1ece7ebff\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\e68c2077436d34d39f42e4e52db5c9c5\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\f1ced49f0d78a06b79b9720f6f5dc615\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\4cdc8a6c8a7a3e32197480dc5db45ef6\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\ba05e09925055d905e0a38f44ca206df\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\579a63270ca5385e3976219912e685d5\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\5aed108425126024a224c68ff1f18158\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\365ae90bb65d8934710a24ef115682a9\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:multidex:1.0.2] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\f306a7639151fb6f304abeb37d994754\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\5de5a11e09f7fb227c2acd6598071cf1\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\2527ac47513d1978c33608d2f414dfa0\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\74765ce5c09e643850c0b418c312fb51\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\702edfe1c763718e9064404bddf295bc\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\e35fc4e1f84915f2c5fb3084339ae8c6\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\03104839822d4fbacd6167ce77f416a8\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\42c7a981d554ff999d535e4c9348ba9d\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\d517dd4bcb02a8ae446884e63f89c447\AndroidManifest.xml:17:1-31:12
 INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
 INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
 INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
@@ -37,24 +37,24 @@ ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:6:5
 		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:6:22-64
 application
 ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:8:5-40:19
-MERGED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\3ca98316e9b08f00ccaf22238f7afd68\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\3ca98316e9b08f00ccaf22238f7afd68\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\d6547fd81503e8c1208d54c5bed5c871\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\d6547fd81503e8c1208d54c5bed5c871\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\1224c194cd9c2921dfaba0f1ece7ebff\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\1224c194cd9c2921dfaba0f1ece7ebff\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\e68c2077436d34d39f42e4e52db5c9c5\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\e68c2077436d34d39f42e4e52db5c9c5\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\f1ced49f0d78a06b79b9720f6f5dc615\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\f1ced49f0d78a06b79b9720f6f5dc615\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\4cdc8a6c8a7a3e32197480dc5db45ef6\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\4cdc8a6c8a7a3e32197480dc5db45ef6\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\ba05e09925055d905e0a38f44ca206df\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\ba05e09925055d905e0a38f44ca206df\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\579a63270ca5385e3976219912e685d5\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\579a63270ca5385e3976219912e685d5\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\5aed108425126024a224c68ff1f18158\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\5aed108425126024a224c68ff1f18158\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\365ae90bb65d8934710a24ef115682a9\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\365ae90bb65d8934710a24ef115682a9\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\5de5a11e09f7fb227c2acd6598071cf1\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\5de5a11e09f7fb227c2acd6598071cf1\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\2527ac47513d1978c33608d2f414dfa0\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\2527ac47513d1978c33608d2f414dfa0\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\74765ce5c09e643850c0b418c312fb51\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\74765ce5c09e643850c0b418c312fb51\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\702edfe1c763718e9064404bddf295bc\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\702edfe1c763718e9064404bddf295bc\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\e35fc4e1f84915f2c5fb3084339ae8c6\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\e35fc4e1f84915f2c5fb3084339ae8c6\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\03104839822d4fbacd6167ce77f416a8\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\03104839822d4fbacd6167ce77f416a8\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\42c7a981d554ff999d535e4c9348ba9d\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\42c7a981d554ff999d535e4c9348ba9d\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\d517dd4bcb02a8ae446884e63f89c447\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\d517dd4bcb02a8ae446884e63f89c447\AndroidManifest.xml:25:5-29:19
 	android:label
 		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:11:9-25
 	android:icon
@@ -125,30 +125,30 @@ uses-sdk
 INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
 INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\3ca98316e9b08f00ccaf22238f7afd68\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\3ca98316e9b08f00ccaf22238f7afd68\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:multidex:1.0.2] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\e22922d84da3c295181f5ee8a97b5bac\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:multidex:1.0.2] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\e22922d84da3c295181f5ee8a97b5bac\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\d6547fd81503e8c1208d54c5bed5c871\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\d6547fd81503e8c1208d54c5bed5c871\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\1224c194cd9c2921dfaba0f1ece7ebff\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\1224c194cd9c2921dfaba0f1ece7ebff\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\e68c2077436d34d39f42e4e52db5c9c5\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\e68c2077436d34d39f42e4e52db5c9c5\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\f1ced49f0d78a06b79b9720f6f5dc615\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\f1ced49f0d78a06b79b9720f6f5dc615\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\4cdc8a6c8a7a3e32197480dc5db45ef6\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\4cdc8a6c8a7a3e32197480dc5db45ef6\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\ba05e09925055d905e0a38f44ca206df\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\ba05e09925055d905e0a38f44ca206df\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\579a63270ca5385e3976219912e685d5\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\579a63270ca5385e3976219912e685d5\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\5aed108425126024a224c68ff1f18158\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\5aed108425126024a224c68ff1f18158\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\365ae90bb65d8934710a24ef115682a9\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\365ae90bb65d8934710a24ef115682a9\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:multidex:1.0.2] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\f306a7639151fb6f304abeb37d994754\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\f306a7639151fb6f304abeb37d994754\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\5de5a11e09f7fb227c2acd6598071cf1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\5de5a11e09f7fb227c2acd6598071cf1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\2527ac47513d1978c33608d2f414dfa0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\2527ac47513d1978c33608d2f414dfa0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\74765ce5c09e643850c0b418c312fb51\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\74765ce5c09e643850c0b418c312fb51\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\702edfe1c763718e9064404bddf295bc\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\702edfe1c763718e9064404bddf295bc\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\e35fc4e1f84915f2c5fb3084339ae8c6\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\e35fc4e1f84915f2c5fb3084339ae8c6\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\03104839822d4fbacd6167ce77f416a8\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\03104839822d4fbacd6167ce77f416a8\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\42c7a981d554ff999d535e4c9348ba9d\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\42c7a981d554ff999d535e4c9348ba9d\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\d517dd4bcb02a8ae446884e63f89c447\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\d517dd4bcb02a8ae446884e63f89c447\AndroidManifest.xml:21:5-23:58
 INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
 INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\3ca98316e9b08f00ccaf22238f7afd68\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\365ae90bb65d8934710a24ef115682a9\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
 		INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
 		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
@@ -158,24 +158,24 @@ INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
 		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
 		INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\3ca98316e9b08f00ccaf22238f7afd68\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\d6547fd81503e8c1208d54c5bed5c871\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\d6547fd81503e8c1208d54c5bed5c871\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\1224c194cd9c2921dfaba0f1ece7ebff\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\1224c194cd9c2921dfaba0f1ece7ebff\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\e68c2077436d34d39f42e4e52db5c9c5\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\e68c2077436d34d39f42e4e52db5c9c5\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\f1ced49f0d78a06b79b9720f6f5dc615\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\f1ced49f0d78a06b79b9720f6f5dc615\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\4cdc8a6c8a7a3e32197480dc5db45ef6\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\4cdc8a6c8a7a3e32197480dc5db45ef6\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\ba05e09925055d905e0a38f44ca206df\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\ba05e09925055d905e0a38f44ca206df\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\579a63270ca5385e3976219912e685d5\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\579a63270ca5385e3976219912e685d5\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\5aed108425126024a224c68ff1f18158\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\5aed108425126024a224c68ff1f18158\AndroidManifest.xml:26:9-28:38
+ADDED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\365ae90bb65d8934710a24ef115682a9\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\5de5a11e09f7fb227c2acd6598071cf1\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\5de5a11e09f7fb227c2acd6598071cf1\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\2527ac47513d1978c33608d2f414dfa0\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\2527ac47513d1978c33608d2f414dfa0\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\74765ce5c09e643850c0b418c312fb51\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\74765ce5c09e643850c0b418c312fb51\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\702edfe1c763718e9064404bddf295bc\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\702edfe1c763718e9064404bddf295bc\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\e35fc4e1f84915f2c5fb3084339ae8c6\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\e35fc4e1f84915f2c5fb3084339ae8c6\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\03104839822d4fbacd6167ce77f416a8\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\03104839822d4fbacd6167ce77f416a8\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\42c7a981d554ff999d535e4c9348ba9d\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\42c7a981d554ff999d535e4c9348ba9d\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\d517dd4bcb02a8ae446884e63f89c447\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\d517dd4bcb02a8ae446884e63f89c447\AndroidManifest.xml:26:9-28:38
 	android:value
-		ADDED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\3ca98316e9b08f00ccaf22238f7afd68\AndroidManifest.xml:28:13-35
+		ADDED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\365ae90bb65d8934710a24ef115682a9\AndroidManifest.xml:28:13-35
 	android:name
-		ADDED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\3ca98316e9b08f00ccaf22238f7afd68\AndroidManifest.xml:27:13-51
+		ADDED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\365ae90bb65d8934710a24ef115682a9\AndroidManifest.xml:27:13-51
