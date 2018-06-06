@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
@@ -16,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -33,8 +33,6 @@ import java.io.File;
 /**
  * Created by Brady on 6/1/2015.
  * laptop change
- *
- * des
  */
 public class BibleContent extends Activity {
 
@@ -442,9 +440,13 @@ public class BibleContent extends Activity {
                     String combinedResult;
 
 
+
+
+                    // while (resultSet.moveToNext() && resultSet.getString(resultSet.getColumnIndex("Book")).equals("MAT"))
                     while (resultSet.moveToNext())
 
                     {
+
                         bookResult = resultSet.getString(resultSet.getColumnIndex("Book"));
                         chapterResult = resultSet.getString(resultSet.getColumnIndex("Chapter"));
                         if (chapterResult.substring(0, 1).equals("0")) {
@@ -465,6 +467,17 @@ public class BibleContent extends Activity {
                         Log.d("InsertText", combinedResult);
                         // textResult = "water";
                         webView.loadUrl("javascript:insertBody('<p>" + combinedResult + "</p>')");
+
+
+                    }
+
+                    //webView.loadUrl("javascript:insertNTText('<p>testing</p>')");
+
+                    //hide keyboard
+                    View view = webView;
+                    if (view != null) {
+                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
                     }
 
                     resultSet.close();
@@ -599,7 +612,7 @@ public class BibleContent extends Activity {
         @JavascriptInterface
         public void clearCachedExtras() {
 
-          //  Bundle extras = getIntent().getExtras();
+            //  Bundle extras = getIntent().getExtras();
 
             getIntent().removeExtra("BookName");
             getIntent().removeExtra("SelectedChapter");
@@ -609,7 +622,7 @@ public class BibleContent extends Activity {
 
         @JavascriptInterface   // must be added for API 17 or higher
         public void sendEmailJSInterface() {
-              Toast.makeText(context, "sendEmailJSInterface!", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "sendEmailJSInterface!", Toast.LENGTH_LONG).show();
 
             Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
             emailIntent.setType("application/image");
@@ -781,11 +794,11 @@ public class BibleContent extends Activity {
             // Commit the edits!
             editor.commit();
 
-			/* Font Comparisons
+            /* Font Comparisons
              * 4.5vmin = 14pt
-			 * 5.0vmin = 16pt
-			 *
-			 * */
+             * 5.0vmin = 16pt
+             *
+             * */
 
         }
 
@@ -816,12 +829,15 @@ public class BibleContent extends Activity {
         a[2] = "00";
         a[3] = "%<p>%";
         // String query = "SELECT * FROM bible WHERE text LIKE ?";
-        String query = "select * from bible where text like ? and text like ? and Chapter > ? and not text like ?";
+        //  String query = "SELECT * FROM bible WHERE text LIKE ? AND text LIKE ? AND Chapter > ? AND NOT text LIKE ? ORDER BY rowid DESC";
+        String query = "SELECT * FROM bible WHERE text LIKE ? AND text LIKE ? AND Chapter > ? AND NOT text LIKE ? ORDER BY BookOrder";
+
         Cursor resultSet = myDataBase.rawQuery(query, a);
 
 
         return resultSet;
     }
+
 
 
 }
