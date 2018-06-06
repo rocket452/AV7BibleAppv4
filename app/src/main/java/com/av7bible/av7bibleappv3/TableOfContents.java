@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
@@ -127,13 +128,13 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
 
 
         @JavascriptInterface   // must be added for API 17 or higher
-        public void searchForText(final String searchString) {
+        public void searchForText(final String searchString1, final String searchString2) {
 
-            Toast.makeText(context, "SearchForTextTOC!", Toast.LENGTH_LONG).show();
+            //Toast.makeText(context, "SearchForText!", Toast.LENGTH_LONG).show();
 
-           webView.post(new Runnable() {
+            webView.post(new Runnable() {
                 public void run() {
-                     Cursor resultSet = getSearchResults(searchString);
+                    Cursor resultSet = getSearchResults(searchString1, searchString2);
 
                     String bookResult;
                     String chapterResult;
@@ -142,13 +143,13 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
                     String combinedResult;
 
 
-                    while(resultSet.moveToNext())
+                    while (resultSet.moveToNext())
 
                     {
                         bookResult = resultSet.getString(resultSet.getColumnIndex("Book"));
                         chapterResult = resultSet.getString(resultSet.getColumnIndex("Chapter"));
-                        if (chapterResult.substring(0,1).equals("0")){
-                           chapterResult = chapterResult.substring(1);
+                        if (chapterResult.substring(0, 1).equals("0")) {
+                            chapterResult = chapterResult.substring(1);
                         }
                         verseResult = resultSet.getString(resultSet.getColumnIndex("Verse"));
                         textResult = resultSet.getString(resultSet.getColumnIndex("Text"));
@@ -156,19 +157,25 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
                         combinedResult = "<span id=\"verseNumber\">" + bookResult + " " + chapterResult + ":" + verseResult + "</span>" + textResult;
 
 
-                       // textResult = "water";
+                        combinedResult = combinedResult.replace("=\'", "=\"");
+                        combinedResult = combinedResult.replace("'>", "\">");
+                        combinedResult = combinedResult.replace("'", "&quot;");
+
+                        // combinedResult =  combinedResult.substring(1, combinedResult.length()-1);
+
+                        Log.d("InsertText", combinedResult);
+                        // textResult = "water";
                         webView.loadUrl("javascript:insertBody('<p>" + combinedResult + "</p>')");
                     }
 
-
                     resultSet.close();
                 }
-                });
-                //InsertBibleTxt(resultSet);
-
-            }
+            });
+            //InsertBibleTxt(resultSet);
 
         }
+
+    }
 
 
 
@@ -229,6 +236,34 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
 
         //  Cursor resultSet = myDataBase.rawQuery("Select * from Bible where Book = \"" + bookName + "\" and chapter = \"" + selectedChapter + "\"", null);
         Cursor resultSet = myDataBase.rawQuery("select * from bible where text like '%" + searchString + "%' and Chapter <> '00'",null);
+
+        return resultSet;
+    }
+
+    protected Cursor getSearchResults(String searchString1, String searchString2) {
+
+        //The Android's default system path of your application database.
+        String DB_PATH = "/data/data/com.av7bible.av7bibleappv2/databases/";
+
+        String DB_NAME = "newDb";
+
+        SQLiteDatabase myDataBase;
+
+        String myPath = DB_PATH + DB_NAME;
+        myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+
+
+        String[] a = new String[4];
+        //   a[0]       = "%one's%";
+        a[0] = "%" + searchString1 + "%";
+        a[1] = "%" + searchString2 + "%";
+        a[2] = "00";
+        a[3] = "%<p>%";
+        // String query = "SELECT * FROM bible WHERE text LIKE ?";
+        String query = "SELECT * FROM bible WHERE text LIKE ? AND text LIKE ? AND Chapter > ? AND NOT text LIKE ? ORDER BY rowid DESC";
+
+        Cursor resultSet = myDataBase.rawQuery(query, a);
+
 
         return resultSet;
     }

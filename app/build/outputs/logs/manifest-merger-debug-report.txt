@@ -1,181 +1,181 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
-MERGED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\365ae90bb65d8934710a24ef115682a9\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:multidex:1.0.2] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\f306a7639151fb6f304abeb37d994754\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\5de5a11e09f7fb227c2acd6598071cf1\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\2527ac47513d1978c33608d2f414dfa0\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\74765ce5c09e643850c0b418c312fb51\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\702edfe1c763718e9064404bddf295bc\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\e35fc4e1f84915f2c5fb3084339ae8c6\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\03104839822d4fbacd6167ce77f416a8\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\42c7a981d554ff999d535e4c9348ba9d\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\d517dd4bcb02a8ae446884e63f89c447\AndroidManifest.xml:17:1-31:12
-INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
+ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
+MERGED from [com.android.support:appcompat-v7:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\2e3adea3ad71dac442399ed2301b4dd5\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\1a779e9c8999bf3bfb2a46eecf1c8dca\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\2636661cd8627db98ef1766a28467952\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\18750c3534ee2a959338896566b25695\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\8c050bd8a688c3e644c7ddb862cf21c0\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\c424a54ea1b1e443088ccfce2266c783\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\1f966981a77557fbe3540121cf7de20a\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\8955e85073e9667ef2080ef3128f64fd\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\aea648ba065f4cb8ffb344577a7c6717\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\7d1cdebff1287ac9f9064bbda2d7977d\AndroidManifest.xml:17:1-31:12
+INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
 	package
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:3:5-41
-		INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
-		INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:3:5-41
+		INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
-		INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
+		INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
-		INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:1-42:12
+		INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:6:5-67
+ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:6:5-67
 	android:name
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:6:22-64
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:6:22-64
 application
-ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:8:5-40:19
-MERGED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\365ae90bb65d8934710a24ef115682a9\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\365ae90bb65d8934710a24ef115682a9\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\5de5a11e09f7fb227c2acd6598071cf1\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\5de5a11e09f7fb227c2acd6598071cf1\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\2527ac47513d1978c33608d2f414dfa0\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\2527ac47513d1978c33608d2f414dfa0\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\74765ce5c09e643850c0b418c312fb51\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\74765ce5c09e643850c0b418c312fb51\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\702edfe1c763718e9064404bddf295bc\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\702edfe1c763718e9064404bddf295bc\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\e35fc4e1f84915f2c5fb3084339ae8c6\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\e35fc4e1f84915f2c5fb3084339ae8c6\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\03104839822d4fbacd6167ce77f416a8\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\03104839822d4fbacd6167ce77f416a8\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\42c7a981d554ff999d535e4c9348ba9d\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\42c7a981d554ff999d535e4c9348ba9d\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\d517dd4bcb02a8ae446884e63f89c447\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\d517dd4bcb02a8ae446884e63f89c447\AndroidManifest.xml:25:5-29:19
+ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:8:5-40:19
+MERGED from [com.android.support:appcompat-v7:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\2e3adea3ad71dac442399ed2301b4dd5\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\2e3adea3ad71dac442399ed2301b4dd5\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\2636661cd8627db98ef1766a28467952\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\2636661cd8627db98ef1766a28467952\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\18750c3534ee2a959338896566b25695\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\18750c3534ee2a959338896566b25695\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\8c050bd8a688c3e644c7ddb862cf21c0\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\8c050bd8a688c3e644c7ddb862cf21c0\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\c424a54ea1b1e443088ccfce2266c783\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\c424a54ea1b1e443088ccfce2266c783\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\1f966981a77557fbe3540121cf7de20a\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\1f966981a77557fbe3540121cf7de20a\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\8955e85073e9667ef2080ef3128f64fd\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\8955e85073e9667ef2080ef3128f64fd\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\aea648ba065f4cb8ffb344577a7c6717\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\aea648ba065f4cb8ffb344577a7c6717\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\7d1cdebff1287ac9f9064bbda2d7977d\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\7d1cdebff1287ac9f9064bbda2d7977d\AndroidManifest.xml:25:5-29:19
 	android:label
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:11:9-25
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:11:9-25
 	android:icon
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:10:9-42
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:10:9-42
 	android:allowBackup
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:9:9-35
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:12:9-40
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:12:9-40
 activity#com.av7bible.av7bibleappv3.MainActivity
-ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:13:9-23:20
+ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:13:9-23:20
 	android:screenOrientation
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:17:13-49
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:17:13-49
 	android:label
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:15:13-38
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:15:13-38
 	android:configChanges
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:16:13-48
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:16:13-48
 	android:name
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:14:13-67
-intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:18:13-22:29
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:14:13-67
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:18:13-22:29
 action#android.intent.action.MAIN
-ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:19:17-69
+ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:19:17-69
 	android:name
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:19:25-66
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:19:25-66
 category#android.intent.category.LAUNCHER
-ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:21:17-77
+ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:21:17-77
 	android:name
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:21:27-74
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:21:27-74
 activity#com.av7bible.av7bibleappv3.TableOfContents
-ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:24:9-27:51
+ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:24:9-27:51
 	android:screenOrientation
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:27:13-49
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:27:13-49
 	android:configChanges
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:26:13-48
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:26:13-48
 	android:finishOnTaskLaunch
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:25:13-46
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:25:13-46
 	android:name
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:24:19-76
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:24:19-76
 activity#com.av7bible.av7bibleappv3.BibleContent
-ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:28:9-32:27
+ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:28:9-32:27
 	android:screenOrientation
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:31:13-49
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:31:13-49
 	android:configChanges
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:30:13-48
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:30:13-48
 	android:finishOnTaskLaunch
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:29:13-46
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:29:13-46
 	android:name
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:28:19-73
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:28:19-73
 activity#com.av7bible.av7bibleappv3.GoToAmazon
-ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:33:9-34:48
+ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:33:9-34:48
 	android:finishOnTaskLaunch
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:34:13-46
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:34:13-46
 	android:name
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:33:19-71
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:33:19-71
 activity#com.av7bible.av7bibleappv3.HelpPage
-ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:35:9-105
+ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:35:9-105
 	android:finishOnTaskLaunch
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:35:70-103
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:35:70-103
 	android:name
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:35:19-69
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:35:19-69
 activity#com.av7bible.av7bibleappv3.SharePage
-ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:36:9-106
+ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:36:9-106
 	android:finishOnTaskLaunch
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:36:71-104
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:36:71-104
 	android:name
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:36:19-70
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml:36:19-70
 uses-sdk
-INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
-INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\365ae90bb65d8934710a24ef115682a9\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\365ae90bb65d8934710a24ef115682a9\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:multidex:1.0.2] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\f306a7639151fb6f304abeb37d994754\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:multidex:1.0.2] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\f306a7639151fb6f304abeb37d994754\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\5de5a11e09f7fb227c2acd6598071cf1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\5de5a11e09f7fb227c2acd6598071cf1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\2527ac47513d1978c33608d2f414dfa0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\2527ac47513d1978c33608d2f414dfa0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\74765ce5c09e643850c0b418c312fb51\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\74765ce5c09e643850c0b418c312fb51\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\702edfe1c763718e9064404bddf295bc\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\702edfe1c763718e9064404bddf295bc\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\e35fc4e1f84915f2c5fb3084339ae8c6\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\e35fc4e1f84915f2c5fb3084339ae8c6\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\03104839822d4fbacd6167ce77f416a8\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\03104839822d4fbacd6167ce77f416a8\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\42c7a981d554ff999d535e4c9348ba9d\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\42c7a981d554ff999d535e4c9348ba9d\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\d517dd4bcb02a8ae446884e63f89c447\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\d517dd4bcb02a8ae446884e63f89c447\AndroidManifest.xml:21:5-23:58
-INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
-INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\2e3adea3ad71dac442399ed2301b4dd5\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\2e3adea3ad71dac442399ed2301b4dd5\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\1a779e9c8999bf3bfb2a46eecf1c8dca\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\1a779e9c8999bf3bfb2a46eecf1c8dca\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\2636661cd8627db98ef1766a28467952\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\2636661cd8627db98ef1766a28467952\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\18750c3534ee2a959338896566b25695\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\18750c3534ee2a959338896566b25695\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\8c050bd8a688c3e644c7ddb862cf21c0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\8c050bd8a688c3e644c7ddb862cf21c0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\c424a54ea1b1e443088ccfce2266c783\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\c424a54ea1b1e443088ccfce2266c783\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\1f966981a77557fbe3540121cf7de20a\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\1f966981a77557fbe3540121cf7de20a\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-utils:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\8955e85073e9667ef2080ef3128f64fd\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\8955e85073e9667ef2080ef3128f64fd\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\aea648ba065f4cb8ffb344577a7c6717\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\aea648ba065f4cb8ffb344577a7c6717\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\7d1cdebff1287ac9f9064bbda2d7977d\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\7d1cdebff1287ac9f9064bbda2d7977d\AndroidManifest.xml:21:5-23:58
+INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\365ae90bb65d8934710a24ef115682a9\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\2e3adea3ad71dac442399ed2301b4dd5\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
-		INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
-		ADDED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
-		INJECTED from E:\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Brady Gilley\AndroidProjects\AV7BibleAppv4\app\src\main\AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\365ae90bb65d8934710a24ef115682a9\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\5de5a11e09f7fb227c2acd6598071cf1\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:animated-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\5de5a11e09f7fb227c2acd6598071cf1\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\2527ac47513d1978c33608d2f414dfa0\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-vector-drawable:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\2527ac47513d1978c33608d2f414dfa0\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\74765ce5c09e643850c0b418c312fb51\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-v4:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\74765ce5c09e643850c0b418c312fb51\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\702edfe1c763718e9064404bddf295bc\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\702edfe1c763718e9064404bddf295bc\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\e35fc4e1f84915f2c5fb3084339ae8c6\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\e35fc4e1f84915f2c5fb3084339ae8c6\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\03104839822d4fbacd6167ce77f416a8\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\03104839822d4fbacd6167ce77f416a8\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\42c7a981d554ff999d535e4c9348ba9d\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\42c7a981d554ff999d535e4c9348ba9d\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\d517dd4bcb02a8ae446884e63f89c447\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\d517dd4bcb02a8ae446884e63f89c447\AndroidManifest.xml:26:9-28:38
+ADDED from [com.android.support:appcompat-v7:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\2e3adea3ad71dac442399ed2301b4dd5\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\2636661cd8627db98ef1766a28467952\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0.aar\2636661cd8627db98ef1766a28467952\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\18750c3534ee2a959338896566b25695\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0.aar\18750c3534ee2a959338896566b25695\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\8c050bd8a688c3e644c7ddb862cf21c0\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0.aar\8c050bd8a688c3e644c7ddb862cf21c0\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\c424a54ea1b1e443088ccfce2266c783\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0.aar\c424a54ea1b1e443088ccfce2266c783\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\1f966981a77557fbe3540121cf7de20a\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0.aar\1f966981a77557fbe3540121cf7de20a\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\8955e85073e9667ef2080ef3128f64fd\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0.aar\8955e85073e9667ef2080ef3128f64fd\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\aea648ba065f4cb8ffb344577a7c6717\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0.aar\aea648ba065f4cb8ffb344577a7c6717\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\7d1cdebff1287ac9f9064bbda2d7977d\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0.aar\7d1cdebff1287ac9f9064bbda2d7977d\AndroidManifest.xml:26:9-28:38
 	android:value
-		ADDED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\365ae90bb65d8934710a24ef115682a9\AndroidManifest.xml:28:13-35
+		ADDED from [com.android.support:appcompat-v7:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\2e3adea3ad71dac442399ed2301b4dd5\AndroidManifest.xml:28:13-35
 	android:name
-		ADDED from [com.android.support:appcompat-v7:26.0.0] E:\AndroidProjects\Gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\365ae90bb65d8934710a24ef115682a9\AndroidManifest.xml:27:13-51
+		ADDED from [com.android.support:appcompat-v7:26.0.0] C:\Users\Brady Gilley\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0.aar\2e3adea3ad71dac442399ed2301b4dd5\AndroidManifest.xml:27:13-51

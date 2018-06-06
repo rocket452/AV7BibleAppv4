@@ -1,272 +1,188 @@
-
-
 <html >
    <head>
-   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-		<link href="../CSS/styles.css" media="all" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      <link href="../CSS/styles.css" media="all" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
       <style type="text/css">
-
          h1 { font-size: 16pt; font-weight:bold; text-align:center;}
          p {  font-family: Georgia,Serif; font-size: 14pt;}
-		 li {		 
-			font-family: Georgia,Serif;
-			font-size: 14pt;
-		}
-		 .italic {font-size: 11pt; font-style: italic; }
-		 .lighter { opacity: 0.5; font-family: inherit; font-size: inherit;}
-		 .underline { text-decoration: underline; font-family: inherit; font-size: inherit;}
-		 .greek { color: green; }
-		 
-		 #chapterSelectTable {
-			  margin-left: auto;
-			  margin-right: auto;
-              border: 3px solid black;
-			  border-collapse: collapse;
-			  width: 95%;
-			  text-align: center;
-			  font-family: Georgia,Serif; font-size: 14pt;
-			  background-color: white;
-			
-		 }
-		 
-		  #chapterSelectTable tr, td {
-	
-              border: 3px solid black;
-			
-		 }
-		 
-		#chapterSelectTable td {
-		   height: 35px;
-		}
-		
-		#logoTable {
-		
-			position: fixed;
-			z-index: 1;
-		}
-		
-		a {
-  color: inherit; /* blue colors for links too */
-  text-decoration: inherit; /* no underline */
-}
-
-		h1 {
-		  /* text-align: center; */
-		  margin-left:auto;
-		  margin-right:auto;
-		  
-		}
-		
-		#verseNumber {
-			color: blue;
-			margin-right:7px;
-			font-style:italic;
-			font-family: Georgia,Serif; font-size: 10pt;
-		}
-		#bibleText {
-		 font-family: Georgia,Serif; font-size: 14pt;
-		 }
-		 
-		 #chapterTitle {
-		  text-align: center;
-		  font-weight:bold;
-		  
-		 }
-		 
-		 #italicText {
-				font-style:italic;
-				color:grey;
-		 }
-		 
-		 #wordsOfJesus {
-			color:darkred;
-		 }
-		 
-			 
-		 #plusSign {
-			color:blue;
-		 }
-		 
-		 #bibleReference {
-		 color:grey;
-				font-style:italic;
-			font-family: Georgia,Serif; font-size: 10pt;
-		 }
-		 
-	
+         li {		 
+         font-family: Georgia,Serif;
+         font-size: 14pt;
+         }
+         .italic {font-size: 11pt; font-style: italic; }
+         .lighter { opacity: 0.5; font-family: inherit; font-size: inherit;}
+         .underline { text-decoration: underline; font-family: inherit; font-size: inherit;}
+         .greek { color: green; }
+         #chapterSelectTable {
+         margin-left: auto;
+         margin-right: auto;
+         border: 3px solid black;
+         border-collapse: collapse;
+         width: 95%;
+         text-align: center;
+         font-family: Georgia,Serif; font-size: 14pt;
+         background-color: white;
+         }
+         #chapterSelectTable tr, td {
+         border: 3px solid black;
+         }
+         #chapterSelectTable td {
+         height: 35px;
+         }
+         #logoTable {
+         position: fixed;
+         z-index: 1;
+         }
+         a {
+         color: inherit; /* blue colors for links too */
+         text-decoration: inherit; /* no underline */
+         }
+         h1 {
+         /* text-align: center; */
+         margin-left:auto;
+         margin-right:auto;
+         }
+         #verseNumber {
+         color: blue;
+         margin-right:7px;
+         font-style:italic;
+         font-family: Georgia,Serif; font-size: 10pt;
+         }
+         #bibleText {
+         font-family: Georgia,Serif; font-size: 14pt;
+         }
+         #chapterTitle {
+         text-align: center;
+         font-weight:bold;
+         }
+         #italicText {
+         font-style:italic;
+         color:grey;
+         }
+         #wordsOfJesus {
+         color:darkred;
+         }
+         #plusSign {
+         color:blue;
+         }
+         #bibleReference {
+         color:grey;
+         font-style:italic;
+         font-family: Georgia,Serif; font-size: 10pt;
+         }
       </style>
-	  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	  <script src="../JS/javascript.js"></script>
-	  
-<script type="text/javascript">
-function insertFunction(text) {
-    //document.getElementById('mainContent').innerHTML = text
-	
-	
-	
-	var para = document.createElement("p");
-var node = document.createTextNode(text);
-para.appendChild(node);
-var element = document.getElementById("mainContent");
-
-wrapperDiv.appendChild(para);
-element.appendChild(element);
-
-}
-/*
-function insertFunction2(verse,text) {
-    //document.getElementById('mainContent').innerHTML = text
-	var wrapperDiv = document.createElement("div");
-	var lineBreak = document.createElement("p");
-//	wrapperDiv.style.display = "inline-flex";
-//	var para = document.createElement("p");
-	var verseElement = document.createElement("div");
-	var textElement = document.createElement("div");
-	//verseElement.style.float = "left";
-	//textElement.style.float = "right";
-	//verseElement.style.color ='blue';
-	  verseElement.setAttribute("id", "verseNumber");
-	  if(text.indexOf("Chapter") ==-1){
-	    textElement.setAttribute("id", "bibleText");
-		wrapperDiv.style.display = "inline-flex";
-		}
-	
-var verseNode = document.createTextNode(verse);
-
-//verseElement.appendChild(verseNode);
-verseElement.innerHTML = verse;
-
-//verseElement.innerHTML ="<span>test2</span>";
-//verseElement.innerHTML = "But <div id='italicText'>Jesus</div> answered and said: <div id='wordsOfJesus'>It is written: Mankind+ shall not live by bread alone, but by every word that proceeds out of the mouth of God.</div> [@Deuteronomy 8:3@]";
-var textNode = document.createTextNode(text);
-//textElement.appendChild(textNode);
-textElement.innerHTML  = text;
-var element = document.getElementById("mainContent");
-//para.appendChild(verseElement);
-//para.appendChild(textElement);
-//wrapperDiv.appendChild(para);
-wrapperDiv.appendChild(verseElement);
-wrapperDiv.appendChild(textElement);
-   
-element.appendChild(wrapperDiv);
-element.appendChild(document.createElement("br"));
-
-
-}
-*/
-
-function previousPage() {
-    window.history.back();
-}
-
-function toggleDiv(id) {
-    var div = document.getElementById(id);
-    div.style.display = div.style.display == "none" ? "block" : "none";
-	
-	var elem = document.getElementById("btnSearchTips");
-    if (elem.value=="Search Tips") elem.value = "Hide Tips";
-    else elem.value = "Search Tips";
-}
-
-
-
-</script>
-	  
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script src="../JS/javascript.js"></script>
+      <script type="text/javascript">
+         function insertFunction(text) {
+             //document.getElementById('mainContent').innerHTML = text
+         	
+         	
+         	
+         	var para = document.createElement("p");
+         var node = document.createTextNode(text);
+         para.appendChild(node);
+         var element = document.getElementById("mainContent");
+         
+         wrapperDiv.appendChild(para);
+         element.appendChild(element);
+         
+         }
+           
+         function previousPage() {
+             window.history.back();
+         }
+         
+         function toggleDiv(id) {
+             var div = document.getElementById(id);
+             div.style.display = div.style.display == "none" ? "block" : "none";
+         	
+         	var elem = document.getElementById("btnSearchTips");
+             if (elem.value=="Search Tips") elem.value = "Hide Tips";
+             else elem.value = "Search Tips";
+         }
+		 
+		 $( document ).ready(function() {
+			$("#SearchText1").keyup(function(event) {
+				if (event.keyCode === 13) {
+					$("#SearchBtn").click();
+				}
+			});
+		});
+		 
+		
+         
+      </script>
    </head>
    <body background="../images/avbackground.jpg" style="margin:0px; margin-bottom:50px;" onload="clearCachedExtras()">
-     <table id="logoTable" style="width:100%;">
-	<tr>
-		<td style="width:33%;"><img  style="width:100%;" id="av7IconImg"  src="../images/Av7BarIcon.png" onclick="goToTitleScreen()"/></td><td style="width:50%;"><img id="invitationImg" style="width:100%;"  src="../images/tib-logo.jpg" onclick="goToTableOfContents()"/></td>
-	</tr>
-   </table>
-   <br>
-   <div id="page1"  style="border: 2px solid white; background: #EEE7DA; padding: 15px;
-    margin-left: 2%; margin-right: 2%;  margin-bottom: 2%; margin-top: 63px;">
+      <table id="logoTable" style="width:100%;">
+         <tr>
+            <td style="width:33%;"><img  style="width:100%;" id="av7IconImg"  src="../images/Av7BarIcon.png" onclick="goToTitleScreen()"/></td>
+            <td style="width:50%;"><img id="invitationImg" style="width:100%;"  src="../images/tib-logo.jpg" onclick="goToTableOfContents()"/></td>
+         </tr>
+      </table>
+      <br>
+      <div id="page1"  style="border: 2px solid white; background: #EEE7DA; padding: 15px;
+         margin-left: 2%; margin-right: 2%;  margin-bottom: 2%; margin-top: 63px;">
       <h1>
-		
-	  </h1>
-   
-	  <div>
-	  
-		
+      </h1>
+      <div>
+         <span style="font-size: large;">Search the entire AV7 Bible for any word or phrase:</span>
+         <p><input type="text" id="SearchText1" value="" style="font-size: large; width: 100%;" placeholder="Enter a single word or phrase here"></p>
+         <p><input type="text" id="SearchText2" value="" style="font-size: large; width: 100%;" placeholder="Enter a second word to search here"></p>
 
-					<!--
-			<p>Please enter your email address</p>
-			<input type="text" name="LastName" value=""><br>
-			<p>Questions, suggestions, or comments:</p>
-				<input type="text" name="LastName" value="" style="height: 200px; width: 85%;"><br>
-			
-			
-			<center><input type="button" style="font-size: large; margin: 10px;" value="Send" onclick="goBack()">or<input type="button" style="font-size: large; margin: 10px;" value="Go Back" onclick="goBack()"></center>
--->
-
-    
-
-
-
-
-<p>An upgrade with extensive search capabilities is being developed. Try this simple preview</p>
-         <p><span style="font-size: large;">Search the entire AV7 Bible for any word or phrase:</span></p>
-		 <p><input type="text" id="SearchText1" value="" style="font-size: large; width: 100%;" placeholder="Enter a single word or phrase here"></p>
-	     <p><input type="text" id="SearchText2" value="" style="font-size: large; width: 100%;" placeholder="Enter a second word to search here"></p>
-         <br>
-         <button type="button" onclick="searchForText(document.getElementById('SearchText1').value,document.getElementById('SearchText2').value);" id="SearchBtn" style="font-size: large;">Search</button>
-	 </div>
-		<p>For a gallery of search tips:</p>
-	
-		   <input type="button" value="Search Tips" id="btnSearchTips" onclick="toggleDiv('searchTips');" style="font-size: large;"/>
-			
-			<div id="searchTips" style="display:none;">
-			<ol>
-						   <li> Search for a single word or name.&nbsp; Try entering the word &nbsp;
-				  [<b><u>friends</u></b>]&nbsp; and press [<b><u>Search</u></b>]<br>
-			   </li>
-		
-			   <br><br>
-			   <li> Narrow your search by entering two separate search terms:&nbsp; 
-				  [<b><u>friends</u></b>] and [<b><u>love</u></b>]
-				  <br><br>
-			   <li> Try different combinations of words.&nbsp; For example:&nbsp; [<b><u>peace</u></b>] and [<b><u>joy</u></b>] <br> 
-				  [<b><u>peace</u></b>] and [<b><u>love</u></b>] ... [<b><u>food</u></b>] and [<b><u>drink</u></b>] ... [<b><u>faith</u></b>] and [<b><u>follow</u></b>] ... etc. 
-				  <br><br>
-			   <li> You can also search for two or more words that you know appear together<br>
-				  in one or both search input windows.&nbsp; For example:&nbsp; [Jesus said] ... <i>(alone)</i><br>
-				  Or, narrow the search with: [Jesus said] in one and [love] in the second input window. 
-				  <br><br>
-			   <li> With these capabilities, you can find absolutely anything in the Bible <br>
-				  that you might like to find without knowing Book, Chapter, and Verse ... <br>
-				  even if you know only a word or two of a something that you might like to find. <br><br>
-			   <li> <b>Or</b>, search for a <b><u>single</u></b> Book-Chapter:Verse - 
-				  for example: &nbsp; [John] &nbsp;and&nbsp; [<b><u>15:14</u></b>]<br><br>
-			   <li> <b>Or</b>, view and read an entire Chapter of 
-				  a Book, enter the Book name: &nbsp;[<b><u>John</u></b>] <br>
-				  &nbsp;and chapter number&nbsp; [<b><u>15</u></b>]
-			   </li>
-			</ol>
-					</div>
-       <div id="mainContent" />
-	   
-	  <p><hr size=4 width=80% color=red></p>
-	  
-	  			<p>The New Authorized Version Foundation hopes to add and continually increase the amount of information provided here for 
-			deeper contemplation on each book of the Bible, drawing mainly from the insights provided by Matthew Henry's Commentary.</p>
-		
-			<p>In the meantime, we welcome your questions, suggestions, and comments.</p>
-	  
-	  <form action=https://www.bluehost.com/bluemail method=POST>
- <input type=hidden name=sendtoemail value=av7@av7.org>
-
- Please enter your email address:<br>
- <input type=text name=mailfrom size=19 maxlength=90><br>
-Questions, suggestions, or comments:<br>
- <textarea name=comments cols=36 rows=7 wrap=virtual></textarea><br><center>
- <input type=submit value=Send> &nbsp; &nbsp; or &nbsp; &nbsp;
- <input type=button value="Go Back" onclick="goBack()">
-</center>
-</form> 
-	  
-	  </div>
-	 
+         <button type="submit" onclick="searchForText(document.getElementById('SearchText1').value,document.getElementById('SearchText2').value);" id="SearchBtn" style="font-size: large;">Search</button>
+      </div>
+      <p>For a gallery of search tips:</p>
+      <input type="button" value="Search Tips" id="btnSearchTips" onclick="toggleDiv('searchTips');" style="font-size: large;"/>
+      <div id="searchTips" style="display:none;">
+         <ol>
+            <li> Search for a single word or name.&nbsp; Try entering the word &nbsp;
+               [<b><u>friends</u></b>]&nbsp; and press [<b><u>Search</u></b>]<br>
+            </li>
+            <br><br>
+            <li> Narrow your search by entering two separate search terms:&nbsp; 
+               [<b><u>friends</u></b>] and [<b><u>love</u></b>]
+               <br><br>
+            <li> Try different combinations of words.&nbsp; For example:&nbsp; [<b><u>peace</u></b>] and [<b><u>joy</u></b>] <br> 
+               [<b><u>peace</u></b>] and [<b><u>love</u></b>] ... [<b><u>food</u></b>] and [<b><u>drink</u></b>] ... [<b><u>faith</u></b>] and [<b><u>follow</u></b>] ... etc. 
+               <br><br>
+            <li> You can also search for two or more words that you know appear together<br>
+               in one or both search input windows.&nbsp; For example:&nbsp; [Jesus said] ... <i>(alone)</i><br>
+               Or, narrow the search with: [Jesus said] in one and [love] in the second input window. 
+               <br><br>
+            <li> With these capabilities, you can find absolutely anything in the Bible <br>
+               that you might like to find without knowing Book, Chapter, and Verse ... <br>
+               even if you know only a word or two of a something that you might like to find. <br><br>
+            <li> <b>Or</b>, search for a <b><u>single</u></b> Book-Chapter:Verse - 
+               for example: &nbsp; [John] &nbsp;and&nbsp; [<b><u>15:14</u></b>]<br><br>
+            <li> <b>Or</b>, view and read an entire Chapter of 
+               a Book, enter the Book name: &nbsp;[<b><u>John</u></b>] <br>
+               &nbsp;and chapter number&nbsp; [<b><u>15</u></b>]
+            </li>
+         </ol>
+      </div>
+      <div id="mainContent" />
+         <p>
+         <hr size=4 width=80% color=red>
+         </p>
+         <p>The New Authorized Version Foundation hopes to add and continually increase the amount of information provided here for 
+            deeper contemplation on each book of the Bible, drawing mainly from the insights provided by Matthew Henry's Commentary.
+         </p>
+         <p>In the meantime, we welcome your questions, suggestions, and comments.</p>
+         <form action=https://www.bluehost.com/bluemail method=POST>
+            <input type=hidden name=sendtoemail value=av7@av7.org>
+            Please enter your email address:<br>
+            <input type=text name=mailfrom size=19 maxlength=90><br>
+            Questions, suggestions, or comments:<br>
+            <textarea name=comments cols=36 rows=7 wrap=virtual></textarea>
+            <br>
+            <center>
+               <input type=button value=Send> &nbsp; &nbsp; or &nbsp; &nbsp;
+               <input type=button value="Go Back" onclick="goBack()">
+            </center>
+         </form>
+      </div>
    </body>
 </html>

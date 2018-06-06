@@ -1,16 +1,10 @@
 package com.av7bible.av7bibleappv3;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.webkit.JavascriptInterface;
-import android.webkit.WebChromeClient;
 import android.webkit.WebView;
-import android.widget.Button;
-import android.widget.NumberPicker;
 import android.widget.Toast;
 
 
@@ -65,6 +59,8 @@ public class HelpPage extends Activity {
         }
 
     }
+
+
 
 
 
