@@ -433,6 +433,7 @@ public class BibleContent extends Activity {
                 public void run() {
                     Cursor resultSet = getSearchResults(searchString1, searchString2);
 
+
                     String bookResult;
                     String chapterResult;
                     String verseResult;
@@ -446,6 +447,14 @@ public class BibleContent extends Activity {
                     while (resultSet.moveToNext())
 
                     {
+
+                        //We want to exclude search results that snagged on something inside the HTML (class name, id name etc)
+                        String resultWithoutHTML =   android.text.Html.fromHtml(resultSet.getString(resultSet.getColumnIndex("Text"))).toString();
+                       if(!resultWithoutHTML.toUpperCase().contains(searchString1.toUpperCase()) || !resultWithoutHTML.toUpperCase().contains(searchString2.toUpperCase())){
+                            continue;
+                        }
+
+
 
                         bookResult = resultSet.getString(resultSet.getColumnIndex("Book"));
                         chapterResult = resultSet.getString(resultSet.getColumnIndex("Chapter"));
@@ -822,15 +831,16 @@ public class BibleContent extends Activity {
         myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
 
 
-        String[] a = new String[4];
+        String[] a = new String[5];
         //   a[0]       = "%one's%";
         a[0] = "%" + searchString1 + "%";
         a[1] = "%" + searchString2 + "%";
         a[2] = "00";
         a[3] = "%<p>%";
+        a[4] = "";
         // String query = "SELECT * FROM bible WHERE text LIKE ?";
         //  String query = "SELECT * FROM bible WHERE text LIKE ? AND text LIKE ? AND Chapter > ? AND NOT text LIKE ? ORDER BY rowid DESC";
-        String query = "SELECT * FROM bible WHERE text LIKE ? AND text LIKE ? AND Chapter > ? AND NOT text LIKE ? ORDER BY BookOrder";
+        String query = "SELECT * FROM bible WHERE text LIKE ? AND text LIKE ? AND Chapter > ? AND NOT text LIKE ? AND NOT verse = ? ORDER BY BookOrder";
 
         Cursor resultSet = myDataBase.rawQuery(query, a);
 
