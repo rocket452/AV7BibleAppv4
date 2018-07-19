@@ -433,19 +433,37 @@ public class BibleContent extends Activity {
                 public void run() {
                     Cursor resultSet = getSearchResults(searchString1, searchString2);
 
-
                     String bookResult;
                     String chapterResult;
                     String verseResult;
                     String textResult;
                     String combinedResult;
 
+                    int newTestamentCount = 0;
+                    int oldTestamentCount = 0;
 
-
-
-                    // while (resultSet.moveToNext() && resultSet.getString(resultSet.getColumnIndex("Book")).equals("MAT"))
+                    //Get OT/NT Result Counts
                     while (resultSet.moveToNext())
+                    {
+                        int BookOrder = resultSet.getInt(resultSet.getColumnIndex("BookOrder"));
 
+                       bookResult = resultSet.getString(resultSet.getColumnIndex("Book"));
+                       Log.d("Result Book ", bookResult + " BookOrder: "+BookOrder);
+
+                        if(BookOrder < 28){
+                            newTestamentCount++;
+                        }
+                        else{
+                            oldTestamentCount++;
+                        }
+                    }
+
+                    webView.loadUrl("javascript:insertBody('<p><b>New Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">"+ newTestamentCount + "</span></b></p>')");
+                    webView.loadUrl("javascript:insertBody('<p><b>Old Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">"+ oldTestamentCount + "</span></b></p>')");
+
+                    //Read Text Results
+                    resultSet.moveToPosition(-1);
+                    while (resultSet.moveToNext())
                     {
 
                         //We want to exclude search results that snagged on something inside the HTML (class name, id name etc)

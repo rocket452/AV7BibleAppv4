@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.av7bible.av7bibleappv2"
-    android:versionCode="31"
-    android:versionName=".962" >
+    android:versionCode="32"
+    android:versionName=".963" >
 
     <uses-sdk
         android:minSdkVersion="17"
@@ -16,6 +16,7 @@
         android:debuggable="true"
         android:icon="@drawable/app_icon"
         android:label=""
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.av7bible.av7bibleappv3.MainActivity"
