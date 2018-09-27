@@ -103,7 +103,9 @@
              if (elem.value=="Search Tips") elem.value = "Hide Tips";
              else elem.value = "Search Tips";
          }
-         
+		 
+		 
+
          
          
       </script>
@@ -133,12 +135,12 @@
             <input type=hidden name=sendtoemail value=av7@av7.org>
             <!-- <input type=hidden name=redirect value=http://www.av7bible.com> -->
             Please enter your email address:<br>
-            <input type=text name=mailfrom size=19 maxlength=90><br>
+            <input type="text" name="mailfrom" size="19" id="inputEmail" maxlength="90"><br>
             Enter your friends' email addresses:<br>
             <textarea name=comments cols=34 rows=3 wrap=virtual></textarea>
             <br>
             <center>
-               <input type=submit value=Send> &nbsp; &nbsp; or &nbsp; &nbsp;
+               <input type="submit" id="sendBtn" value="Send"> &nbsp; &nbsp; or &nbsp; &nbsp;
                <input type=button value="Go Back" onClick="goBack()">
             </center>
             <p>
@@ -146,3 +148,89 @@
       </div>
    </body>
 </html>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDkuxVYD8aiWle774J7FC2hollnEV4GHvs",
+    authDomain: "av7bibleapptest.firebaseapp.com",
+    databaseURL: "https://av7bibleapptest.firebaseio.com",
+    projectId: "av7bibleapptest",
+    storageBucket: "av7bibleapptest.appspot.com",
+    messagingSenderId: "880313292566"
+  };
+  firebase.initializeApp(config);
+  console.log("firebase setup successfully");
+  
+    function writeUserData(userId, name, email, imageUrl) {
+  firebase.database().ref('users/' + userId).set({
+    username: name,
+    email: email,
+    profile_picture : imageUrl
+  });
+  }
+  
+     console.log("called writeUserData1");
+  // writeUserData(5,"brady","brady@email.com","" );
+     console.log("called writeUserData");
+  
+ // firebase.auth().signInAnonymously();
+  
+  var database = firebase.database();
+  var ref = database.ref('UserEmails');
+  
+
+  
+
+  
+  		 $( document ).ready(function() {
+			 $( "#sendBtn" ).click(function() {
+					
+			 // alert($( "#inputEmail" ).val());
+			   var data = {
+				Email: $( "#inputEmail" ).val()
+				
+	
+			  }
+			  ref.push(data);
+			});
+		});    
+  
+ 
+  
+  
+  
+         function insertFunction(text) {
+             //document.getElementById('mainContent').innerHTML = text
+         	
+         	
+         	
+         	var para = document.createElement("p");
+         var node = document.createTextNode(text);
+         para.appendChild(node);
+         var element = document.getElementById("mainContent");
+         
+         wrapperDiv.appendChild(para);
+         element.appendChild(element);
+         
+         }
+         
+         
+         function previousPage() {
+             window.history.back();
+         }
+         
+         function toggleDiv(id) {
+             var div = document.getElementById(id);
+             div.style.display = div.style.display == "none" ? "block" : "none";
+         	
+         	var elem = document.getElementById("btnSearchTips");
+             if (elem.value=="Search Tips") elem.value = "Hide Tips";
+             else elem.value = "Search Tips";
+         }
+
+
+  
+</script>

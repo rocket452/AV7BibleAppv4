@@ -122,7 +122,7 @@ public class BibleContent extends Activity {
             bookName = bookNameParam;
             selectedChapter = chapterNumberParam;
         } else {
-            if(extras != null) {
+            if (extras != null) {
                 bookName = extras.getString("BookName");
                 selectedChapter = extras.getString("SelectedChapter");
             }
@@ -428,89 +428,96 @@ public class BibleContent extends Activity {
         public void searchForText(final String searchString1, final String searchString2) {
 
             //Toast.makeText(context, "SearchForText!", Toast.LENGTH_LONG).show();
+            if (!searchString1.isEmpty() || !searchString2.isEmpty()) {
+                webView.post(new Runnable() {
+                    public void run() {
+                        Cursor resultSet = getSearchResults(searchString1, searchString2);
 
-            webView.post(new Runnable() {
-                public void run() {
-                    Cursor resultSet = getSearchResults(searchString1, searchString2);
+                        String bookResult;
+                        String chapterResult;
+                        String verseResult;
+                        String textResult;
+                        String combinedResult;
 
-                    String bookResult;
-                    String chapterResult;
-                    String verseResult;
-                    String textResult;
-                    String combinedResult;
+                        int newTestamentCount = 0;
+                        int oldTestamentCount = 0;
 
-                    int newTestamentCount = 0;
-                    int oldTestamentCount = 0;
+                        Log.d("DeubugTag", "Result Count:" + resultSet.getCount());
+                        //Get OT/NT Result Counts
+                        while (resultSet.moveToNext()) {
+                            int BookOrder = resultSet.getInt(resultSet.getColumnIndex("BookOrder"));
 
-                    //Get OT/NT Result Counts
-                    while (resultSet.moveToNext())
-                    {
-                        int BookOrder = resultSet.getInt(resultSet.getColumnIndex("BookOrder"));
+                            bookResult = resultSet.getString(resultSet.getColumnIndex("Book"));
+                            Log.d("Result Book ", bookResult + " BookOrder: " + BookOrder);
 
-                       bookResult = resultSet.getString(resultSet.getColumnIndex("Book"));
-                       Log.d("Result Book ", bookResult + " BookOrder: "+BookOrder);
-
-                        if(BookOrder < 28){
-                            newTestamentCount++;
+                            if (BookOrder < 28) {
+                                newTestamentCount++;
+                            } else {
+                                oldTestamentCount++;
+                            }
                         }
-                        else{
-                            oldTestamentCount++;
+
+                        webView.loadUrl("javascript:insertBody('<p><b>New Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">" + newTestamentCount + "</span></b></p>')");
+                        webView.loadUrl("javascript:insertBody('<p><b>Old Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">" + oldTestamentCount + "</span></b></p>')");
+
+                        int resultCountLimit = 1000;
+
+
+                        if (resultSet.getCount() > resultCountLimit) {
+                            webView.loadUrl("javascript:insertBody('<p><span id=\"verseNumber\"> Only displaying the first " + resultCountLimit + " results</span></p>')");
                         }
+
+                        int i = 0;
+
+                        //Read Text Results
+                        resultSet.moveToPosition(-1);
+                        while (resultSet.moveToNext() && i < resultCountLimit) {
+                            i++;
+
+                            //We want to exclude search results that snagged on something inside the HTML (class name, id name etc)
+                            String resultWithoutHTML = android.text.Html.fromHtml(resultSet.getString(resultSet.getColumnIndex("Text"))).toString();
+                            if (!resultWithoutHTML.toUpperCase().contains(searchString1.toUpperCase()) || !resultWithoutHTML.toUpperCase().contains(searchString2.toUpperCase())) {
+                                continue;
+                            }
+
+
+                            bookResult = resultSet.getString(resultSet.getColumnIndex("Book"));
+                            chapterResult = resultSet.getString(resultSet.getColumnIndex("Chapter"));
+                            if (chapterResult.substring(0, 1).equals("0")) {
+                                chapterResult = chapterResult.substring(1);
+                            }
+                            verseResult = resultSet.getString(resultSet.getColumnIndex("Verse"));
+                            textResult = resultSet.getString(resultSet.getColumnIndex("Text"));
+
+                            combinedResult = "<span id=\"verseNumber\">" + bookResult + " " + chapterResult + ":" + verseResult + "</span>" + textResult;
+
+
+                            combinedResult = combinedResult.replace("=\'", "=\"");
+                            combinedResult = combinedResult.replace("'>", "\">");
+                            combinedResult = combinedResult.replace("'", "&quot;");
+
+                            // combinedResult =  combinedResult.substring(1, combinedResult.length()-1);
+
+                            Log.d("InsertText", combinedResult);
+                            // textResult = "water";
+                            webView.loadUrl("javascript:insertBody('<p>" + combinedResult + "</p>')");
+
+
+                        }
+
+                        //webView.loadUrl("javascript:insertNTText('<p>testing</p>')");
+
+                        //hide keyboard
+                        View view = webView;
+                        if (view != null) {
+                            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                        }
+
+                        resultSet.close();
                     }
-
-                    webView.loadUrl("javascript:insertBody('<p><b>New Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">"+ newTestamentCount + "</span></b></p>')");
-                    webView.loadUrl("javascript:insertBody('<p><b>Old Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">"+ oldTestamentCount + "</span></b></p>')");
-
-                    //Read Text Results
-                    resultSet.moveToPosition(-1);
-                    while (resultSet.moveToNext())
-                    {
-
-                        //We want to exclude search results that snagged on something inside the HTML (class name, id name etc)
-                        String resultWithoutHTML =   android.text.Html.fromHtml(resultSet.getString(resultSet.getColumnIndex("Text"))).toString();
-                       if(!resultWithoutHTML.toUpperCase().contains(searchString1.toUpperCase()) || !resultWithoutHTML.toUpperCase().contains(searchString2.toUpperCase())){
-                            continue;
-                        }
-
-
-
-                        bookResult = resultSet.getString(resultSet.getColumnIndex("Book"));
-                        chapterResult = resultSet.getString(resultSet.getColumnIndex("Chapter"));
-                        if (chapterResult.substring(0, 1).equals("0")) {
-                            chapterResult = chapterResult.substring(1);
-                        }
-                        verseResult = resultSet.getString(resultSet.getColumnIndex("Verse"));
-                        textResult = resultSet.getString(resultSet.getColumnIndex("Text"));
-
-                        combinedResult = "<span id=\"verseNumber\">" + bookResult + " " + chapterResult + ":" + verseResult + "</span>" + textResult;
-
-
-                        combinedResult = combinedResult.replace("=\'", "=\"");
-                        combinedResult = combinedResult.replace("'>", "\">");
-                        combinedResult = combinedResult.replace("'", "&quot;");
-
-                        // combinedResult =  combinedResult.substring(1, combinedResult.length()-1);
-
-                        Log.d("InsertText", combinedResult);
-                        // textResult = "water";
-                        webView.loadUrl("javascript:insertBody('<p>" + combinedResult + "</p>')");
-
-
-                    }
-
-                    //webView.loadUrl("javascript:insertNTText('<p>testing</p>')");
-
-                    //hide keyboard
-                    View view = webView;
-                    if (view != null) {
-                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-                    }
-
-                    resultSet.close();
-                }
-            });
-            //InsertBibleTxt(resultSet);
+                });
+            }
 
         }
 
@@ -654,7 +661,7 @@ public class BibleContent extends Activity {
             Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
             emailIntent.setType("application/image");
             emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"testemail"});
-            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,"Test Subject");
+            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Test Subject");
             emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "From My App");
             emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file:///mnt/sdcard/Myimage.jpeg"));
             startActivity(Intent.createChooser(emailIntent, "Send mail..."));
@@ -865,7 +872,6 @@ public class BibleContent extends Activity {
 
         return resultSet;
     }
-
 
 
 }

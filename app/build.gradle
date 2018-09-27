@@ -8,9 +8,9 @@ android {
         multiDexEnabled true
         applicationId "com.av7bible.av7bibleappv2"
         minSdkVersion 17
-        targetSdkVersion 22
-        versionCode 33
-        versionName ".964"
+        targetSdkVersion 26
+        versionCode 36
+        versionName ".965"
     }
     buildTypes {
         release {
