@@ -1,0 +1,4 @@
+#Sat Oct 26 13:18:11 EDT 2019
+base.0=E\:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\transforms\\dexMerger\\release\\0
+path.0=classes.dex
+renamed.0=classes.dex

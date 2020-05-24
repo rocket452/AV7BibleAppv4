@@ -1,0 +1,195 @@
+
+
+<html >
+   <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<link href="../CSS/styles.css" media="all" rel="stylesheet" type="text/css" />
+      <style type="text/css">
+
+         h1 { font-size: 16pt; font-weight:bold; text-align:center;}
+         p {  font-family: Georgia,Serif; font-size: 14pt;}
+		 li {		 
+			font-family: Georgia,Serif;
+			font-size: 14pt;
+		}
+		 .italic {font-size: 11pt; font-style: italic; }
+		 .lighter { opacity: 0.5; font-family: inherit; font-size: inherit;}
+		 .underline { text-decoration: underline; font-family: inherit; font-size: inherit;}
+		 .greek { color: green; }
+		 
+		 #chapterSelectTable {
+			  margin-left: auto;
+			  margin-right: auto;
+              border: 3px solid black;
+			  border-collapse: collapse;
+			  width: 95%;
+			  text-align: center;
+			  font-family: Georgia,Serif; font-size: 14pt;
+			  background-color: white;
+			  table-layout: fixed;
+   			
+		 }
+		 
+		  #chapterSelectTable tr, td {
+	
+              border: 3px solid black;
+			
+		 }
+		 
+		#chapterSelectTable td {
+		   height: 35px;
+		}
+		
+		#logoTable {
+		
+			position: fixed;
+			z-index: 1;
+		}
+		
+		a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+		 
+      </style>
+	  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	  <script src="../JS/javascript.js"></script>
+	  <script type="text/javascript">
+	  function insertFunction2(verse,text) {
+  
+	var wrapperDiv = document.createElement("div");
+	var lineBreak = document.createElement("p");
+
+	var verseElement = document.createElement("div");
+	var textElement = document.createElement("div");
+
+	  verseElement.setAttribute("id", "verseNumber");
+	  if(text.indexOf("Chapter") ==-1){
+	    textElement.setAttribute("id", "bibleText");
+		wrapperDiv.style.display = "inline-flex";
+		}
+	
+var verseNode = document.createTextNode(verse);
+
+verseElement.innerHTML = verse;
+
+var textNode = document.createTextNode(text);
+textElement.innerHTML  = text;
+var element = document.getElementById("mainContent");
+
+wrapperDiv.appendChild(verseElement);
+wrapperDiv.appendChild(textElement);
+   
+element.appendChild(wrapperDiv);
+element.appendChild(document.createElement("br"));
+
+
+}
+
+function insertFunction(header,table,body) {
+
+var headerContent = document.getElementById("headerContent");
+var headerContentTextNode = document.createTextNode(header);
+headerContent.appendChild(headerContentTextNode);
+
+var tableContent = document.getElementById("chapterSelectTable");
+var tableContentTextNode = document.createTextNode(table);
+tableContent.appendChild(tableContentTextNode);
+
+var mainContent = document.getElementById("mainContent");
+var mainContentTextNode = document.createTextNode(body);
+mainContent.appendChild(mainContentTextNode);
+
+}
+
+function insertHeader(input) {
+
+	var headerContent = document.getElementById("headerContent");
+	//var headerContentTextNode = document.createTextNode("");
+	headerContent.innerHTML = input;
+//	headerContent.appendChild(headerContentTextNode);
+
+}
+
+function insertTable(input) {
+
+	var tableContent = document.getElementById("chapterSelectTable");
+	//var tableContentTextNode = document.createTextNode(input);
+	tableContent.innerHTML = input;
+
+}
+
+function insertBody(input) {
+
+var textElement = document.createElement("span");
+textElement.innerHTML = input;
+
+	var mainContent = document.getElementById("mainContent");
+	//var mainContentTextNode = document.createTextNode(input);
+	//mainContent.innerHTML = input;
+mainContent.appendChild(textElement);
+
+}
+
+
+
+
+
+</script>
+
+	  
+   </head>
+   <body background="../images/avbackground.jpg" style="margin:0px;">
+     <table id="logoTable" style="width:100%;">
+	<tr>
+		<td style="width:50%;"><img  style="width:100%;" id="av7IconImg"  src="../images/Av7BarIcon.png" onclick="goToTitleScreen()"/></td><td style="width:50%;"><img id="invitationImg" style="width:100%;"  src="../images/tib-logo.jpg" /></td>
+	</tr>
+   </table>
+   <br>
+   <div id="page1"  style="border: 2px solid white; background: #EEE7DA; padding: 15px;
+    margin-left: 2%; margin-right: 2%;  margin-bottom: 2%; margin-top: 63px;">
+     
+	  <div id="headerContent">
+
+      </div>
+	  
+	  <table  id="chapterSelectTable">
+			
+	  </table>
+	  
+	  <div style="text-align:center; " >
+	  <br/>
+	  <button style="font-size: large;" onclick="showSelectChapterMenu()">Select Chapter Btn</button>
+	  </div>
+      <p>
+			<i>Or scroll down for a further overview.</i>
+	  </p>
+	  
+	   <div id="mainContent">
+
+      </div>
+	  
+		  
+	  </div>
+	  	<table style="width:100%; z-index: 99;     background-color: white;
+    z-index: 99;
+    position: fixed;
+    height: 35px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+	width:100%;
+	border: 2px solid gold;
+	color: grey;
+	background: #EEE7DA;">
+	<tr >
+		<td style="font-size: 30px; width: 1px; border:none; " onclick="goBack()"><i style="margin-left: 15%;" class="fa fa-arrow-circle-left"></i></td>
+		<td style="font-size: 20px; align-content: center; width: 100%; border:none; text-align: center; width: 50%;">Scroll down to view all.</td>
+		<td style="font-size: 30px; align-items: right;width: 1px; border:none; margin-right: 30px;" onclick="openOptionsMenu()"><i class="fa fa-cog"/></td>
+		<td style="font-size: 30px; align-items: right;width: 1px; border:none;" ><a href="helpPage.htm"><i class="fa fa-question-circle" ></i></a></td>
+		
+	</tr>
+   </table>
+   </body>
+</html>

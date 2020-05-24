@@ -1,0 +1,250 @@
+
+
+<html >
+   <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<link href="../CSS/styles.css" media="all" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <style type="text/css">
+
+         h1 { font-size: 16pt; font-weight:bold; text-align:center;}
+         p {  font-family: Georgia,Serif; font-size: 14pt;}
+		 li {		 
+			font-family: Georgia,Serif;
+			font-size: 14pt;
+		}
+		 .italic {font-size: 11pt; font-style: italic; }
+		 .lighter { opacity: 0.5; font-family: inherit; font-size: inherit;}
+		 .underline { text-decoration: underline; font-family: inherit; font-size: inherit;}
+		 .greek { color: green; }
+		 
+		 #chapterSelectTable {
+			  margin-left: auto;
+			  margin-right: auto;
+              border: 3px solid black;
+			  border-collapse: collapse;
+			  width: 95%;
+			  text-align: center;
+			  font-family: Georgia,Serif; font-size: 14pt;
+			  background-color: white;
+			
+		 }
+		 
+		
+		 
+		#chapterSelectTable td {
+		   height: 35px;
+		}
+		
+		#logoTable {
+		
+			position: fixed;
+			z-index: 1;
+		}
+		
+		a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+		h1 {
+		  /* text-align: center; */
+		  margin-left:auto;
+		  margin-right:auto;
+		  
+		}
+		
+		#verseNumber {
+			color: blue;
+			margin-right:7px;
+			font-style:italic;
+			font-family: Georgia,Serif; font-size: 10pt;
+		}
+		#bibleText {
+		 font-family: Georgia,Serif; font-size: 14pt;
+		 }
+		 
+		 #chapterTitle {
+		  text-align: center;
+		  font-weight:bold;
+		  
+		 }
+		 
+		 #italicText {
+				font-style:italic;
+				color:grey;
+		 }
+		 
+		 #wordsOfJesus {
+			color:darkred;
+		 }
+		 
+			 
+		 #plusSign {
+			color:blue;
+		 }
+		 
+		 #bibleReference {
+		 color:grey;
+				font-style:italic;
+			font-family: Georgia,Serif; font-size: 10pt;
+		 }
+		 
+	
+      </style>
+	  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	  <script src="../JS/javascript.js"></script>
+	  
+<script type="text/javascript">
+function insertFunction(text) {
+    //document.getElementById('mainContent').innerHTML = text
+	
+	
+	
+	var para = document.createElement("p");
+var node = document.createTextNode(text);
+para.appendChild(node);
+var element = document.getElementById("mainContent");
+
+wrapperDiv.appendChild(para);
+element.appendChild(element);
+
+}
+/*
+function insertFunction2(verse,text) {
+    //document.getElementById('mainContent').innerHTML = text
+	var wrapperDiv = document.createElement("div");
+	var lineBreak = document.createElement("p");
+//	wrapperDiv.style.display = "inline-flex";
+//	var para = document.createElement("p");
+	var verseElement = document.createElement("div");
+	var textElement = document.createElement("div");
+	//verseElement.style.float = "left";
+	//textElement.style.float = "right";
+	//verseElement.style.color ='blue';
+	  verseElement.setAttribute("id", "verseNumber");
+	  if(text.indexOf("Chapter") ==-1){
+	    textElement.setAttribute("id", "bibleText");
+		wrapperDiv.style.display = "inline-flex";
+		}
+	
+var verseNode = document.createTextNode(verse);
+
+//verseElement.appendChild(verseNode);
+verseElement.innerHTML = verse;
+
+//verseElement.innerHTML ="<span>test2</span>";
+//verseElement.innerHTML = "But <div id='italicText'>Jesus</div> answered and said: <div id='wordsOfJesus'>It is written: Mankind+ shall not live by bread alone, but by every word that proceeds out of the mouth of God.</div> [@Deuteronomy 8:3@]";
+var textNode = document.createTextNode(text);
+//textElement.appendChild(textNode);
+textElement.innerHTML  = text;
+var element = document.getElementById("mainContent");
+//para.appendChild(verseElement);
+//para.appendChild(textElement);
+//wrapperDiv.appendChild(para);
+wrapperDiv.appendChild(verseElement);
+wrapperDiv.appendChild(textElement);
+   
+element.appendChild(wrapperDiv);
+element.appendChild(document.createElement("br"));
+
+
+}
+*/
+
+function previousPage() {
+    window.history.back();
+}
+
+
+</script>
+	  
+   </head>
+   <body background="../images/avbackground.jpg" style="margin:0px; margin-bottom:50px;" onload="insertFunction2('verse',<b>+'test6'+</b>)">
+     <table id="logoTable" style="width:100%;" >
+	<tr>
+		<td ><img  style="width:100%;" id="av7IconImg"  src="../images/doYouKnowPurpose.jpg" onclick="goToTitleScreen()"/></td>
+	</tr>
+   </table>
+   <br>
+   <div id="page1"  style="border: 2px solid white; background: #EEE7DA; padding: 15px;
+    margin-left: 2%; margin-right: 2%;  margin-bottom: 2%; margin-top: 100px;">
+      <h1>
+		
+	  </h1>
+   
+	  <div id="mainContent">
+	
+				<font class=title><b>Do you realize</b>&nbsp; that it is 
+			impossible to achieve true fulfillment in life if you do not know,
+			understand, and actively pursue the ultimate mission and purpose 
+			of your life? 
+			<p>
+			You <b><u>can</u></b> discover the answer to this 
+			most important of all questions &nbsp;. . .&nbsp;
+			<b><i>if</i></b> &nbsp;. . .&nbsp; 
+			you earnestly and sincerely seek the answer.
+			<p>
+			However, you must diligently seek the truth,
+			or else you will certainly never find it. 
+			<p><center>
+			<img src=../images/may.you.see2.jpg width=320></center>
+			<p>
+			The simple and most basic fact of life is that every 
+			human being is born with a totally self-centered 
+			human nature.
+			<p>
+			Sadly,&nbsp; too many never grow beyond that  
+			"It's all about me" self-centeredness.
+			<p>
+			Too many never even try to discover their 
+			true purpose in life, and consequently, they never 
+			do find and experience the satisfaction of a 
+			true sense of mission and purpose. 
+			<p>
+			<center>
+			<font class=subtitle><b><i>
+			But it is your choice.</i></b></font></center>
+			<p>
+			Most people spend (or waste) most of the hours ... 
+			and days ... and months ... and years of their life 
+			in trivial pursuits that have no lasting significance.&nbsp; 
+			At the other extreme, some devote themselves to an endless 
+			chase after more money, success, security, fame, pleasure, 
+			and material possessions, etc.
+			<p><center>
+			However ... the truth is:</center>
+			<p>
+			<li>Money is not the answer.
+			<li>Fame is not the answer.
+			<li>Power is not the answer.
+			<li>Security is not the answer.
+			<li>Possessions are not the answer.
+			<li>The pursuit of pleasure is not the answer.
+			<li>Chasing happiness is not the answer.
+			<p><center>
+			These are all passing fancies<br>
+			that will ultimately pass away
+			<p>
+			Then what?
+			<p>What will be left? 
+			<p>
+			<hr size=4 width=70% color=darkblue>
+			<p>
+			To attain true fulfillment in life
+			<p>
+			. . . &nbsp;here is wisdom&nbsp; . . .
+			<p>
+			Seek first the kingdom of God<br>
+			and His righteousness<br>
+			and all these things will be added to you.<br>
+			<i>-Matthew 6:33<i>
+			
+
+    
+	 </div>
+	  
+	  </div>
+	
+   </body>
+</html>

@@ -1,0 +1,2 @@
+# Referenced at E:\AndroidProjects\AV7BibleAppv4\app\build\intermediates\merged_manifests\release\processReleaseManifest\merged\AndroidManifest.xml:13
+-keep class android.support.multidex.MultiDexApplication { <init>(...); }
