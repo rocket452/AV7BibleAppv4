@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.webkit.JavascriptInterface;
@@ -38,6 +39,10 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
         webView.setWebChromeClient(new WebChromeClient());
 
         webView.loadUrl(tableOfContentsURL);
+
+        //prevents FileUriExposedException
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
 
     }
 

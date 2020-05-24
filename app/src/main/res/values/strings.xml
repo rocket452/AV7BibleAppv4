@@ -5,6 +5,10 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <!--firebase info-->
+    <string name="api_key">AIzaSyB4wwxHCrMac7aamAX6J7iQNIR3uEtsTZY</string>
+    <string name="messaging_sender_id">880313292566</string>
+
     <string-array name="font_options_array">
         <item>10</item>
         <item>11</item>

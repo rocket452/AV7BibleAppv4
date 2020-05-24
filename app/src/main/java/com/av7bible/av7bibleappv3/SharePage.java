@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 
@@ -22,7 +23,18 @@ public class SharePage extends Activity {
 
         JavaScriptInterface JSInterface = new JavaScriptInterface(this);
 
-        webView.addJavascriptInterface(JSInterface, "JSInterface");
+       // webView.addJavascriptInterface(JSInterface, "JSInterface");
+
+        webView.setWebViewClient(new WebViewClient() {
+
+            public void onPageFinished(WebView view, String url) {
+
+                String apiKey = getResources().getString(R.string.api_key);
+                String messagingSenderId = getResources().getString(R.string.messaging_sender_id);
+
+                webView.loadUrl("javascript:setupFireBaseDatabase('"+apiKey+"','"+messagingSenderId+"');");
+            }
+        });
 
         webView.loadUrl(sharePageURL);
 
@@ -55,6 +67,8 @@ public class SharePage extends Activity {
         }
 
     }
+
+
 
 
 

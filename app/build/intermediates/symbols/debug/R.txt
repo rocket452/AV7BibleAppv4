@@ -809,10 +809,12 @@ int string abc_shareactionprovider_share_with 0x7f0d001c
 int string abc_shareactionprovider_share_with_application 0x7f0d001d
 int string abc_toolbar_collapse_description 0x7f0d001e
 int string action_settings 0x7f0d001f
-int string app_name 0x7f0d0020
-int string hello_world 0x7f0d0021
-int string search_menu_title 0x7f0d0022
-int string status_bar_notification_info_overflow 0x7f0d0023
+int string api_key 0x7f0d0020
+int string app_name 0x7f0d0021
+int string hello_world 0x7f0d0022
+int string messaging_sender_id 0x7f0d0023
+int string search_menu_title 0x7f0d0024
+int string status_bar_notification_info_overflow 0x7f0d0025
 int style AlertDialog_AppCompat 0x7f0e0000
 int style AlertDialog_AppCompat_Light 0x7f0e0001
 int style Animation 0x7f0e0002

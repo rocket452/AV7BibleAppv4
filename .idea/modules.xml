@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AV7BibleAppv4.iml" filepath="$PROJECT_DIR$/AV7BibleAppv4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AV7BibleAppv4.iml" filepath="$PROJECT_DIR$/AV7BibleAppv4.iml" group="AV7BibleAppv4" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="AV7BibleAppv4/app" />
     </modules>
   </component>
 </project>
