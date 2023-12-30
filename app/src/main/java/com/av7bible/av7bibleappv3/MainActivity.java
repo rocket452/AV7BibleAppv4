@@ -8,6 +8,7 @@ import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -62,29 +63,15 @@ public class MainActivity extends Activity {
         sendEmails.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
-                Intent intent = new Intent(MainActivity.this, SharePage.class);
-                startActivity(intent);
+                //todo need to fix this with new email host that is used by http://av7bible.com/shareContactForm/shareAV7.php
+             //   Intent intent = new Intent(MainActivity.this, SharePage.class);
+              //  startActivity(intent);
 
+                //todo for now lets just use the same page as the website
+                Uri uriUrl = Uri.parse("http://av7bible.com/shareContactForm/shareAV7.php");
+                Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
+                startActivity(launchBrowser);
 
-            /*    Intent i = new Intent(Intent.ACTION_SEND);
-                i.setType("message/rfc822");
-                //i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"rocket452@hotmail.com"});
-                i.putExtra(Intent.EXTRA_SUBJECT, "'Enter Your Name' has "+
-                                "shared the AV7 Bible App with you!"
-                );
-
-                i.putExtra(Intent.EXTRA_TEXT   ,
-                        "'Enter Your Name' has invited you to click this link"+
-                                " to download a free copy of the book, 'How "+
-                                " http://www.vsiq.com/avx/compare.php " +
-                                "to Compare Bible Versions'"
-                );
-
-                try {
-                    startActivity(Intent.createChooser(i, "Send mail..."));
-                } catch (android.content.ActivityNotFoundException ex) {
-                    Toast.makeText(getApplicationContext(), "NO email client installed", Toast.LENGTH_SHORT).show();
-                }*/
 
             }});
 

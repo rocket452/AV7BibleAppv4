@@ -29,10 +29,6 @@ public class SharePage extends Activity {
 
             public void onPageFinished(WebView view, String url) {
 
-                String apiKey = getResources().getString(R.string.api_key);
-                String messagingSenderId = getResources().getString(R.string.messaging_sender_id);
-
-                webView.loadUrl("javascript:setupFireBaseDatabase('"+apiKey+"','"+messagingSenderId+"');");
             }
         });
 
