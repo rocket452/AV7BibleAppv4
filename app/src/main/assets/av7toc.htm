@@ -3,7 +3,8 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <link href="CSS/styles.css" media="all" rel="stylesheet" type="text/css" />
-<title>AV7 ~ The Invitation Bible Table of Contents </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <title>AV7 ~ The Invitation Bible Table of Contents </title>
 <style>
 #tableOfContentsTable,#tableOfContentsTable th,#tableOfContentsTable td{
 	border: solid black;
@@ -94,6 +95,13 @@
 </style>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="JS/javascript.js"></script>
+
+    <script type="text/javascript">
+
+function goBack() {
+    JSInterface.goBack();
+}
+    </script>
 
 
 </head>
@@ -201,11 +209,17 @@
 	<td colspan=3 ><a onclick="goToChapter('MAL',0)">MALAC</a></td>
 	<td colspan=3 bgcolor="#1F61B0"><a href="whyPage.htm"  style="color: white;">WHY?</a></td>
   </tr>
-   <tr bgcolor="#176A16" >
-    <td colspan=15 style="border-top-width: 5px;"><a style="color: white;" href="10reasons.htm">10 Reasons to choose the AV7 Bible!</a></td>
-  </tr>
 </table>
-
+<table id="footerTable">
+     <tr >
+         <td onclick="goToTitleScreen()"><i style="margin-left: 15%;" class="fa fa-arrow-left"></i></td>
+         <td  onclick="goToTitleScreen()">Back</td>
+         <td style="background-color:#439943; border: 1px solid gainsboro;"><a href="NT/GoDeeperPage.htm" style="color:white">Search</a></td>
+         <td style="background-color:#000287; border: 1px solid gainsboro;"><a href="https://av7bible.com/shareContactForm/shareAV7.php" style="color:white">Share This</a></td>
+         <td onclick="openHelpPage()">Help</td>
+         <td onclick="openOptionsMenu()"><i class="fa fa-cog"/></td>
+     </tr>
+</table>
 
 
 

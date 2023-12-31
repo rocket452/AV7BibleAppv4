@@ -4,17 +4,27 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.NumberPicker;
+import android.widget.PopupWindow;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 
@@ -22,8 +32,8 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
 
     private WebView webView;
     String tableOfContentsURL = "file:///android_asset/av7toc.htm";
-
-
+    CharSequence currentSelectedFont;
+    SharedPreferences savedSettings;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +41,9 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
 
         webView = (WebView) findViewById(R.id.webview);
         webView.getSettings().setJavaScriptEnabled(true);
+
+        savedSettings = this.getSharedPreferences("AV7BibleAppPreferences", Context.MODE_PRIVATE);
+        currentSelectedFont = savedSettings.getString("savedFont", "12");
 
         JavaScriptInterface JSInterface = new JavaScriptInterface(this);
 
@@ -87,6 +100,30 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
             Intent intent = new Intent(TableOfContents.this, MainActivity.class);
             startActivity(intent);
 
+        }
+
+        @JavascriptInterface
+        public void goBack() {
+
+            Intent intent = new Intent(TableOfContents.this, TableOfContents.class);
+            startActivity(intent);
+        }
+
+        @JavascriptInterface   // must be added for API 17 or higher
+        public void openHelpPage() {
+
+            //Toast.makeText(context, "Open Help", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(TableOfContents.this, HelpPage.class);
+
+            startActivity(intent);
+
+        }
+
+        @JavascriptInterface   // must be added for API 17 or higher
+        public void openOptionsMenu() {
+            //  Toast.makeText(context, "New Thing3!", Toast.LENGTH_SHORT).show();
+            //   showHelpPopup((Activity) context);
+            showHelpPopup(TableOfContents.this);
         }
 
         @JavascriptInterface   // must be added for API 17 or higher
@@ -220,6 +257,119 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
 
 
     }
+
+    private void showHelpPopup(final Activity context) {
+
+
+        // Inflate the popup_layout.xml
+        LinearLayout viewGroup = (LinearLayout) context.findViewById(R.id.popup);
+
+        LayoutInflater layoutInflater;
+
+        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        View layout = layoutInflater.inflate(R.layout.popup_layout, viewGroup); //
+
+        //layout.setAnimation(AnimationUtils.loadAnimation(this, R.style.Animation));
+
+
+        // Creating the PopupWindow
+        final PopupWindow popup = new PopupWindow(context);
+        popup.setContentView(layout);
+        popup.setWidth(WindowManager.LayoutParams.WRAP_CONTENT);
+        popup.setHeight(WindowManager.LayoutParams.WRAP_CONTENT);
+        popup.setFocusable(true);
+        popup.setAnimationStyle(R.style.Animation);
+
+
+        // Some offset to align the popup a bit to the right, and a bit down, relative to button's position.
+        int OFFSET_X = 30;
+        int OFFSET_Y = 30;
+
+        // Clear the default translucent background
+        popup.setBackgroundDrawable(new BitmapDrawable());
+
+        // Displaying the popup at the specified location, + offsets.
+        popup.showAtLocation(layout, Gravity.NO_GRAVITY, 100, 100);
+
+        //Spinner (dropdown)
+        final Spinner spinner = (Spinner) layout.findViewById(R.id.fontOptionsSpinner);
+
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(TableOfContents.this,
+                R.array.font_options_array, R.layout.spinner_properties);
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+        // Apply the adapter to the spinner
+
+
+        spinner.setAdapter(adapter);
+        //End Spinner
+        //  spinner.setSelection(4);
+        spinner.setSelection(adapter.getPosition(currentSelectedFont));
+        //     spinner.setSelection(adapter.getPosition("11"));
+        spinner.setOnItemSelectedListener(new SpinnerActivity());
+        // Getting a reference to Close button, and close the popup when clicked.
+        Button close = (Button) layout.findViewById(R.id.close);
+
+
+        close.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                webView.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        //Toast.makeText(getApplicationContext(), "Font Selected: "+(Integer.parseInt(spinner.getSelectedItem().toString())+2), Toast.LENGTH_SHORT).show();
+                        // webView.loadUrl("javascript:" + "var elems = document.getElementsByTagName('p');" + "for (var i = 0; i < elems.length; i++) {" + "		document.getElementsByTagName('p')[i].style.fontSize = '" + spinner.getSelectedItem() + "pt';" + "}" + "elems = document.getElementsByTagName('h1');" + "for (var i = 0; i < elems.length; i++) {" + "		document.getElementsByTagName('h1')[i].style.fontSize = '" + (Integer.parseInt(spinner.getSelectedItem().toString()) + 2) + "pt';" + "}" + "elems = document.getElementsByClassName('italic');" + "for (var i = 0; i < elems.length; i++) {" + "		document.getElementsByClassName('italic')[i].style.fontSize = '" + (Integer.parseInt(spinner.getSelectedItem().toString()) - 3) + " +pt';" + "}");
+                        Log.i("TextResult", "Selected Font: " + spinner.getSelectedItem());
+
+                        webView.loadUrl("javascript:adjustFont('" + spinner.getSelectedItem() + "')");
+
+
+                    }
+                });
+                popup.dismiss();
+            }
+        });
+
+
+    }
+
+    public class SpinnerActivity extends Activity implements AdapterView.OnItemSelectedListener {
+
+        String strItem;
+
+
+        public void onItemSelected(AdapterView<?> parent, View view,
+                                   int pos, long id) {
+            // An item was selected. You can retrieve the selected item using
+
+            // Toast.makeText(parent.getContext(),	"OnItemSelectedListener : " + parent.getItemAtPosition(pos).toString(),	Toast.LENGTH_SHORT).show();
+            currentSelectedFont = parent.getItemAtPosition(pos).toString();
+
+            SharedPreferences.Editor editor = savedSettings.edit();
+            editor.putString("savedFont", currentSelectedFont.toString());
+            //Toast.makeText(parent.getContext(),	"OnItemSelectedListener : " + currentSelectedFont.toString(),	Toast.LENGTH_SHORT).show();
+            // Commit the edits!
+            editor.commit();
+
+            /* Font Comparisons
+             * 4.5vmin = 14pt
+             * 5.0vmin = 16pt
+             *
+             * */
+
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> adapterView) {
+
+        }
+
+    }
+
 
     @Override
     public void onValueChange(NumberPicker numberPicker, int i, int i2) {
