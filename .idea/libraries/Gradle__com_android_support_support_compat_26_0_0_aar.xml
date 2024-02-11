@@ -3,10 +3,14 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../Gradle/caches/transforms-1/files-1.1/support-compat-26.0.0.aar/d5749114a9fc3603a6914ee348cad122/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../Gradle/caches/transforms-1/files-1.1/support-compat-26.0.0.aar/d5749114a9fc3603a6914ee348cad122/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-compat-26.0.0.aar/6e557dbc6e86ac09e08213b72ab56fa3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-compat-26.0.0.aar/6e557dbc6e86ac09e08213b72ab56fa3/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-compat-26.0.0.aar/6e557dbc6e86ac09e08213b72ab56fa3/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../Gradle/caches/modules-2/files-2.1/com.android.support/support-compat/26.0.0/fd0c36f57508740900458a6355f41fc8f37a54b/support-compat-26.0.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/support-compat/26.0.0/fd0c36f57508740900458a6355f41fc8f37a54b/support-compat-26.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

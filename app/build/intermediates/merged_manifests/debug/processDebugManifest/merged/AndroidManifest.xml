@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.av7bible.av7bibleappv2"
-    android:versionCode="40"
-    android:versionName=".971" >
+    android:versionCode="44"
+    android:versionName=".974" >
 
     <uses-sdk
         android:minSdkVersion="17"
-        android:targetSdkVersion="28" />
+        android:targetSdkVersion="33" />
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -21,6 +21,7 @@
         <activity
             android:name="com.av7bible.av7bibleappv3.MainActivity"
             android:configChanges="orientation"
+            android:exported="true"
             android:label="AV7 Bible"
             android:screenOrientation="portrait" >
             <intent-filter>

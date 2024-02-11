@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-zh-rHK\\values-zh-rHK.xml",
+            "outputFile": "C:\\Users\\BradyGilley\\StudioProjects\\AV7BibleAppv4\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-zh-rHK\\values-zh-rHK.xml",
             "map": [
                 {
-                    "source": "E:\\AndroidProjects\\Gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0.aar\\186d61eab5370eb8f266eb540774040f\\res\\values-zh-rHK\\values-zh-rHK.xml",
+                    "source": "C:\\Users\\BradyGilley\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0.aar\\0007db5f3aed51c6329e079e68c2b518\\res\\values-zh-rHK\\values-zh-rHK.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

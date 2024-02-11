@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\AndroidProjects\\AV7BibleAppv4\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v24\\values-v24.xml",
+            "outputFile": "C:\\Users\\BradyGilley\\StudioProjects\\AV7BibleAppv4\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "E:\\AndroidProjects\\Gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0.aar\\186d61eab5370eb8f266eb540774040f\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\BradyGilley\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0.aar\\0007db5f3aed51c6329e079e68c2b518\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "E:\\AndroidProjects\\Gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.0.0.aar\\f21bfedd695b8fc7e0e24f1c217941f3\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\BradyGilley\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.0.0.aar\\6e6390da5f49df3ee7d36ffe56a45d44\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

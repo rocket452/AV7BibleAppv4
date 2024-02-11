@@ -457,6 +457,7 @@ public class BibleContent extends Activity {
                             }
                         }
 
+
                         webView.loadUrl("javascript:insertBody('<p><b>New Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">" + newTestamentCount + "</span></b></p>')");
                         webView.loadUrl("javascript:insertBody('<p><b>Old Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">" + oldTestamentCount + "</span></b></p>')");
 

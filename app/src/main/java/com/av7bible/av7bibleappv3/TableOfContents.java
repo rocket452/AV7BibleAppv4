@@ -172,7 +172,7 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
         @JavascriptInterface   // must be added for API 17 or higher
         public void searchForText(final String searchString1, final String searchString2) {
 
-            //Toast.makeText(context, "SearchForText!", Toast.LENGTH_LONG).show();
+           // Toast.makeText(context, "SearchForText!", Toast.LENGTH_LONG).show();
 
             webView.post(new Runnable() {
                 public void run() {
@@ -183,11 +183,32 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
                     String verseResult;
                     String textResult;
                     String combinedResult;
+                    int newTestamentCount = 0;
+                    int oldTestamentCount = 0;
+
+                    while (resultSet.moveToNext())
+
+                    {
+                        int BookOrder = resultSet.getInt(resultSet.getColumnIndex("BookOrder"));
+
+                        if (BookOrder < 28) {
+                            newTestamentCount++;
+                        } else {
+                            oldTestamentCount++;
+                        }
+                    }
+                    resultSet.moveToFirst();
+
+                    webView.loadUrl("javascript:insertBody('<p><b>New Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">" + newTestamentCount + "</span></b></p>')");
+                    webView.loadUrl("javascript:insertBody('<p><b>Old Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">" + oldTestamentCount + "</span></b></p>')");
 
 
                     while (resultSet.moveToNext())
 
                     {
+
+
+
                         bookResult = resultSet.getString(resultSet.getColumnIndex("Book"));
                         chapterResult = resultSet.getString(resultSet.getColumnIndex("Chapter"));
                         if (chapterResult.substring(0, 1).equals("0")) {
@@ -207,8 +228,10 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
 
                         Log.d("InsertText", combinedResult);
                         // textResult = "water";
-                        webView.loadUrl("javascript:insertBody('<p>" + combinedResult + "</p>')");
+                          webView.loadUrl("javascript:insertBody('<p>" + combinedResult + "</p>')");
                     }
+
+
 
                     resultSet.close();
                 }

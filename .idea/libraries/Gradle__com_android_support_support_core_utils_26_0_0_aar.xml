@@ -3,10 +3,14 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../Gradle/caches/transforms-1/files-1.1/support-core-utils-26.0.0.aar/a4296aa2c93242b1e48ffdb73c9b2e91/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../Gradle/caches/transforms-1/files-1.1/support-core-utils-26.0.0.aar/a4296aa2c93242b1e48ffdb73c9b2e91/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.0.0.aar/1adc8a0dc33a7de018b6b841a80d18f9/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.0.0.aar/1adc8a0dc33a7de018b6b841a80d18f9/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.0.0.aar/1adc8a0dc33a7de018b6b841a80d18f9/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../Gradle/caches/modules-2/files-2.1/com.android.support/support-core-utils/26.0.0/7b7c909a06cc2b077269e3a70c1abb0681fc2578/support-core-utils-26.0.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/support-core-utils/26.0.0/7b7c909a06cc2b077269e3a70c1abb0681fc2578/support-core-utils-26.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
