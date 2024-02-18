@@ -27,6 +27,9 @@ import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 public class TableOfContents extends Activity implements NumberPicker.OnValueChangeListener {
 
@@ -176,6 +179,9 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
 
             webView.post(new Runnable() {
                 public void run() {
+
+                    if(searchString1.equals("") && searchString2.equals("")) return;
+
                     Cursor resultSet = getSearchResults(searchString1, searchString2);
 
                     String bookResult;
@@ -186,21 +192,19 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
                     int newTestamentCount = 0;
                     int oldTestamentCount = 0;
 
-                    while (resultSet.moveToNext())
+//                    while (resultSet.moveToNext())
+//
+//                    {
+//                        int BookOrder = resultSet.getInt(resultSet.getColumnIndex("BookOrder"));
+//
+//                        if (BookOrder < 28) {
+//                            newTestamentCount++;
+//                        } else {
+//                            oldTestamentCount++;
+//                        }
+//                    }
+//                    resultSet.moveToFirst();
 
-                    {
-                        int BookOrder = resultSet.getInt(resultSet.getColumnIndex("BookOrder"));
-
-                        if (BookOrder < 28) {
-                            newTestamentCount++;
-                        } else {
-                            oldTestamentCount++;
-                        }
-                    }
-                    resultSet.moveToFirst();
-
-                    webView.loadUrl("javascript:insertBody('<p><b>New Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">" + newTestamentCount + "</span></b></p>')");
-                    webView.loadUrl("javascript:insertBody('<p><b>Old Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">" + oldTestamentCount + "</span></b></p>')");
 
 
                     while (resultSet.moveToNext())
@@ -224,12 +228,53 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
                         combinedResult = combinedResult.replace("'>", "\">");
                         combinedResult = combinedResult.replace("'", "&quot;");
 
+                        Pattern pattern;
+                        Matcher matcher;
+                        StringBuffer sb;
+                        if(!searchString1.equals("")) {
+                            pattern = Pattern.compile(Pattern.quote(searchString1), Pattern.CASE_INSENSITIVE);
+                            matcher = pattern.matcher(combinedResult);
+                            sb = new StringBuffer();
+
+                            while (matcher.find()) {
+                                matcher.appendReplacement(sb, "<span style=\"color:red;\">" + matcher.group() + "</span>");
+                            }
+                            matcher.appendTail(sb);
+
+                            combinedResult = sb.toString();
+                        }
+
+                        if(!searchString2.equals("")) {
+                            pattern = Pattern.compile(Pattern.quote(searchString2), Pattern.CASE_INSENSITIVE);
+                            matcher = pattern.matcher(combinedResult);
+                            sb = new StringBuffer();
+
+                            while (matcher.find()) {
+                                matcher.appendReplacement(sb, "<span style=\"color:red;\">" + matcher.group() + "</span>");
+                            }
+                            matcher.appendTail(sb);
+
+                            combinedResult = sb.toString();
+                        }
+
+
+
                         // combinedResult =  combinedResult.substring(1, combinedResult.length()-1);
 
                         Log.d("InsertText", combinedResult);
                         // textResult = "water";
                           webView.loadUrl("javascript:insertBody('<p>" + combinedResult + "</p>')");
+
+                        int BookOrder = resultSet.getInt(resultSet.getColumnIndex("BookOrder"));
+
+                        if (BookOrder < 28) {
+                            newTestamentCount++;
+                        } else {
+                            oldTestamentCount++;
+                        }
                     }
+                    webView.loadUrl("javascript:insertBefore('<p><b>Old Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">" + oldTestamentCount + "</span></b></p>')");
+                    webView.loadUrl("javascript:insertBefore('<p><b>New Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">" + newTestamentCount + "</span></b></p>')");
 
 
 
@@ -438,7 +483,7 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
         a[2] = "00";
         a[3] = "%<p>%";
         // String query = "SELECT * FROM bible WHERE text LIKE ?";
-        String query = "SELECT * FROM bible WHERE text LIKE ? AND text LIKE ? AND Chapter > ? AND NOT text LIKE ? ORDER BY rowid DESC";
+        String query = "SELECT * FROM bible WHERE text LIKE ? AND text LIKE ? AND Chapter > ? AND NOT text LIKE ? ORDER BY rowid ASC";
 
         Cursor resultSet = myDataBase.rawQuery(query, a);
 
