@@ -182,88 +182,17 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
 
                     if(searchString1.equals("") && searchString2.equals("")) return;
 
-                    Cursor resultSet = getSearchResults(searchString1, searchString2);
+                    Cursor resultSet = getSearchResults(searchString1, searchString2, true);
 
-                    String bookResult;
-                    String chapterResult;
-                    String verseResult;
-                    String textResult;
-                    String combinedResult;
+
                     int newTestamentCount = 0;
                     int oldTestamentCount = 0;
 
-//                    while (resultSet.moveToNext())
-//
-//                    {
-//                        int BookOrder = resultSet.getInt(resultSet.getColumnIndex("BookOrder"));
-//
-//                        if (BookOrder < 28) {
-//                            newTestamentCount++;
-//                        } else {
-//                            oldTestamentCount++;
-//                        }
-//                    }
-//                    resultSet.moveToFirst();
-
-
 
                     while (resultSet.moveToNext())
-
                     {
 
-
-
-                        bookResult = resultSet.getString(resultSet.getColumnIndex("Book"));
-                        chapterResult = resultSet.getString(resultSet.getColumnIndex("Chapter"));
-                        if (chapterResult.substring(0, 1).equals("0")) {
-                            chapterResult = chapterResult.substring(1);
-                        }
-                        verseResult = resultSet.getString(resultSet.getColumnIndex("Verse"));
-                        textResult = resultSet.getString(resultSet.getColumnIndex("Text"));
-
-                        combinedResult = "<span id=\"verseNumber\">" + bookResult + " " + chapterResult + ":" + verseResult + "</span>" + textResult;
-
-
-                        combinedResult = combinedResult.replace("=\'", "=\"");
-                        combinedResult = combinedResult.replace("'>", "\">");
-                        combinedResult = combinedResult.replace("'", "&quot;");
-
-                        Pattern pattern;
-                        Matcher matcher;
-                        StringBuffer sb;
-                        if(!searchString1.equals("")) {
-                            pattern = Pattern.compile(Pattern.quote(searchString1), Pattern.CASE_INSENSITIVE);
-                            matcher = pattern.matcher(combinedResult);
-                            sb = new StringBuffer();
-
-                            while (matcher.find()) {
-                                matcher.appendReplacement(sb, "<span style=\"color:red;\">" + matcher.group() + "</span>");
-                            }
-                            matcher.appendTail(sb);
-
-                            combinedResult = sb.toString();
-                        }
-
-                        if(!searchString2.equals("")) {
-                            pattern = Pattern.compile(Pattern.quote(searchString2), Pattern.CASE_INSENSITIVE);
-                            matcher = pattern.matcher(combinedResult);
-                            sb = new StringBuffer();
-
-                            while (matcher.find()) {
-                                matcher.appendReplacement(sb, "<span style=\"color:red;\">" + matcher.group() + "</span>");
-                            }
-                            matcher.appendTail(sb);
-
-                            combinedResult = sb.toString();
-                        }
-
-
-
-                        // combinedResult =  combinedResult.substring(1, combinedResult.length()-1);
-
-                        Log.d("InsertText", combinedResult);
-                        // textResult = "water";
-                          webView.loadUrl("javascript:insertBody('<p>" + combinedResult + "</p>')");
+                        processResultSet(searchString1, searchString2,resultSet);
 
                         int BookOrder = resultSet.getInt(resultSet.getColumnIndex("BookOrder"));
 
@@ -273,6 +202,23 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
                             oldTestamentCount++;
                         }
                     }
+
+                    resultSet = getSearchResults(searchString1, searchString2, false);
+
+                    while (resultSet.moveToNext())
+                    {
+
+                        processResultSet(searchString1, searchString2,resultSet);
+
+                        int BookOrder = resultSet.getInt(resultSet.getColumnIndex("BookOrder"));
+
+                        if (BookOrder < 28) {
+                            newTestamentCount++;
+                        } else {
+                            oldTestamentCount++;
+                        }
+                    }
+
                     webView.loadUrl("javascript:insertBefore('<p><b>Old Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">" + oldTestamentCount + "</span></b></p>')");
                     webView.loadUrl("javascript:insertBefore('<p><b>New Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">" + newTestamentCount + "</span></b></p>')");
 
@@ -284,6 +230,69 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
             //InsertBibleTxt(resultSet);
 
         }
+
+    }
+
+    private void processResultSet(String searchString1, String searchString2,  Cursor resultSet ){
+
+        String bookResult;
+        String chapterResult;
+        String verseResult;
+        String textResult;
+        String combinedResult;
+
+        bookResult = resultSet.getString(resultSet.getColumnIndex("Book"));
+        chapterResult = resultSet.getString(resultSet.getColumnIndex("Chapter"));
+        if (chapterResult.substring(0, 1).equals("0")) {
+            chapterResult = chapterResult.substring(1);
+        }
+        verseResult = resultSet.getString(resultSet.getColumnIndex("Verse"));
+        textResult = resultSet.getString(resultSet.getColumnIndex("Text"));
+
+        combinedResult = "<span id=\"verseNumber\">" + bookResult + " " + chapterResult + ":" + verseResult + "</span>" + textResult;
+
+
+        combinedResult = combinedResult.replace("=\'", "=\"");
+        combinedResult = combinedResult.replace("'>", "\">");
+        combinedResult = combinedResult.replace("'", "&quot;");
+
+        Pattern pattern;
+        Matcher matcher;
+        StringBuffer sb;
+        if(!searchString1.equals("")) {
+            pattern = Pattern.compile(Pattern.quote(searchString1), Pattern.CASE_INSENSITIVE);
+            matcher = pattern.matcher(combinedResult);
+            sb = new StringBuffer();
+
+            while (matcher.find()) {
+                matcher.appendReplacement(sb, "<span style=\"color:red;\">" + matcher.group() + "</span>");
+            }
+            matcher.appendTail(sb);
+
+            combinedResult = sb.toString();
+        }
+
+        if(!searchString2.equals("")) {
+            pattern = Pattern.compile(Pattern.quote(searchString2), Pattern.CASE_INSENSITIVE);
+            matcher = pattern.matcher(combinedResult);
+            sb = new StringBuffer();
+
+            while (matcher.find()) {
+                matcher.appendReplacement(sb, "<span style=\"color:red;\">" + matcher.group() + "</span>");
+            }
+            matcher.appendTail(sb);
+
+            combinedResult = sb.toString();
+        }
+
+
+
+        // combinedResult =  combinedResult.substring(1, combinedResult.length()-1);
+
+        Log.d("InsertText", combinedResult);
+        // textResult = "water";
+        webView.loadUrl("javascript:insertBody('<p>" + combinedResult + "</p>')");
+        
 
     }
 
@@ -463,7 +472,7 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
         return resultSet;
     }
 
-    protected Cursor getSearchResults(String searchString1, String searchString2) {
+    protected Cursor getSearchResults(String searchString1, String searchString2, boolean isNT) {
 
         //The Android's default system path of your application database.
         String DB_PATH = "/data/data/com.av7bible.av7bibleappv2/databases/";
@@ -475,15 +484,16 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
         String myPath = DB_PATH + DB_NAME;
         myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
 
-
         String[] a = new String[4];
-        //   a[0]       = "%one's%";
         a[0] = "%" + searchString1 + "%";
         a[1] = "%" + searchString2 + "%";
         a[2] = "00";
         a[3] = "%<p>%";
-        // String query = "SELECT * FROM bible WHERE text LIKE ?";
-        String query = "SELECT * FROM bible WHERE text LIKE ? AND text LIKE ? AND Chapter > ? AND NOT text LIKE ? ORDER BY rowid ASC";
+
+
+        String query = "SELECT * FROM bible WHERE text LIKE ? AND text LIKE ? AND Chapter > ? AND BookOrder < '28' AND NOT text LIKE ? ORDER BY rowid ASC";
+        if (!isNT) query = "SELECT * FROM bible WHERE text LIKE ? AND text LIKE ? AND Chapter > ? AND BookOrder >= '28' AND NOT text LIKE ? ORDER BY rowid ASC";
+
 
         Cursor resultSet = myDataBase.rawQuery(query, a);
 
