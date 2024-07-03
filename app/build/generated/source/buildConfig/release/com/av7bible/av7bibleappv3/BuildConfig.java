@@ -8,6 +8,6 @@ public final class BuildConfig {
   public static final String APPLICATION_ID = "com.av7bible.av7bibleappv2";
   public static final String BUILD_TYPE = "release";
   public static final String FLAVOR = "";
-  public static final int VERSION_CODE = 47;
-  public static final String VERSION_NAME = ".977";
+  public static final int VERSION_CODE = 478;
+  public static final String VERSION_NAME = ".978";
 }

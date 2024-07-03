@@ -292,7 +292,7 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
         Log.d("InsertText", combinedResult);
         // textResult = "water";
         webView.loadUrl("javascript:insertBody('<p>" + combinedResult + "</p>')");
-        
+
 
     }
 
