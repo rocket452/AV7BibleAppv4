@@ -129,3 +129,13 @@ function insertBody(input) {
     mainContent.appendChild(textElement);
 
 }
+
+function insertBefore(input) {
+    var textElement = document.createElement("span");
+    input = input.toString().replace(new RegExp("&quot;", 'g'), "'");
+    textElement.innerHTML = input;
+
+    var mainContent = document.getElementById("mainContent");
+    // Insert at the top using prepend
+    mainContent.prepend(textElement);
+}

@@ -53,7 +53,7 @@ public class SharePage extends Activity {
 
         @JavascriptInterface   // must be added for API 17 or higher
         public void goBack() {
-            //Toast.makeText(context, "New Thing!", Toast.LENGTH_SHORT).show();
+         //   Toast.makeText(context, "New Thing!", Toast.LENGTH_SHORT).show();
             webView.post(new Runnable() {
                 public void run() {
                     finish();

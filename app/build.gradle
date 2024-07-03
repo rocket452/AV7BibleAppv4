@@ -9,8 +9,8 @@ android {
         applicationId "com.av7bible.av7bibleappv2"
         minSdkVersion 17
         targetSdkVersion 33
-        versionCode 45
-        versionName ".975"
+        versionCode 479
+        versionName ".979"
     }
     buildTypes {
         release {

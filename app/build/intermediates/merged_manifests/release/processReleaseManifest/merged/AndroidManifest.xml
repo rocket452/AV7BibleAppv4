@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.av7bible.av7bibleappv2"
-    android:versionCode="45"
-    android:versionName=".975" >
+    android:versionCode="478"
+    android:versionName=".978" >
 
     <uses-sdk
         android:minSdkVersion="17"
