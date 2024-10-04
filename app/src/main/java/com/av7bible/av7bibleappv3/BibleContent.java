@@ -138,7 +138,7 @@ public class BibleContent extends Activity {
         //resultSet = getBibleText(selectedChapter);
         //Toast.makeText(getApplicationContext(), "Book: '" + bookName + "'  Chap: '" + selectedChapter + "'", Toast.LENGTH_LONG).show();
         if (bookName == "VSQ" && selectedChapter == "") { //Search Page
-            resultSet = getSearchResults(searchString, "");
+            resultSet = Utility.getSearchResults(searchString, "");
         } else {
             resultSet = getBibleText(bookName, selectedChapter);
         }
@@ -426,99 +426,9 @@ public class BibleContent extends Activity {
 
         @JavascriptInterface   // must be added for API 17 or higher
         public void searchForText(final String searchString1, final String searchString2) {
+            Log.d("SearchTag", "BibleContent calling getSearchResults");
 
-            //Toast.makeText(context, "SearchForText!", Toast.LENGTH_LONG).show();
-            if (!searchString1.isEmpty() || !searchString2.isEmpty()) {
-                webView.post(new Runnable() {
-                    public void run() {
-                        Cursor resultSet = getSearchResults(searchString1, searchString2);
-
-                        String bookResult;
-                        String chapterResult;
-                        String verseResult;
-                        String textResult;
-                        String combinedResult;
-
-                        int newTestamentCount = 0;
-                        int oldTestamentCount = 0;
-
-                        Log.d("DeubugTag", "Result Count:" + resultSet.getCount());
-                        //Get OT/NT Result Counts
-                        while (resultSet.moveToNext()) {
-                            int BookOrder = resultSet.getInt(resultSet.getColumnIndex("BookOrder"));
-
-                            bookResult = resultSet.getString(resultSet.getColumnIndex("Book"));
-                            Log.d("Result Book ", bookResult + " BookOrder: " + BookOrder);
-
-                            if (BookOrder < 28) {
-                                newTestamentCount++;
-                            } else {
-                                oldTestamentCount++;
-                            }
-                        }
-
-
-                        webView.loadUrl("javascript:insertBody('<p><b>New Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">" + newTestamentCount + "</span></b></p>')");
-                        webView.loadUrl("javascript:insertBody('<p><b>Old Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">" + oldTestamentCount + "</span></b></p>')");
-
-                        int resultCountLimit = 1000;
-
-
-                        if (resultSet.getCount() > resultCountLimit) {
-                            webView.loadUrl("javascript:insertBody('<p><span id=\"verseNumber\"> Only displaying the first " + resultCountLimit + " results</span></p>')");
-                        }
-
-                        int i = 0;
-
-                        //Read Text Results
-                        resultSet.moveToPosition(-1);
-                        while (resultSet.moveToNext() && i < resultCountLimit) {
-                            i++;
-
-                            //We want to exclude search results that snagged on something inside the HTML (class name, id name etc)
-                            String resultWithoutHTML = android.text.Html.fromHtml(resultSet.getString(resultSet.getColumnIndex("Text"))).toString();
-                            if (!resultWithoutHTML.toUpperCase().contains(searchString1.toUpperCase()) || !resultWithoutHTML.toUpperCase().contains(searchString2.toUpperCase())) {
-                                continue;
-                            }
-
-
-                            bookResult = resultSet.getString(resultSet.getColumnIndex("Book"));
-                            chapterResult = resultSet.getString(resultSet.getColumnIndex("Chapter"));
-                            if (chapterResult.substring(0, 1).equals("0")) {
-                                chapterResult = chapterResult.substring(1);
-                            }
-                            verseResult = resultSet.getString(resultSet.getColumnIndex("Verse"));
-                            textResult = resultSet.getString(resultSet.getColumnIndex("Text"));
-
-                            combinedResult = "<span id=\"verseNumber\">" + bookResult + " " + chapterResult + ":" + verseResult + "</span>" + textResult;
-
-
-                            combinedResult = combinedResult.replace("=\'", "=\"");
-                            combinedResult = combinedResult.replace("'>", "\">");
-                            combinedResult = combinedResult.replace("'", "&quot;");
-
-                            // combinedResult =  combinedResult.substring(1, combinedResult.length()-1);
-
-                            Log.d("InsertText", combinedResult);
-                            // textResult = "water";
-                            webView.loadUrl("javascript:insertBody('<p>" + combinedResult + "</p>')");
-
-
-                        }
-
-                        //webView.loadUrl("javascript:insertNTText('<p>testing</p>')");
-
-                        //hide keyboard
-                        View view = webView;
-                        if (view != null) {
-                            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-                        }
-
-                        resultSet.close();
-                    }
-                });
-            }
+            Utility.retrieveAndDisplaySearchResults(searchString1, searchString2, webView, getApplicationContext());
 
         }
 
@@ -842,36 +752,6 @@ public class BibleContent extends Activity {
 
         }
 
-    }
-
-    protected Cursor getSearchResults(String searchString1, String searchString2) {
-
-        //The Android's default system path of your application database.
-        String DB_PATH = "/data/data/com.av7bible.av7bibleappv2/databases/";
-
-        String DB_NAME = "newDb";
-
-        SQLiteDatabase myDataBase;
-
-        String myPath = DB_PATH + DB_NAME;
-        myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
-
-
-        String[] a = new String[5];
-        //   a[0]       = "%one's%";
-        a[0] = "%" + searchString1 + "%";
-        a[1] = "%" + searchString2 + "%";
-        a[2] = "00";
-        a[3] = "%<p>%";
-        a[4] = "";
-        // String query = "SELECT * FROM bible WHERE text LIKE ?";
-        //  String query = "SELECT * FROM bible WHERE text LIKE ? AND text LIKE ? AND Chapter > ? AND NOT text LIKE ? ORDER BY rowid DESC";
-        String query = "SELECT * FROM bible WHERE text LIKE ? AND text LIKE ? AND Chapter > ? AND NOT text LIKE ? AND NOT verse = ? ORDER BY BookOrder";
-
-        Cursor resultSet = myDataBase.rawQuery(query, a);
-
-
-        return resultSet;
     }
 
 
