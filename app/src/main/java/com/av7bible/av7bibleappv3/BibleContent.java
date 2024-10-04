@@ -756,5 +756,3 @@ public class BibleContent extends Activity {
 
 
 }
-
-
