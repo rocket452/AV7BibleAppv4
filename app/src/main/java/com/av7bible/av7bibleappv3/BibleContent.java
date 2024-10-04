@@ -30,6 +30,10 @@ import android.widget.Toast;
 import java.io.File;
 
 
+/**
+ * Created by Brady on 6/1/2015.
+ * laptop change
+ */
 public class BibleContent extends Activity {
 
     private WebView webView;
@@ -59,6 +63,7 @@ public class BibleContent extends Activity {
         // Restore preferences from font value saved on device
         savedSettings = this.getSharedPreferences("AV7BibleAppPreferences", Context.MODE_PRIVATE);
         currentSelectedFont = savedSettings.getString("savedFont", "12");
+        // Toast.makeText(getApplicationContext(), "Current Select Font " + description, Toast.LENGTH_SHORT).show();
         JavaScriptInterface JSInterface = new JavaScriptInterface(this);
 
         webView.addJavascriptInterface(JSInterface, "JSInterface");
@@ -81,6 +86,7 @@ public class BibleContent extends Activity {
         } else {
             urlToBeLoaded = "file:///android_asset/NT/templatePage.htm";
         }
+        //loading wrong file!!
 
         webView.setWebViewClient(new WebViewClient() {
             @Override
@@ -98,10 +104,13 @@ public class BibleContent extends Activity {
             }
         });
 
+        //webView.loadUrl("file:///android_asset/NT/templatePage.htm");
         webView.loadUrl(urlToBeLoaded);
+
     }
 
     void BuildPage(String bookNameParam, String chapterNumberParam) {
+        //Toast.makeText(getApplicationContext(), "Height: " + webView.getContentHeight(), Toast.LENGTH_LONG).show();
 
         //Get selected chapter passed here from TableOfContents.java through the chapter picker
         Bundle extras = getIntent().getExtras();
@@ -119,15 +128,17 @@ public class BibleContent extends Activity {
             }
         }
 
+
         //single digit chapters are represented as "01" not "1" so they must be appended
         if (selectedChapter.length() == 1) {
 
             selectedChapter = "0" + selectedChapter;
         }
         Cursor resultSet = null;
-
+        //resultSet = getBibleText(selectedChapter);
+        //Toast.makeText(getApplicationContext(), "Book: '" + bookName + "'  Chap: '" + selectedChapter + "'", Toast.LENGTH_LONG).show();
         if (bookName == "VSQ" && selectedChapter == "") { //Search Page
-            resultSet = getSearchResults(searchString, "");
+            resultSet = Utility.getSearchResults(searchString, "");
         } else {
             resultSet = getBibleText(bookName, selectedChapter);
         }
@@ -147,6 +158,7 @@ public class BibleContent extends Activity {
         String textResult = "";
         String verseNumber = "";
         String combinedResult = "";
+        String bookName = "";
 
         webView.loadUrl("javascript:insertPreviousChapterAnchor()");
 
@@ -157,14 +169,20 @@ public class BibleContent extends Activity {
             verseResult = resultSet.getString(resultSet.getColumnIndex("Verse"));
             textResult = resultSet.getString(resultSet.getColumnIndex("Text"));
 
+            //   if(textResult.contains("'")) {
             textResult = textResult.replaceAll("'", "\\\\'");
             textResult = textResult.replaceAll(",", "\\\\,");
+            //    }
 
+            //combinedResult = verseResult + "   " + textResult + "\n";
             verseNumber = verseResult;
             verseResult = "<span id=\"verseNumber\">" + verseResult + "</span>";
             combinedResult = verseResult + textResult;
+            //combinedResult = "knight";
 
             if (chapterResult.equals("00")) {
+
+                //urlToBeLoaded = "file:///android_asset/NT/mat00test.htm";
 
                 if (verseNumber.equals("1")) {
 
@@ -175,6 +193,7 @@ public class BibleContent extends Activity {
 
                     textResult = generateChapterSelectTableHTML(bookResult, Integer.parseInt(numberOfChaptersCursor.getString(0)));
 
+
                     //1,2,3 John has a special table
                     if (bookResult.equals("1JO")) {
                         textResult = get123JohnCustomChapterSelectTable();
@@ -182,6 +201,8 @@ public class BibleContent extends Activity {
 
                     webView.loadUrl("javascript:insertTable('" + textResult + "')");
                 } else {
+                    // textResult = "slaughter of the infants, and the beginning of Jesus's ministry.";
+                    // textResult = "<ul><li>Genealogy and birth 1:1-2:23</li><li>John the Baptist\\'s ministry 3:1-12</li><li>Jesus baptism and temptation 3:13-4:11</li><li>Jesus public ministry in Galilee 4:12-18:35</li><";
                     webView.loadUrl("javascript:insertBody('" + textResult + "')");
                 }
 
@@ -194,7 +215,16 @@ public class BibleContent extends Activity {
             //Set font size to previously used font
             webView.loadUrl("javascript:adjustFont('" + currentSelectedFont + "')");
 
+            //webView.loadUrl("javascript:insertFunction('" + combinedResult + "')");
+            //  webView.loadUrl("javascript:insertFunction2('" + verseResult +"','"+ textResult + "')");
+
+
+            //  webView.loadUrl("javascript:insertFunction('header','table','body')");
+            // Log.i("db path", "javascript:insertFunction('" + verseResult + "','" + textResult + "')");
         }
+
+        //Add a little space to the end of each chapter but not needed onthe summary pages
+        //if(!chapterResult.equals("00"))   webView.loadUrl("javascript:insertFunction('<br><br>')");
 
     }
 
@@ -206,6 +236,12 @@ public class BibleContent extends Activity {
         String textResult = "";
         String verseNumber = "";
         String combinedResult = "";
+        String bookName = "";
+
+        //We need to get the distance from the top so we can
+        // webView.loadUrl("javascript:getDistanceFromTop()");
+
+        //Insert Spacer
 
         webView.loadUrl("javascript:insertBeforeFunction('<br><br>')");
         webView.loadUrl("javascript:insertBeforePreviousChapterAnchor()");
@@ -216,11 +252,14 @@ public class BibleContent extends Activity {
             chapterResult = resultSet.getString(resultSet.getColumnIndex("Chapter"));
             verseResult = resultSet.getString(resultSet.getColumnIndex("Verse"));
             textResult = resultSet.getString(resultSet.getColumnIndex("Text"));
+            //combinedResult = verseResult + "   " + textResult + "\n";
             verseNumber = verseResult;
             verseResult = "<span id=\"verseNumber\">" + verseResult + "</span>";
             combinedResult = verseResult + textResult;
+            //combinedResult = "knight";
 
             if (chapterResult.equals("00")) {
+
 
                 if (verseNumber.equals("1")) {
 
@@ -231,6 +270,7 @@ public class BibleContent extends Activity {
 
                     textResult = generateChapterSelectTableHTML(bookResult, Integer.parseInt(numberOfChaptersCursor.getString(0)));
 
+
                     //1,2,3 John has a special table
                     if (bookResult.equals("1JO")) {
                         textResult = get123JohnCustomChapterSelectTable();
@@ -239,6 +279,9 @@ public class BibleContent extends Activity {
                     webView.loadUrl("javascript:insertTable('" + textResult + "')");
 
                 } else {
+                    // textResult = "slaughter of the infants, and the beginning of Jesus's ministry.";
+                    // textResult = "<ul><li>Genealogy and birth 1:1-2:23</li><li>John the Baptist\\'s ministry 3:1-12</li><li>Jesus baptism and temptation 3:13-4:11</li><li>Jesus public ministry in Galilee 4:12-18:35</li><";
+
                     webView.loadUrl("javascript:insertBody('" + textResult + "')");
                 }
 
@@ -246,7 +289,15 @@ public class BibleContent extends Activity {
                 webView.loadUrl("javascript:insertBeforeFunction('" + combinedResult + "')");
             }
 
+
+            //webView.loadUrl("javascript:insertFunction('" + combinedResult + "')");
+            //  webView.loadUrl("javascript:insertFunction2('" + verseResult +"','"+ textResult + "')");
+
+
+            //  webView.loadUrl("javascript:insertFunction('header','table','body')");
+            // Log.i("db path", "javascript:insertFunction('" + verseResult + "','" + textResult + "')");
         }
+
 
     }
 
@@ -274,10 +325,46 @@ public class BibleContent extends Activity {
                 "</tr>";
     }
 
+    protected Cursor getBibleTextOld(String bookName, String selectedChapter) {
+
+        File dbfile = this.getDatabasePath("mydb");
+
+        if (!dbfile.exists()) {
+            Toast.makeText(getApplicationContext(), "No DB!", Toast.LENGTH_SHORT).show();
+        }
+
+        SQLiteDatabase mydatabase = openOrCreateDatabase("mydb", MODE_PRIVATE, null);
+
+        //Cursor resultSet = mydatabase.rawQuery("Select * from Bible limit 1",null);
+        Cursor resultSet = mydatabase.rawQuery("Select * from Bible where Book = \"" + bookName + "\" and chapter = \"" + selectedChapter + "\"", null);
+
+
+        String bookResult = "";
+        String chapterResult = "";
+        String verseResult = "";
+        String textResult = "";
+/*
+        while (resultSet.moveToNext()) {
+            bookResult = resultSet.getString(resultSet.getColumnIndex("Book"));
+            chapterResult = resultSet.getString(resultSet.getColumnIndex("Chapter"));
+            verseResult = resultSet.getString(resultSet.getColumnIndex("Verse"));
+            textResult = resultSet.getString(resultSet.getColumnIndex("Text"));
+            Log.i ("info12345 bookResult",bookResult);            Log.i ("info12345 textResult", textResult);
+
+            Log.i ("info12345 chapterResult",chapterResult );
+            Log.i ("info12345 verseResult", verseResult);
+        }
+        resultSet.close();
+        */
+
+        return resultSet;
+    }
+
     protected Cursor getBibleText(String bookName, String selectedChapter) {
 
         //The Android's default system path of your application database.
         String DB_PATH = "/data/data/com.av7bible.av7bibleappv2/databases/";
+
 
         String DB_NAME = "newDb";
 
@@ -286,7 +373,9 @@ public class BibleContent extends Activity {
         String myPath = DB_PATH + DB_NAME;
         myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
 
+
         if (selectedChapter.length() == 1) selectedChapter = "0" + selectedChapter;
+
 
         Cursor resultSet = myDataBase.rawQuery("Select * from Bible where Book = \"" + bookName + "\" and chapter = \"" + selectedChapter + "\"", null);
         return resultSet;
@@ -318,9 +407,11 @@ public class BibleContent extends Activity {
 
         @JavascriptInterface   // must be added for API 17 or higher
         public void goBack() {
+            //Toast.makeText(context, "New Thing!", Toast.LENGTH_SHORT).show();
             webView.post(new Runnable() {
                 public void run() {
                     finish();
+                    // getActivity().onBackPressed();
                 }
             });
         }
@@ -328,26 +419,40 @@ public class BibleContent extends Activity {
 
         @JavascriptInterface   // must be added for API 17 or higher
         public void openOptionsMenu() {
+            //  Toast.makeText(context, "New Thing3!", Toast.LENGTH_SHORT).show();
+            //   showHelpPopup((Activity) context);
             showHelpPopup(BibleContent.this);
+        }
+
+        @JavascriptInterface   // must be added for API 17 or higher
+        public void searchForText(final String searchString1, final String searchString2) {
+            Log.d("SearchTag", "BibleContent calling getSearchResults");
+
+            Utility.retrieveAndDisplaySearchResults(searchString1, searchString2, webView, getApplicationContext());
+
         }
 
         @JavascriptInterface   // must be added for API 17 or higher
         public void goToChapter(String bookName, String chapterNumber) {
 
+            //Toast.makeText(context, "test function: "+ chapterNumber, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(BibleContent.this, BibleContent.class);
 
             intent.putExtra("BookName", bookName);
             intent.putExtra("SelectedChapter", chapterNumber);
-
+            //Toast.makeText(getApplicationContext(), "Chapter?:  " + np.getValue(), Toast.LENGTH_SHORT).show();
             startActivity(intent);
+
         }
 
         @JavascriptInterface   // must be added for API 17 or higher
         public void openHelpPage() {
 
+            //Toast.makeText(context, "Open Help", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(BibleContent.this, HelpPage.class);
 
             startActivity(intent);
+
         }
 
         @JavascriptInterface   // must be added for API 17 or higher
@@ -355,17 +460,22 @@ public class BibleContent extends Activity {
             webView.post(new Runnable() {
                 public void run() {
 
+
                     if (nextChapterCounter.equals("-1") || nextChapterCounter.equals("-2")) {
+                        //
                         return;
                     }
 
+                    // int nextChapterInt =    Integer.parseInt(extras.getString("SelectedChapter"))+1;
                     nextChapterCounter = Integer.toString(Integer.parseInt(nextChapterCounter) + 1);
 
                     Cursor resultSet = getBibleText(extras.getString("BookName"), nextChapterCounter);
+                    //Toast.makeText(getApplicationContext(), "Chapter?:  "+ resultSet.getCount(), Toast.LENGTH_SHORT).show();
 
                     if (resultSet.getCount() > 0) {
                         Toast.makeText(getApplicationContext(), "Swipe Up to See Next Chapter", Toast.LENGTH_LONG).show();
                         webView.loadUrl("javascript:insertFunction('<br><br>')");
+                        // webView.loadUrl("javascript:insertBeforeFunction('atlantaFalcons')");
                     }
 
                     InsertBibleTxt(resultSet);
@@ -379,15 +489,20 @@ public class BibleContent extends Activity {
             webView.post(new Runnable() {
                 public void run() {
 
+                    // int nextChapterInt =    Integer.parseInt(extras.getString("SelectedChapter"))+1;
                     previousChapterCounter = Integer.toString(Integer.parseInt(previousChapterCounter) - 1);
 
                     Cursor resultSet = getBibleText(extras.getString("BookName"), previousChapterCounter);
+                    //Toast.makeText(getApplicationContext(), "Chapter?:  "+ previousChapterCounter, Toast.LENGTH_SHORT).show();
 
                     if (resultSet.getCount() > 0 && Integer.parseInt(previousChapterCounter) > 0) {
                         Toast.makeText(getApplicationContext(), "Swipe Up to See Previous Chapter", Toast.LENGTH_LONG).show();
+                        //   webView.loadUrl("javascript:insertFunction('<br><br>')");
+                        //  webView.loadUrl("javascript:insertBeforeFunction('atlantaFalcons')");
                         InsertBibleTxtBefore(resultSet);
                         webView.loadUrl("javascript:scrollToAnchor()");
                     }
+
 
                 }
             });
@@ -397,6 +512,7 @@ public class BibleContent extends Activity {
         public void sendShareEmail() {
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("message/rfc822");
+            //i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"rocket452@hotmail.com"});
             i.putExtra(Intent.EXTRA_SUBJECT, "'Enter Your Name' has " +
                     "shared 'How to Compare Bible Versions' with you!"
             );
@@ -419,121 +535,35 @@ public class BibleContent extends Activity {
 
         @JavascriptInterface   // must be added for API 17 or higher
         public void goToTitleScreen() {
+
+            //Toast.makeText(context, "Open Help", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(BibleContent.this, MainActivity.class);
+
             startActivity(intent);
+
         }
 
         @JavascriptInterface   // must be added for API 17 or higher
         public void goToTableOfContents() {
+
+            //Toast.makeText(context, "Open Help", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(BibleContent.this, TableOfContents.class);
+
             startActivity(intent);
+
         }
 
 
         @JavascriptInterface
         public void clearCachedExtras() {
+
+            //  Bundle extras = getIntent().getExtras();
+
             getIntent().removeExtra("BookName");
             getIntent().removeExtra("SelectedChapter");
-        }
 
-        @JavascriptInterface   // must be added for API 17 or higher
-        public void searchForText(final String searchString1, final String searchString2) {
-
-            //Toast.makeText(context, "SearchForText!", Toast.LENGTH_LONG).show();
-            if (!searchString1.isEmpty() || !searchString2.isEmpty()) {
-                webView.post(new Runnable() {
-                    public void run() {
-                        Cursor resultSet = getSearchResults(searchString1, searchString2);
-
-                        String bookResult;
-                        String chapterResult;
-                        String verseResult;
-                        String textResult;
-                        String combinedResult;
-
-                        int newTestamentCount = 0;
-                        int oldTestamentCount = 0;
-
-                        Log.d("DeubugTag", "Result Count:" + resultSet.getCount());
-                        //Get OT/NT Result Counts
-                        while (resultSet.moveToNext()) {
-                            int BookOrder = resultSet.getInt(resultSet.getColumnIndex("BookOrder"));
-
-                            bookResult = resultSet.getString(resultSet.getColumnIndex("Book"));
-                            Log.d("Result Book ", bookResult + " BookOrder: " + BookOrder);
-
-                            if (BookOrder < 28) {
-                                newTestamentCount++;
-                            } else {
-                                oldTestamentCount++;
-                            }
-                        }
-
-
-                        webView.loadUrl("javascript:insertBody('<p><b>New Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">" + newTestamentCount + "</span></b></p>')");
-                        webView.loadUrl("javascript:insertBody('<p><b>Old Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">" + oldTestamentCount + "</span></b></p>')");
-
-                        int resultCountLimit = 1000;
-
-
-                        if (resultSet.getCount() > resultCountLimit) {
-                            webView.loadUrl("javascript:insertBody('<p><span id=\"verseNumber\"> Only displaying the first " + resultCountLimit + " results</span></p>')");
-                        }
-
-                        int i = 0;
-
-                        //Read Text Results
-                        resultSet.moveToPosition(-1);
-                        while (resultSet.moveToNext() && i < resultCountLimit) {
-                            i++;
-
-                            //We want to exclude search results that snagged on something inside the HTML (class name, id name etc)
-                            String resultWithoutHTML = android.text.Html.fromHtml(resultSet.getString(resultSet.getColumnIndex("Text"))).toString();
-                            if (!resultWithoutHTML.toUpperCase().contains(searchString1.toUpperCase()) || !resultWithoutHTML.toUpperCase().contains(searchString2.toUpperCase())) {
-                                continue;
-                            }
-
-
-                            bookResult = resultSet.getString(resultSet.getColumnIndex("Book"));
-                            chapterResult = resultSet.getString(resultSet.getColumnIndex("Chapter"));
-                            if (chapterResult.substring(0, 1).equals("0")) {
-                                chapterResult = chapterResult.substring(1);
-                            }
-                            verseResult = resultSet.getString(resultSet.getColumnIndex("Verse"));
-                            textResult = resultSet.getString(resultSet.getColumnIndex("Text"));
-
-                            combinedResult = "<span id=\"verseNumber\">" + bookResult + " " + chapterResult + ":" + verseResult + "</span>" + textResult;
-
-
-                            combinedResult = combinedResult.replace("=\'", "=\"");
-                            combinedResult = combinedResult.replace("'>", "\">");
-                            combinedResult = combinedResult.replace("'", "&quot;");
-
-                            // combinedResult =  combinedResult.substring(1, combinedResult.length()-1);
-
-                            Log.d("InsertText", combinedResult);
-                            // textResult = "water";
-                            webView.loadUrl("javascript:insertBody('<p>" + combinedResult + "</p>')");
-
-
-                        }
-
-                        //webView.loadUrl("javascript:insertNTText('<p>testing</p>')");
-
-                        //hide keyboard
-                        View view = webView;
-                        if (view != null) {
-                            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-                        }
-
-                        resultSet.close();
-                    }
-                });
-            }
 
         }
-
 
         @JavascriptInterface   // must be added for API 17 or higher
         public void sendEmailJSInterface() {
@@ -561,6 +591,8 @@ public class BibleContent extends Activity {
     // The method that displays the popup.
     private void showHelpPopup(final Activity context) {
 
+
+        // Inflate the popup_layout.xml
         LinearLayout viewGroup = (LinearLayout) context.findViewById(R.id.popup);
 
         LayoutInflater layoutInflater;
@@ -568,6 +600,9 @@ public class BibleContent extends Activity {
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         View layout = layoutInflater.inflate(R.layout.popup_layout, viewGroup); //
+
+        //layout.setAnimation(AnimationUtils.loadAnimation(this, R.style.Animation));
+
 
         // Creating the PopupWindow
         final PopupWindow popup = new PopupWindow(context);
@@ -577,12 +612,18 @@ public class BibleContent extends Activity {
         popup.setFocusable(true);
         popup.setAnimationStyle(R.style.Animation);
 
+
+        // Some offset to align the popup a bit to the right, and a bit down, relative to button's position.
+        int OFFSET_X = 30;
+        int OFFSET_Y = 30;
+
         // Clear the default translucent background
         popup.setBackgroundDrawable(new BitmapDrawable());
 
         // Displaying the popup at the specified location, + offsets.
         popup.showAtLocation(layout, Gravity.NO_GRAVITY, 100, 100);
 
+        //Spinner (dropdown)
         final Spinner spinner = (Spinner) layout.findViewById(R.id.fontOptionsSpinner);
 
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -595,9 +636,13 @@ public class BibleContent extends Activity {
 
         spinner.setAdapter(adapter);
         //End Spinner
+        //  spinner.setSelection(4);
         spinner.setSelection(adapter.getPosition(currentSelectedFont));
+        //     spinner.setSelection(adapter.getPosition("11"));
         spinner.setOnItemSelectedListener(new SpinnerActivity());
+        // Getting a reference to Close button, and close the popup when clicked.
         Button close = (Button) layout.findViewById(R.id.close);
+
 
         close.setOnClickListener(new View.OnClickListener() {
 
@@ -607,9 +652,13 @@ public class BibleContent extends Activity {
                 webView.post(new Runnable() {
                     @Override
                     public void run() {
+                        //Toast.makeText(getApplicationContext(), "Font Selected: "+(Integer.parseInt(spinner.getSelectedItem().toString())+2), Toast.LENGTH_SHORT).show();
+                        // webView.loadUrl("javascript:" + "var elems = document.getElementsByTagName('p');" + "for (var i = 0; i < elems.length; i++) {" + "		document.getElementsByTagName('p')[i].style.fontSize = '" + spinner.getSelectedItem() + "pt';" + "}" + "elems = document.getElementsByTagName('h1');" + "for (var i = 0; i < elems.length; i++) {" + "		document.getElementsByTagName('h1')[i].style.fontSize = '" + (Integer.parseInt(spinner.getSelectedItem().toString()) + 2) + "pt';" + "}" + "elems = document.getElementsByClassName('italic');" + "for (var i = 0; i < elems.length; i++) {" + "		document.getElementsByClassName('italic')[i].style.fontSize = '" + (Integer.parseInt(spinner.getSelectedItem().toString()) - 3) + " +pt';" + "}");
                         Log.i("TextResult", "Selected Font: " + spinner.getSelectedItem());
 
                         webView.loadUrl("javascript:adjustFont('" + spinner.getSelectedItem() + "')");
+
+
                     }
                 });
                 popup.dismiss();
@@ -638,7 +687,9 @@ public class BibleContent extends Activity {
                 sb.append("<td class=\"keysPage\" ><a onclick=\"goToChapter(\\'" + bookName + "\\'," + -1 + ")\">Keys</a></td>");
                 j = j + 2;
             }
+            //   }
 
+            // sb.append("<td ><a onclick=\\'goToChapter(\\'MAT\\'," + i + ")\\'>" + i + "</a></td>");
             sb.append("<td ><a onclick=\"goToChapter(\\'" + bookName + "\\'," + i + ")\">" + i + "</a></td>");
 
             if (j == 7) {
@@ -672,10 +723,14 @@ public class BibleContent extends Activity {
 
     public class SpinnerActivity extends Activity implements AdapterView.OnItemSelectedListener {
 
+        String strItem;
+
+
         public void onItemSelected(AdapterView<?> parent, View view,
                                    int pos, long id) {
             // An item was selected. You can retrieve the selected item using
 
+            // Toast.makeText(parent.getContext(),	"OnItemSelectedListener : " + parent.getItemAtPosition(pos).toString(),	Toast.LENGTH_SHORT).show();
             currentSelectedFont = parent.getItemAtPosition(pos).toString();
 
             SharedPreferences.Editor editor = savedSettings.edit();
@@ -683,6 +738,12 @@ public class BibleContent extends Activity {
             //Toast.makeText(parent.getContext(),	"OnItemSelectedListener : " + currentSelectedFont.toString(),	Toast.LENGTH_SHORT).show();
             // Commit the edits!
             editor.commit();
+
+            /* Font Comparisons
+             * 4.5vmin = 14pt
+             * 5.0vmin = 16pt
+             *
+             * */
 
         }
 
@@ -694,36 +755,4 @@ public class BibleContent extends Activity {
     }
 
 
-    protected Cursor getSearchResults(String searchString1, String searchString2) {
-
-        //The Android's default system path of your application database.
-        String DB_PATH = "/data/data/com.av7bible.av7bibleappv2/databases/";
-
-        String DB_NAME = "newDb";
-
-        SQLiteDatabase myDataBase;
-
-        String myPath = DB_PATH + DB_NAME;
-        myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
-
-
-        String[] a = new String[5];
-        //   a[0]       = "%one's%";
-        a[0] = "%" + searchString1 + "%";
-        a[1] = "%" + searchString2 + "%";
-        a[2] = "00";
-        a[3] = "%<p>%";
-        a[4] = "";
-        // String query = "SELECT * FROM bible WHERE text LIKE ?";
-        //  String query = "SELECT * FROM bible WHERE text LIKE ? AND text LIKE ? AND Chapter > ? AND NOT text LIKE ? ORDER BY rowid DESC";
-        String query = "SELECT * FROM bible WHERE text LIKE ? AND text LIKE ? AND Chapter > ? AND NOT text LIKE ? AND NOT verse = ? ORDER BY BookOrder";
-
-        Cursor resultSet = myDataBase.rawQuery(query, a);
-
-
-        return resultSet;
-    }
-
-
 }
-

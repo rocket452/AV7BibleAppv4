@@ -85,19 +85,20 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
     public class JavaScriptInterface {
         Context context;
 
-        /** Instantiate the interface and set the context */
+        /**
+         * Instantiate the interface and set the context
+         */
         JavaScriptInterface(Context c) {
             context = c;
         }
 
         @JavascriptInterface   // must be added for API 17 or higher
-        public void showToast()
-        {
+        public void showToast() {
             Toast.makeText(context, "Works!", Toast.LENGTH_SHORT).show();
         }
 
         @JavascriptInterface   // must be added for API 17 or higher
-        public void goToTitleScreen(){
+        public void goToTitleScreen() {
             //Toast.makeText(context, "New Thing!", Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(TableOfContents.this, MainActivity.class);
@@ -130,7 +131,7 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
         }
 
         @JavascriptInterface   // must be added for API 17 or higher
-        public void goToTableOfContents(){
+        public void goToTableOfContents() {
 
             finish();
             Intent intent = new Intent(TableOfContents.this, TableOfContents.class);
@@ -139,7 +140,7 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
         }
 
         @JavascriptInterface   // must be added for API 17 or higher
-        public void generateChapterPage(){
+        public void generateChapterPage() {
 
             //finish();
             Toast.makeText(context, "New Thing2!", Toast.LENGTH_SHORT).show();
@@ -152,85 +153,31 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
         }
 
         @JavascriptInterface   // must be added for API 17 or higher
-        public void showSelectChapterMenu(){
+        public void showSelectChapterMenu() {
 
             openChapterSelectMenu();
         }
 
         @JavascriptInterface   // must be added for API 17 or higher
-        public void goToChapter(String bookName,String chapterNumber){
+        public void goToChapter(String bookName, String chapterNumber) {
 
             //Toast.makeText(context, "test function: "+ chapterNumber, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(TableOfContents.this, BibleContent.class);
 
-            intent.putExtra("BookName",bookName);
-            intent.putExtra("SelectedChapter",chapterNumber);
+            intent.putExtra("BookName", bookName);
+            intent.putExtra("SelectedChapter", chapterNumber);
             //Toast.makeText(getApplicationContext(), "Chapter?:  " + np.getValue(), Toast.LENGTH_SHORT).show();
             startActivity(intent);
 
         }
 
 
-
         @JavascriptInterface   // must be added for API 17 or higher
         public void searchForText(final String searchString1, final String searchString2) {
-
-           // Toast.makeText(context, "SearchForText!", Toast.LENGTH_LONG).show();
-
-            webView.post(new Runnable() {
-                public void run() {
-
-                    if(searchString1.equals("") && searchString2.equals("")) return;
-
-                    Cursor resultSet = getSearchResults(searchString1, searchString2, true);
-
-
-                    int newTestamentCount = 0;
-                    int oldTestamentCount = 0;
-
-
-                    while (resultSet.moveToNext())
-                    {
-
-                        processResultSet(searchString1, searchString2,resultSet);
-
-                        int BookOrder = resultSet.getInt(resultSet.getColumnIndex("BookOrder"));
-
-                        if (BookOrder < 28) {
-                            newTestamentCount++;
-                        } else {
-                            oldTestamentCount++;
-                        }
-                    }
-
-                    resultSet = getSearchResults(searchString1, searchString2, false);
-
-                    while (resultSet.moveToNext())
-                    {
-
-                        processResultSet(searchString1, searchString2,resultSet);
-
-                        int BookOrder = resultSet.getInt(resultSet.getColumnIndex("BookOrder"));
-
-                        if (BookOrder < 28) {
-                            newTestamentCount++;
-                        } else {
-                            oldTestamentCount++;
-                        }
-                    }
-
-                    webView.loadUrl("javascript:insertBefore('<p><b>Old Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">" + oldTestamentCount + "</span></b></p>')");
-                    webView.loadUrl("javascript:insertBefore('<p><b>New Testament Results: <span id=\"verseNumber\" style=\"font-size: large;\">" + newTestamentCount + "</span></b></p>')");
-
-
-
-                    resultSet.close();
-                }
-            });
-            //InsertBibleTxt(resultSet);
+            Log.d("SearchTag", "TableOfContents calling getSearchResults");
+            Utility.retrieveAndDisplaySearchResults(searchString1, searchString2, webView, getApplicationContext());
 
         }
-
     }
 
     private void processResultSet(String searchString1, String searchString2,  Cursor resultSet ){
@@ -454,7 +401,7 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
     }
 
 
-    protected Cursor getSearchResults(String searchString) {
+    protected Cursor getSearchResultsOLD(String searchString) {
 
         //The Android's default system path of your application database.
         String DB_PATH = "/data/data/com.av7bible.av7bibleappv2/databases/";
@@ -472,7 +419,7 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
         return resultSet;
     }
 
-    protected Cursor getSearchResults(String searchString1, String searchString2, boolean isNT) {
+    protected Cursor getSearchResultsOLD(String searchString1, String searchString2, boolean isNT) {
 
         //The Android's default system path of your application database.
         String DB_PATH = "/data/data/com.av7bible.av7bibleappv2/databases/";
