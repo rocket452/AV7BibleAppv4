@@ -156,8 +156,6 @@ public class Utility {
 
     public static Cursor getSearchResults(String searchString1, String searchString2) {
         Log.d("SearchTag", "getSearchResults");
-        searchString1 = searchString1.trim();
-        searchString2 = searchString2.trim();
 
         // The Android's default system path of your application database.
         String DB_PATH = "/data/data/com.av7bible.av7bibleappv2/databases/";

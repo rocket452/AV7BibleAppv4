@@ -1,4 +1,4 @@
-#Fri Apr 05 22:56:02 EDT 2024
+#Thu Oct 30 08:26:10 EDT 2025
 base.0=C\:\\Users\\BradyGilley\\StudioProjects\\AV7BibleAppv4\\app\\build\\intermediates\\transforms\\dexMerger\\release\\0
 path.0=classes.dex
 renamed.0=classes.dex
