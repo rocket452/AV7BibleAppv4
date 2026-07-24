@@ -1,179 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The AV7 Invitation Bible</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../CSS/styles.css">
 
+	<style type="text/css">
+		h1 {
+			text-align: center;
+		}
 
-<html >
-   <head>
-   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-		<link href="../CSS/styles.css" media="all" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-      <style type="text/css">
+		body,
+		body *,
+		.text-container,
+		.text-container *,
+		.T1 {
+			font-size: 14pt !important;
+		}
 
+		.img1 {
+			width: 142px;
+			float: left;
+		}
 
-		 
-		 #chapterSelectTable {
-			  margin-left: auto;
-			  margin-right: auto;
-              border: 3px solid black;
-			  border-collapse: collapse;
-			  width: 95%;
-			  text-align: center;
-			  font-family: Georgia,Serif; font-size: 14pt;
-			  background-color: white;
-			  table-layout: fixed;
-   			
-		 }
-		 
-		  #chapterSelectTable tr, td {
-	
-              border: 3px solid black;
-			
-		 }
-		 
+		.img2 {
+			width: 60%;
+			float: left;
+		}
+
+		.banner {
+			background-color: #000000;
+			overflow: hidden;
+			padding: 10px 3px;
+		}
+
+		#innerTable {
+			margin-top: 12px;
+		    width: 45%;
+            max-width: 600px;
+		}
+
+		#footer {
+			border: solid black;
+		}
+
+		@media (max-width: 600px) {
+			body {
+				margin: 0;
+				padding: 0;
+				font-size: 13pt !important;
+			}
+
+			.main {
+				width: 100%;
+			}
+
+			.img1 {
+				width: 40%;
+			}
+
+			.img2 {
+				width: 60%;
+			}
+
+			#innerTable {
+				width: 100%;
+				height: 100%;
+				border: none;
+				margin: 0px;
+			}
+
+			#footer {
+				border: 3px solid black;
+				font-size: larger;
+			}
+
+			.text-container {
+				height: 100vh;
+				width:auto;
+				overflow: auto; /* Changed to auto to allow scrolling */
+			}
+		}
+
+		.text-container {
+			height: 525px;
+			overflow: auto;
+			padding: 20px 5px 5px 5px;
+	//
+		}
+
 		#chapterSelectTable td {
-		   height: 35px;
+			padding: 2px;
+			text-align: center;
+			border: 3px solid black;
 		}
-		
-		
 
-		 
-      </style>
-	  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	  <script src="../JS/javascript.js"></script>
-	  <script type="text/javascript">
-	  
-	  
-	  function insertFunction2(verse,text) {
-  
-	var wrapperDiv = document.createElement("div");
-	var lineBreak = document.createElement("p");
-
-	var verseElement = document.createElement("div");
-	var textElement = document.createElement("div");
-
-	  verseElement.setAttribute("id", "verseNumber");
-	  if(text.indexOf("Chapter") ==-1){
-	    textElement.setAttribute("id", "bibleText");
-		wrapperDiv.style.display = "inline-flex";
+		#chapterSelectTable td,
+		#chapterSelectTable td a {
+			font-size: 14pt !important;
 		}
-	
-var verseNode = document.createTextNode(verse);
 
-verseElement.innerHTML = verse;
+		.whyPage,
+		.keysPage {
+			background-color: #4682B4;
+			width: 40px;
+		}
 
-var textNode = document.createTextNode(text);
-textElement.innerHTML  = text;
-var element = document.getElementById("mainContent");
+		.whyPage {
+			background: blue;
+		}
 
-wrapperDiv.appendChild(verseElement);
-wrapperDiv.appendChild(textElement);
-   
-element.appendChild(wrapperDiv);
-element.appendChild(document.createElement("br"));
+		.whyPage a {
+			color: white !important;
+			font-weight: bold;
+		}
 
+		.keysPage {
+			background-color: #F1C22C;
+		}
 
-}
+		.keysPage a {
+			color: black !important;
+		}
+	</style>
 
-function insertFunction(header,table,body) {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../JS/javascript.js"></script>
+    <script>
 
-var headerContent = document.getElementById("headerContent");
-var headerContentTextNode = document.createTextNode(header);
-headerContent.appendChild(headerContentTextNode);
+        function insertHeader(input) {
+            document.getElementById("headerContent").innerHTML = input;
+        }
 
-var tableContent = document.getElementById("chapterSelectTable");
-var tableContentTextNode = document.createTextNode(table);
-tableContent.appendChild(tableContentTextNode);
+        function insertTable(input) {
+            document.getElementById("chapterSelectTable").innerHTML = input;
+        }
 
-var mainContent = document.getElementById("mainContent");
-var mainContentTextNode = document.createTextNode(body);
-mainContent.appendChild(mainContentTextNode);
+        function insertBody(input) {
+            var textElement = document.createElement("span");
+            textElement.innerHTML = input;
+            document.getElementById("mainContent").appendChild(textElement);
+        }
+    </script>
+</head>
 
-}
+<body bgcolor="#000000" background="../images/avbackground.jpg">
+    <table border="0" cols="1" width="100%" height="100%" align="center" style="border-spacing:inherit">
+        <tr>
+            <td>
+                <center>
+                    <table id="innerTable" border="3" cellspacing="0" cellpadding="0">
+                        <tr valign="top">
+                            <td bgcolor="#F6EFE6" background="../images/linenbackz.jpg">
+                                <div class="banner">
+                                    <a href="../index.htm">
+                                        <img src="file:///android_asset/images/av7icon.jpg" border="none" class="img1">
+                                    </a>
+                                    <a href="../av7toc.htm">
+                                        <img src="file:///android_asset/images/tibicon.jpg" align="top" class="img2">
+                                    </a>
+                                </div>
 
-function insertHeader(input) {
+                                <div class="text-container">
+                                    <div id="headerContent"></div>
+                                    <p>
+                                        <center>
+                                            <table id='chapterSelectTable'></table>
+                                        </center>
+                                    </p>
+                                    <div id="mainContent"></div>
+                                </div>
 
-	var headerContent = document.getElementById("headerContent");
-	//var headerContentTextNode = document.createTextNode("");
-	headerContent.innerHTML = input;
-//	headerContent.appendChild(headerContentTextNode);
-
-}
-
-function insertTable(input) {
-
-	var tableContent = document.getElementById("chapterSelectTable");
-	//var tableContentTextNode = document.createTextNode(input);
-	tableContent.innerHTML = input;
-
-}
-
-function insertBody(input) {
-
-var textElement = document.createElement("span");
-textElement.innerHTML = input;
-
-	var mainContent = document.getElementById("mainContent");
-	//var mainContentTextNode = document.createTextNode(input);
-	//mainContent.innerHTML = input;
-mainContent.appendChild(textElement);
-
-}
-
-function adjustFont(fontInput){
-
- document.body.setAttribute('style', 'font-size:' + fontInput + 'pt !important;');
-	 document.getElementsByTagName("h1").setAttribute('style', 'font-size:' + fontInput + 'pt !important;');
-
-}
-
-
-
-
-
-
-</script>
-
-	  
-   </head>
-   <body background="../images/avbackground.jpg" style="margin:0;">
-   <table id="logoTable" style="width:100%;">
-	<tr>
-		<td style="width:33%;"><img  style="width:100%;" id="av7IconImg"  src="../images/Av7BarIcon.png" onclick="goToTitleScreen()"/></td><td style="width:50%;"><img id="invitationImg" style="width:100%;"  src="../images/tib-logo.jpg" onclick="goToTableOfContents()"/></td>
-	</tr>
-   </table>
-   <br>
-   <div id="page1"  style="border: 2px solid white; background: #EEE7DA; padding: 15px;
-    margin-left: 2%; margin-right: 2%;  margin-bottom: 40px; margin-top: 63px; font-family:Serif;">
-     
-	  <div id="headerContent">
-	
-      </div>
-	  
-	  <table  id="chapterSelectTable">
-			
-	  </table>
-	  
-	  <div style="text-align:center; " >
-	  <br/>
-	 <!-- <button style="font-size: large;" onclick="showSelectChapterMenu()">Select Chapter Btn</button> -->
-	  </div>
-      <!-- <p> -->
-			<!-- <i>Or scroll down for a further overview.</i> -->
-	  <!-- </p> -->
-	  
-	   <div id="mainContent">
-
-      </div>
-	  
-		  
-	  </div>
-	<table id="footerTable">
-		<tr >
-			<td onclick="goBack()"><i style="margin-left: 15%;" class="fa fa-arrow-left"></i></td>
-			<td  onclick="goBack()">Back</td>
-			<td style="background-color:#439943; border: 1px solid gainsboro;"><a href="GoDeeperPage.htm">Search</a></td>
-			<td style="background-color:#000287; border: 1px solid gainsboro;"><a href="sharePage.htm">Share This</a></td>
-			<td onclick="openHelpPage()">Help</td>
-			<td onclick="openOptionsMenu()"><i class="fa fa-cog"/></td>
-		</tr>
-   </table>
-   </body>
+                                <center>
+                                    <div id="footer"></div>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+            </td>
+        </tr>
+    </table>
+</body>
 </html>

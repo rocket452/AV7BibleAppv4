@@ -18,6 +18,7 @@ import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -44,15 +45,28 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
 
         webView = (WebView) findViewById(R.id.webview);
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setAllowFileAccess(true);
+        webView.getSettings().setAllowFileAccessFromFileURLs(true);
+        webView.getSettings().setAllowUniversalAccessFromFileURLs(true);
 
         savedSettings = this.getSharedPreferences("AV7BibleAppPreferences", Context.MODE_PRIVATE);
-        currentSelectedFont = savedSettings.getString("savedFont", "12");
+        currentSelectedFont = savedSettings.getString("savedFont", "14");
 
         JavaScriptInterface JSInterface = new JavaScriptInterface(this);
 
        webView.addJavascriptInterface(JSInterface, "JSInterface");
 
         webView.setWebChromeClient(new WebChromeClient());
+        webView.setWebViewClient(new WebViewClient() {
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                view.loadUrl("javascript:adjustFont('" + currentSelectedFont + "')");
+                if (android.os.Build.VERSION.SDK_INT >= 19) {
+                    view.evaluateJavascript("var links = document.getElementsByTagName('a'); for(var i=0; i<links.length; i++) { var text = links[i].innerText.toUpperCase().trim(); var rect = links[i].getBoundingClientRect(); console.log('TOC_LINK_' + text + ': ' + rect.left + ',' + rect.top + ',' + rect.width + ',' + rect.height); }", null);
+                }
+            }
+        });
 
         webView.loadUrl(tableOfContentsURL);
 
@@ -108,9 +122,7 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
 
         @JavascriptInterface
         public void goBack() {
-
-            Intent intent = new Intent(TableOfContents.this, TableOfContents.class);
-            startActivity(intent);
+            finish();
         }
 
         @JavascriptInterface   // must be added for API 17 or higher
@@ -402,16 +414,8 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
 
 
     protected Cursor getSearchResultsOLD(String searchString) {
-
-        //The Android's default system path of your application database.
-        String DB_PATH = "/data/data/com.av7bible.av7bibleappv2/databases/";
-
-        String DB_NAME = "newDb";
-
-        SQLiteDatabase myDataBase;
-
-        String myPath = DB_PATH + DB_NAME;
-        myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+        String myPath = getDatabasePath("newDb").getPath();
+        SQLiteDatabase myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
 
         //  Cursor resultSet = myDataBase.rawQuery("Select * from Bible where Book = \"" + bookName + "\" and chapter = \"" + selectedChapter + "\"", null);
         Cursor resultSet = myDataBase.rawQuery("select * from bible where text like '%" + searchString + "%' and Chapter <> '00'",null);
@@ -420,16 +424,8 @@ public class TableOfContents extends Activity implements NumberPicker.OnValueCha
     }
 
     protected Cursor getSearchResultsOLD(String searchString1, String searchString2, boolean isNT) {
-
-        //The Android's default system path of your application database.
-        String DB_PATH = "/data/data/com.av7bible.av7bibleappv2/databases/";
-
-        String DB_NAME = "newDb";
-
-        SQLiteDatabase myDataBase;
-
-        String myPath = DB_PATH + DB_NAME;
-        myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+        String myPath = getDatabasePath("newDb").getPath();
+        SQLiteDatabase myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
 
         String[] a = new String[4];
         a[0] = "%" + searchString1 + "%";

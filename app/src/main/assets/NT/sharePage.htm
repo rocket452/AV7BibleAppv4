@@ -3,169 +3,356 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       <link href="../CSS/styles.css" media="all" rel="stylesheet" type="text/css" />
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-      <style type="text/css">
-         h1 { font-size: 16pt; font-weight:bold; text-align:center;}
-         p {  font-family: Georgia,Serif; font-size: 14pt;}
-         li {		 
-         font-family: Georgia,Serif;
-         font-size: 14pt;
-         }
-         .italic {font-size: 11pt; font-style: italic; }
-         .lighter { opacity: 0.5; font-family: inherit; font-size: inherit;}
-         .underline { text-decoration: underline; font-family: inherit; font-size: inherit;}
-         .greek { color: green; }
-         #chapterSelectTable {
-         margin-left: auto;
-         margin-right: auto;
-         border: 3px solid black;
-         border-collapse: collapse;
-         width: 95%;
-         text-align: center;
-         font-family: Georgia,Serif; font-size: 14pt;
-         background-color: white;
-         }
-         #chapterSelectTable tr, td {
-         border: 3px solid black;
-         }
-         #chapterSelectTable td {
-         height: 35px;
-         }
-         #logoTable {
-         position: fixed;
-         z-index: 1;
-         }
-         a {
-         color: inherit; /* blue colors for links too */
-         text-decoration: inherit; /* no underline */
-         }
-         h1 {
-         /* text-align: center; */
-         margin-left:auto;
-         margin-right:auto;
-         }
-         #verseNumber {
-         color: blue;
-         margin-right:7px;
-         font-style:italic;
-         font-family: Georgia,Serif; font-size: 10pt;
-         }
-         #bibleText {
-         font-family: Georgia,Serif; font-size: 14pt;
-         }
-         #chapterTitle {
-         text-align: center;
-         font-weight:bold;
-         }
-         #italicText {
-         font-style:italic;
-         color:grey;
-         }
-         #wordsOfJesus {
-         color:darkred;
-         }
-         #plusSign {
-         color:blue;
-         }
-         #bibleReference {
-         color:grey;
-         font-style:italic;
-         font-family: Georgia,Serif; font-size: 10pt;
-         }
-      </style>
+
+       <style type="text/css">
+           h1 {
+               text-align: center;
+           }
+
+           body,
+           body *,
+           .text-container,
+           .text-container *,
+           .T1 {
+               font-size: 14pt !important;
+           }
+
+           .T0 { font-family: "Times New Roman", Times, serif; color: blue; }
+           .T1 { font-family: Georgia, serif; }
+           .T2 { font-family: Georgia, serif; font-style: italic; color: gray; }
+           .T3 { font-family: Georgia, serif; font-style: italic; color: gray; }
+           .T4 { font-family: "Albertus Extra Bold", Times, serif; font-size: 14pt; }
+           .T5 { font-family: Georgia, serif; color: blue; }
+           .T6 { font-family: Georgia, serif; color: gray; font-style: italic; }
+
+           .img1 {
+               width: 142px;
+               float: left;
+           }
+
+           .img2 {
+               width: 60%;
+               float: left;
+           }
+
+           .banner {
+               background-color: #000000;
+               overflow: hidden;
+               padding: 10px 3px;
+           }
+
+           #innerTable {
+               margin-top: 12px;
+               width: 400px;
+           }
+
+           #footer {
+               border: solid black;
+           }
+
+           .text-container {
+               height: 525px;
+               overflow: auto;
+               padding: 20px 10px 10px 10px;
+               width: 93%;
+           }
+
+           .share-title {
+               font-family: Georgia, serif;
+               line-height: 1.35;
+               margin-bottom: 11px;
+           }
+
+           .share-form-block {
+               margin-bottom: 6px;
+           }
+
+           .share-label {
+               font-weight: bold;
+               font-family: Georgia, serif;
+           }
+
+           .required {
+               color: red;
+           }
+
+           .text_box,
+           .text_area {
+               min-width: 160px;
+               max-width: 300px;
+               width: 100%;
+               margin-top: 4px;
+               margin-bottom: 5px;
+               padding: 5px;
+               box-sizing: border-box;
+               font-family: Georgia, serif;
+           }
+
+           .text_area {
+               height: 80px;
+           }
+
+           .send-button {
+               padding: 10px 25px;
+               font-weight: bold;
+               background-color: #47944e;
+               color: white;
+               border: 2px solid #000000;
+               cursor: pointer;
+               font-family: Georgia, serif;
+           }
+
+           .message-box {
+               max-width: 330px;
+               margin: 0 auto 14px auto;
+               font-family: Georgia, serif;
+               line-height: 1.35;
+           }
+
+           .email-footnote {
+               max-width: 320px;
+               margin: 7px auto 0 auto;
+               font-size: 11pt !important;
+               line-height: 1.25;
+               color: #555555;
+               font-style: italic;
+               font-family: Georgia, serif;
+           }
+
+           .email-footnote * {
+               font-size: 11pt !important;
+           }
+
+           .divider {
+               width: 80%;
+               height: 3px;
+               background-color: black;
+               margin: 20px auto;
+           }
+
+           @media (max-width: 600px) {
+               body {
+                   margin: 0;
+                   padding: 0;
+                   font-size: 13pt !important;
+               }
+
+               .main {
+                   width: 100%;
+               }
+
+               .img1 {
+                   width: 40%;
+               }
+
+               .img2 {
+                   width: 60%;
+               }
+
+               #innerTable {
+                   width: 100%;
+                   height: 100%;
+                   border: none;
+                   margin: 0px;
+               }
+
+               #footer {
+                   border: 3px solid black;
+                   font-size: larger;
+               }
+
+               .text-container {
+                    overflow: hidden;
+               }
+
+               td {
+                    vertical-align: top;
+                    padding-top: 0px;
+                }
+           }
+       </style>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
       <script src="../JS/javascript.js"></script>
       <script type="text/javascript">
-     
-         
-         
+
+         $(function () {
+            $("#footer").load("../pageElements/footer.html");
+         });
+
          function previousPage() {
-             window.history.back();
+            window.history.back();
          }
-         
-         function toggleDiv(id) {
-             var div = document.getElementById(id);
-             div.style.display = div.style.display == "none" ? "block" : "none";
-         	
-         	var elem = document.getElementById("btnSearchTips");
-             if (elem.value=="Search Tips") elem.value = "Hide Tips";
-             else elem.value = "Search Tips";
-         }
-		 
-		 			 function myTestFunction() {
-  
-			var wrapperDiv = document.createElement("div");
 
-			var textElement = document.createElement("div");
+ function toggleDiv(id) {
+     var div = document.getElementById(id);
+     div.style.display = div.style.display == "none" ? "block" : "none";
+
+     var elem = document.getElementById("btnSearchTips");
+     if (elem.value=="Search Tips") elem.value = "Hide Tips";
+     else elem.value = "Search Tips";
+ }
+
+              function myTestFunction() {
+
+    var wrapperDiv = document.createElement("div");
+
+    var textElement = document.createElement("div");
 
 
-			//	  if(text.indexOf("Chapter") ==-1){
-			//	    textElement.setAttribute("id", "bibleText");
-			//		wrapperDiv.style.display = "inline-flex";
-			//		}
-				
-			text = "zzzzzzzzzzzzzz";
-			textElement.innerHTML  = text;
-			var element = document.getElementById("mainContent");
+    //	  if(text.indexOf("Chapter") ==-1){
+    //	    textElement.setAttribute("id", "bibleText");
+    //		wrapperDiv.style.display = "inline-flex";
+    //		}
 
-			wrapperDiv.appendChild(textElement);
-				
-			element.appendChild(wrapperDiv);
-			//element.appendChild(document.createElement("br"));
+    text = "zzzzzzzzzzzzzz";
+    textElement.innerHTML  = text;
+    var element = document.getElementById("mainContent");
 
-		}
-		 
+    wrapperDiv.appendChild(textElement);
 
-         
-         
+    element.appendChild(wrapperDiv);
+    //element.appendChild(document.createElement("br"));
+
+}
+
+
+
+
       </script>
    </head>
-   <body background="../images/avbackground.jpg" style="margin:0px; margin-bottom:50px;" >
-      <table id="logoTable" style="width:100%;">
-         <tr>
-            <td style="width:33%;"><img  style="width:100%;" id="av7IconImg"  src="../images/Av7BarIcon.png" onclick="goToTitleScreen()"/></td>
-            <td style="width:50%;"><img id="invitationImg" style="width:100%;"  src="../images/tib-logo.jpg" onclick="goToTableOfContents()"/></td>
-         </tr>
-      </table>
-      <br>
-      <div id="page1"  style="border: 2px solid white; background: #EEE7DA; padding: 15px;
-         margin-left: 2%; margin-right: 2%;  margin-bottom: 2%; margin-top: 63px;">
-      <h1>
-      </h1>
-      <div id="mainContent" />
-         <center>
-         To share the <b><u>FREE</u></b> online edition<br> 
-         of <b>The AV7 Invitation Bible</b><br>
-         with friends,&nbsp; please enter<br>
-         your email address and the<br>
-         email addresses of friends below<br>
-         and we will send an invitation<br>
-         to them from you.<br>
-         <form action=https://www.bluehost.com/bluemail method=POST>
-            <input type=hidden name=sendtoemail value=av7@av7.org>
-            <!-- <input type=hidden name=redirect value=http://www.av7bible.com> -->
-            Please enter your email address:<br>
-            <input type="text" name="mailfrom" size="19" id="inputEmail" maxlength="90"><br>
-            Enter your friends' email addresses:<br>
-            <textarea name=comments cols=34 rows=3 wrap=virtual></textarea>
-			  <center>
-			 Check this box to receive import updates regarding the AV7 project <input type="checkbox" id="chkBoxSaveEmail">
-			 </center>
-            <br>
-            <center>
-               <input type="submit" id="sendBtn" value="Send"> &nbsp; &nbsp; or &nbsp; &nbsp;
-               <input type=button value="Go Back" onClick="goBack()">
-            </center>
-            <p>
-         </form>
-      </div>
-   </body>
+
+
 </html>
 
 
+<body bgcolor="#000000" background="../../images/avbackground.jpg">
+
+
+<table border="0" cols="1" width="100%" height="100%" align="center" style="border-spacing:inherit">
+   <tr>
+      <td>
+         <center>
+            <table id="innerTable" border="3" cellspacing="0" cellpadding="0">
+               <tr valign="top">
+                  <td bgcolor="#F6EFE6" background="../../images/linenbackz.jpg">
+
+                     <div class="banner">
+                        <a href="../../index.htm">
+                           <img src="../../images/av7icon.jpg" border="none" class="img1">
+                        </a>
+                        <a href="../../av7toc.htm">
+                           <img src="../../images/tibicon.jpg" align="top" class="img2">
+                        </a>
+                     </div>
+
+                     <div class="text-container">
+                        <center>
+
+                           <div id="titleText" class="share-title" >
+                              Please share this <b><u>FREE</u> AV7 Bible</b><br>
+                              This is the easiest to read, word-for-word accurate presentation of the Bible in present-day English.
+                           </div>
+
+
+                           <form method="POST">
+
+
+                              <div class="share-form-block">
+                                 <label class="share-label">
+                                    Your Email Address <span class="required">*</span>
+                                 </label><br>
+                                 <input
+                                         type="text"
+                                         class="text_box"
+                                         name="sourceEmail"
+                                         placeholder="Enter your email address here"
+                                         required
+                                 >
+                              </div>
+
+                              <div class="share-form-block">
+                                 <label class="share-label">
+                                    Destination Email Address <span class="required">*</span>
+                                 </label><br>
+                                 <input
+                                         type="text"
+                                         class="text_box"
+                                         name="destinationEmail"
+                                         placeholder="Enter email addresses to send here"
+                                         required
+                                 >
+                              </div>
+
+                              <div class="share-form-block">
+                                 <label class="share-label">Personal Note</label><br>
+                                 <textarea
+                                         name="message"
+                                         class="text_area"
+                                         placeholder="(Optional) add a personal note..."
+                                 ></textarea>
+                              </div>
+
+                              <input type="submit" value="Send" class="send-button">
+
+                              <p class="email-footnote">
+                                 Your email address is safe with us.
+                                 We will <b>never</b> disclose nor sell your
+                                 information. We will use your email
+                                 addresses <b>only</b> to make sure your
+                                 private note reaches its destination.<span class="required">*</span>
+                              </p>
+
+
+                              <textarea name="thankyoumsg" style="display:none;">
+<div style="font-size:larger; font-family: Georgia, serif;">
+    <p style="color:blue;font-weight: bold;">Your Gift and message were sent.</p>
+
+    <p>Thank you for sharing the Word of God with others.</p>
+
+    <p style="font-weight: bold; font-size: 15pt; font-style: italic;">
+        You are now a faithful messenger of the Great Commision!
+        <i>Matthew 28:19-20</i>
+    </p>
+
+    <p style="color:blue;font-weight: bold;">Keep up the Good Work!</p>
+    <p style="color:blue;font-weight: bold;">God Bless You!</p>
+
+    <div class="divider"></div>
+
+    <p style="font-size:14pt;">
+        Please email:
+        <a href="mailto:AV7@AV7.org?subject=AV7%20Bible%20Suggestion" style="font-weight:bold;">
+            AV7@AV7.org
+        </a>
+        to share comments, questions, and suggestions to make
+        <strong>The AV7 Bible</strong>
+        better.
+    </p>
+</div>
+                                        </textarea>
+
+                           </form>
+
+                        </center>
+                     </div>
+
+                     <center>
+                        <div id="footer"></div>
+                     </center>
+
+                  </td>
+               </tr>
+            </table>
+         </center>
+      </td>
+   </tr>
+</table>
+
+</body>
 <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
 <script>
 
-	
+
 
 
   // Initialize Firebase
@@ -179,7 +366,7 @@
   };
   firebase.initializeApp(config);
   console.log("firebase setup successfully");
-  
+
     function writeUserData(userId, name, email, imageUrl) {
   firebase.database().ref('users/' + userId).set({
     username: name,
@@ -187,23 +374,23 @@
     profile_picture : imageUrl
   });
   }
-  
+
      console.log("called writeUserData1");
   // writeUserData(5,"brady","brady@email.com","" );
      console.log("called writeUserData");
-  
+
  // firebase.auth().signInAnonymously();
-  
+
   var database = firebase.database();
   var ref = database.ref('UserEmails');
-  
 
-  
 
-  
+
+
+
   		 $( document ).ready(function() {
 			 $( "#sendBtn" ).click(function() {
-					
+
 			 if(document.getElementById('chkBoxSaveEmail').checked){
 			   var data = {
 				Email: $( "#inputEmail" ).val()
@@ -211,29 +398,29 @@
 			  ref.push(data);
 			  }
 			});
-			
-		});    
-  
- 
-  
-  
-  
-  
-         
-         
+
+		});
+
+
+
+
+
+
+
+
          function previousPage() {
              window.history.back();
          }
-         
+
          function toggleDiv(id) {
              var div = document.getElementById(id);
              div.style.display = div.style.display == "none" ? "block" : "none";
-         	
+
          	var elem = document.getElementById("btnSearchTips");
              if (elem.value=="Search Tips") elem.value = "Hide Tips";
              else elem.value = "Search Tips";
          }
 
 
-  
+
 </script>

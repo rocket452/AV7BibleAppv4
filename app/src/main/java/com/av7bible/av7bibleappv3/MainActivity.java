@@ -85,72 +85,20 @@ public class MainActivity extends Activity {
 
         });
 
-        this.deleteDatabase("newDb");
-
-        File dbfile = this.getDatabasePath("mydb");
-
-
-
-       //   File  dbfile = new File("Database/mydb");
-
-       // Toast.makeText(getApplicationContext(), this.getDatabasePath("mydb").toString(), Toast.LENGTH_LONG).show();
-
-        if(!dbfile.exists()) {
-          //  Toast.makeText(getApplicationContext(), "Creating Database", Toast.LENGTH_LONG).show();
-  //          createBibleDB();
-        }
-        else {
-            Log.i ("info123456","Database Already exists");
-        }
-
-        SQLiteDatabase mydatabase = openOrCreateDatabase("mydb", MODE_PRIVATE,null);
-
-//        Cursor resultSet = mydatabase.rawQuery("Select * from Bible",null);
-
-        String bookResult = "";
-        String chapterResult = "";
-        String verseResult = "";
-        String textResult = "";
-/*
-        while (resultSet.moveToNext()) {
-            bookResult = resultSet.getString(resultSet.getColumnIndex("Book"));
-            chapterResult = resultSet.getString(resultSet.getColumnIndex("Chapter"));
-            verseResult = resultSet.getString(resultSet.getColumnIndex("Verse"));
-            textResult = resultSet.getString(resultSet.getColumnIndex("Text"));
-            Log.i ("info12345 bookResult",bookResult);
-            Log.i ("info12345 chapterResult",chapterResult );
-            Log.i ("info12345 verseResult", verseResult);
-            Log.i ("info12345 textResult", textResult);
-        }
-        resultSet.close();
-        */
-
-        this.deleteDatabase("mydb");
-
-        DataBaseHelper myDbHelper = new DataBaseHelper(this);
-
-
-        try {
-
-            myDbHelper.createDataBase();
-
-        } catch (IOException ioe) {
-
-            throw new Error("Unable to create database");
-
-        }
-
-        try {
-
-            myDbHelper.openDataBase();
-
-        }catch(SQLException sqle){
-
-
-
-        }
-
-
+        // Database initialization in background thread to prevent ANR
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                DataBaseHelper myDbHelper = new DataBaseHelper(MainActivity.this);
+                try {
+                    myDbHelper.createDataBase();
+                } catch (IOException ioe) {
+                    Log.e("MainActivity", "Unable to create database", ioe);
+                } finally {
+                    myDbHelper.close();
+                }
+            }
+        }).start();
     }
 
     private void createBibleDB() {

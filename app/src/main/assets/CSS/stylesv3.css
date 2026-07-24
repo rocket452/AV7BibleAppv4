@@ -1,0 +1,309 @@
+/*
+==============================================
+Styles for Table of Contents Page (av7tocv4.htm) - UPDATED
+==============================================
+*/
+.toc-page-body,
+.toc-page-body .main-container,
+.toc-page-body .nav-section,
+.toc-page-body .books-grid,
+.toc-page-body .book-cell,
+.toc-page-body a,
+.toc-page-body div {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.toc-page-body {
+    background-image: url('../images/avbackgroundextended.jpg');
+    background-position: center 0%;
+    background-size: cover;
+    min-height: 100vh; /* Changed to 100vh to fill viewport */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Changed to flex-start to align content at top */
+    padding: 10px; /* Reduced padding for mobile */
+    font-family: arial;
+    font-weight: normal;
+    font-size: 100%;
+	/* margin-top: 16px; */
+}
+
+.toc-page-body * {
+    box-sizing: border-box;
+}
+
+   .content-section {
+            background-image: url('../../images/linenbackz.jpg');
+            background-size: cover;
+            color: black;
+            padding: 16px;
+            text-align: center;
+            background-color: rgb(246, 239, 230);
+            height: 556px;
+            font-family: "Times New Roman", serif;
+            overflow-y: auto;
+			font-size: 14pt;
+        }
+		
+		.bible-text {
+			text-align: left;
+			
+		}
+
+.toc-page-body .main-container {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid white;
+    padding: 0;
+    margin: 0;
+    max-width: 396px;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+.toc-page-body .header {
+    background: black;
+    padding: 10px 3px; /* Further reduced padding */
+    display: flex; 
+    align-items: center;
+   /* gap: 12px;  Reduced gap */
+}
+
+.toc-page-body .av7-logo {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 50%, #1abc9c 100%);
+    color: white;
+    padding: 5px 8px; /* Reduced padding */
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px; /* Reduced font size */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid #fff;
+}
+
+.toc-page-body .title-text {
+    color: white;
+    font-style: italic;
+    font-size: 20px; /* Reduced font size */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.toc-page-body .nav-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+}
+
+.toc-page-body .nav-button {
+    background: #e7be19;
+    color: black;
+    padding: 5px 6px; /* Further reduced padding */
+    text-align: center;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toc-page-body .nav-button:hover {
+    background: #B8860B;
+}
+
+.toc-page-body .nav-button a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+	font-size: large;
+}
+
+.toc-page-body .books-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    background: black;
+}
+
+.toc-page-body .book-cell {
+    padding: 6px 1px; /* Further reduced padding */
+    text-align: center;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toc-page-body .book-cell:hover {
+    transform: scale(1.05);
+    z-index: 10;
+    position: relative;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.toc-page-body .book-cell a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	font-size: large;
+}
+
+/* Color classes for book categories */
+.toc-page-body .gospel { background: #a10306; color: white; }
+.toc-page-body .acts { background: #e9cfb6; color: black; }
+.toc-page-body .epistle { background: #e9cfb6; color: black; }
+.toc-page-body .pentateuch { background: #630264; color: white; }
+.toc-page-body .historical { background: #e9cfb6; color: black; }
+.toc-page-body .wisdom { background: #e9cfb6; color: black; }
+.toc-page-body .prophet { background: #e9cfb6; color: black; }
+.toc-page-body .why-button { background: #1f61b0; color: white; }
+
+.toc-page-body .bottom-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0;
+    border-top: 2px solid white;
+}
+
+.toc-page-body .bottom-button {
+    padding: 6px; /* Further reduced padding */
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px; /* Reduced font size */
+    border: 1px solid #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toc-page-body .back-button { background: #708090; color: white; }
+.toc-page-body .search-button { background: #228B22; color: white; }
+.toc-page-body .share-button { background: darkblue; color: white; }
+.toc-page-body .help-button { background: #708090; color: white; }
+
+.toc-page-body .bottom-button:hover { opacity: 0.8; }
+
+.toc-page-body .bottom-button a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.img1 {
+    width: 100%;
+    float: left;
+}
+
+.img2 {
+    width: 100%;
+}
+
+
+
+
+/* Responsive Overrides for TOC Page */
+@media (max-width: 600px) {
+    body { margin: 0; }
+
+    .toc-page-body { 
+        padding: 0;
+        font-size: larger;
+        font-family: arial, sans-serif;
+		min-height: 100dvh; /* replaces 100vh */
+        align-items: flex-start;
+        background: none;
+    }
+
+    .toc-page-body * {
+        box-sizing: border-box;
+    }
+
+    .toc-page-body .main-container {
+        max-width: 100%;
+        width: 100%;
+		min-height: 100dvh; /* replaces 100vh */
+    }
+
+    .toc-page-body .header { 
+        text-align: center; 
+        padding: 11.5px 3px;
+    }
+
+    .toc-page-body .title-text { font-size: 18px; }
+    .toc-page-body .av7-logo { font-size: 14px; }
+
+    /* Dynamic grid for mid-size phones */
+    .toc-page-body .books-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        /* gap: 4px; */
+    }
+
+    .toc-page-body .book-cell { 
+        padding: 4px; 
+        min-height: 40px;
+        font-size: 16px;
+    }
+
+    .toc-page-body .nav-button, 
+    .toc-page-body .bottom-button { 
+        padding: 8px;
+        font-size: 16px;
+    }
+	
+	#footer {
+		border-width: 4px;
+		font-size: 16px;
+	}
+}
+
+/* Narrower phones like Pixel 7 portrait (â‰¤480px) */
+@media (max-width: 480px) {
+    .toc-page-body .books-grid {
+        grid-template-columns: repeat(5, 1fr); /* 3 across for readability */
+    }
+
+    .toc-page-body .book-cell { 
+        font-size: 18px;
+        min-height: 40px;
+        padding: 4px;
+    }
+
+    .toc-page-body .nav-button, 
+    .toc-page-body .bottom-button { 
+        font-size: 17px;
+        padding: 10px;
+    }
+}
+
+/* Extra small devices (â‰¤359px wide) */
+@media (max-width: 359px) {
+    .toc-page-body .books-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .toc-page-body .book-cell { 
+        font-size: 12px;
+        min-height: 35px;
+        padding: 3px;
+    }
+
+    .toc-page-body .nav-button, 
+    .toc-page-body .bottom-button { 
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+
+
+#footer {
+    border: solid black;
+   /* border-width: 9px 4px 8px 4px; */
+}

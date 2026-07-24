@@ -1,0 +1,166 @@
+
+/* Unified Layout Spacing and Style for AV7 Bible App */
+
+#logoTable {
+	background: black !important;
+	width: 100%;
+	border: 1px solid gold;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	margin: 0 !important;
+}
+
+#logoTable td {
+	background: black !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+#page1, .text-container, #wrapperDiv {
+	background: #F6EFE6;
+	/* Visual gap matched to website proportion */
+	padding: 25px 15px 100px 15px;
+	margin: 0;
+	width: 100%;
+	border: none;
+	min-height: 100vh;
+}
+
+/* Specific button branding */
+.whyPage, td.whyPage, td[bgcolor="#1F61B0"], td[bgcolor="#A10306"], td[bgcolor="#630264"] {
+	color: white !important;
+	font-weight: bold !important;
+}
+
+/* Yellow buttons (INVITATION, etc) usually have black text */
+td[bgcolor="#E7BE19"], td[bgcolor="#E7BE19"] a {
+	color: black !important;
+	font-weight: bold !important;
+}
+
+td.whyPage, .whyPage { background: blue !important; }
+td.keysPage, .keysPage { background: #F1C22C !important; color: black !important; }
+
+h1, #headerContent {
+	margin-top: 0px !important;
+	padding-top: 0px !important;
+	margin-bottom: 20px !important;
+	text-align: center;
+	font-weight: bold !important;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 14pt;
+	font-family: Georgia, Serif;
+	background: #F6EFE6;
+}
+
+/* TOC specific styles */
+body.toc-page {
+	background: black !important;
+}
+
+#mainContent {
+	background: transparent !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	width: 100% !important;
+}
+
+/* Prevent double spacing when nested */
+#page1 > #mainContent, #wrapperDiv > #mainContent {
+	padding-top: 0 !important;
+	margin-top: 0 !important;
+}
+
+img {
+	width: 99%;
+	margin: 0 auto;
+}
+
+#footerTable {
+	width: 100%;
+	z-index: 99;
+	background: gray;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	border-top: 2px solid gold;
+	color: white;
+	margin: 0 !important;
+}
+
+#footerTable td {
+	font-size: 19px;
+	text-align: center;
+}
+
+#tableOfContentsTable {
+	border-collapse: collapse;
+	background: black !important;
+	width: 100% !important;
+	margin: 0 !important;
+	margin-top: 93px !important; /* CRITICAL: Clears the header banner */
+	border: 3px solid black !important;
+}
+
+#tableOfContentsTable td, #tableOfContentsTable a {
+	font-family: sans-serif !important; /* Forces Arial/Roboto style */
+	font-size: 18px !important;
+	font-weight: bold !important;
+	text-transform: uppercase;
+}
+
+#tableOfContentsTable td {
+	border: 2.5px solid black !important; /* Thick borders like website */
+	padding: 10px 2px !important;
+	text-align: center;
+}
+
+#tableOfContentsTable a {
+	text-decoration: none;
+	color: inherit !important;
+	display: block;
+	width: 100%;
+}
+
+/* Chapter Selection Grid Styles */
+#chapterSelectTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#chapterSelectTable td {
+    border: 1px solid black;
+    padding: 8px 2px;
+    text-align: center;
+    font-weight: bold !important;
+    font-family: sans-serif !important;
+}
+
+#chapterSelectTable a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    width: 100%;
+}
+
+@font-face {
+	font-family: customFontSerpentineBold;
+	src: url('../fonts/SerpentineBold.ttf') format('truetype');
+}
+
+@font-face {
+   font-family: customFontChampagne;
+   src: url('../fonts/cac_champagne.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: customFontAvenirNextLTProCn;
+	src: url('../fonts/AvenirNextLTPro-DemiCn.ttf') format('truetype');
+}

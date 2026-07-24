@@ -20,10 +20,13 @@ public class SharePage extends Activity {
 
         webView = (WebView) findViewById(R.id.webview);
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setAllowFileAccess(true);
+        webView.getSettings().setAllowFileAccessFromFileURLs(true);
+        webView.getSettings().setAllowUniversalAccessFromFileURLs(true);
 
         JavaScriptInterface JSInterface = new JavaScriptInterface(this);
 
-       // webView.addJavascriptInterface(JSInterface, "JSInterface");
+        webView.addJavascriptInterface(JSInterface, "JSInterface");
 
         webView.setWebViewClient(new WebViewClient() {
 

@@ -21,7 +21,7 @@ public class Utility {
             webView.post(new Runnable() {
                 public void run() {
 
-                    Cursor resultSet = getSearchResults(searchString1, searchString2);
+                    Cursor resultSet = getSearchResults(searchString1, searchString2, context);
 
                     String bookResult;
                     String chapterResult;
@@ -154,15 +154,12 @@ public class Utility {
 
 
 
-    public static Cursor getSearchResults(String searchString1, String searchString2) {
+    public static Cursor getSearchResults(String searchString1, String searchString2, Context context) {
         Log.d("SearchTag", "getSearchResults");
 
-        // The Android's default system path of your application database.
-        String DB_PATH = "/data/data/com.av7bible.av7bibleappv2/databases/";
-        String DB_NAME = "newDb";
-        SQLiteDatabase myDataBase;
-        String myPath = DB_PATH + DB_NAME;
-        myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+        // Use dynamic path
+        String myPath = context.getDatabasePath("newDb").getPath();
+        SQLiteDatabase myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
 
         StringBuilder queryBuilder = new StringBuilder();
         queryBuilder.append("SELECT * FROM bible WHERE ");

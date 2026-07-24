@@ -1,12 +1,10 @@
 //JavaScript alerts don't work on android
 function showToast() {
     alert("here we go2");
-    //document.getElementById("logoTableAV7Cell").innerHTML = "Hello World";
     JSInterface.showToast();
 }
 
 function goToTitleScreen() {
-    //document.getElementById("logoTableAV7Cell").innerHTML = "Hello Worldz";
     JSInterface.goToTitleScreen();
 }
 
@@ -15,7 +13,6 @@ function goToTableOfContents() {
 }
 
 function generateChapterPage() {
-
     JSInterface.generateChapterPage();
 }
 
@@ -34,8 +31,6 @@ function loadNextChapter(bookName, chapterNumber) {
 function loadPreviousChapter(bookName, chapterNumber) {
     JSInterface.loadPreviousChapter(bookName, chapterNumber);
 }
-
-
 
 function goBack() {
     JSInterface.goBack();
@@ -58,84 +53,78 @@ function clearCachedExtras() {
 }
 
 function adjustFont(fontInput) {
+    // Skip font adjustment for the TOC grid to preserve specific branding fonts
+    if (document.body.classList.contains('toc-page') || document.body.classList.contains('toc-page-body')) return;
 
-    document.body.setAttribute('style', 'font-size:' + fontInput + 'pt !important;');
-    document.getElementsByTagName("h1").setAttribute('style', 'font-size:' + fontInput + 'pt !important;');
-
+    var styleId = 'dynamic-font-style';
+    var styleElement = document.getElementById(styleId);
+    if (!styleElement) {
+        styleElement = document.createElement('style');
+        styleElement.id = styleId;
+        document.head.appendChild(styleElement);
+    }
+    var baseSize = parseInt(fontInput);
+    styleElement.innerHTML =
+        'body, p, li, center, div, span, font, #mainContent, #headerContent, #bibleText, .text-container, .T14, .t14, .T4, .T1, .subtitle { font-size: ' + baseSize + 'pt !important; line-height: 1.4 !important; font-family: Georgia, Serif !important; } ' +
+        'h1, h2, h3, .title { font-size: ' + baseSize + 'pt !important; font-weight: bold !important; } ' +
+        '#verseNumber { font-size: ' + baseSize + 'pt !important; } ' +
+        '#bibleReference, .italic, #italicText, .T3 { font-size: ' + (baseSize - 2) + 'pt !important; }' +
+        '.whyPage, .keysPage { font-size: ' + (baseSize - 1) + 'pt !important; } ' +
+        '.fa { font-family: FontAwesome !important; }';
 }
 
-
 function searchForText(text1,text2) {
-	
     document.getElementById('mainContent').innerHTML = "";
     JSInterface.searchForText(text1,text2);
 }
 
-
-function insertHeaderAndFooter() {
-	
-    $("#headerInclude").append(
-        "<table id='logoTable' style='width:100%;'>" +
-        "<tr>" +
-        "<td style='width:33%;'><img  style='width:100%;' id='av7IconImg'   src='images/Av7BarIcon.png' onclick='goToTitleScreen()'/></td>" +
-        "<td style='width:50%;'><img id='invitationImg' style='width:100%;'  src='images/tib-logo.jpg' onclick='goToTableOfContents()'/></td>" +
-        "</tr>" +
-        "</table>");
-		
-    $("#footerInclude").append("<table id='footerTable'>" +
-        "<tr >" +
-        "<td onclick='goBack()'><i style='margin-left: 15%;' class='fa fa-arrow-left'></i></td>" +
-        "<td  onclick='goBack()'>Back</td>" +
-        "<td style='background-color:#439943; border: 1px solid gainsboro;'><a style='color: inherit; text-decoration: inherit;' href='NT/GoDeeperPage.htm'>Search</a></td>" +
-        "<td style='background-color:#000287; border: 1px solid gainsboro;'><a style='color: inherit; text-decoration: inherit;' href='NT/sharePage.htm'>Share This</a></td>" +
-        "<td onclick='openHelpPage()'>Help</td>" +
-        "<td onclick='openOptionsMenu()'><i class='fa fa-cog'/></td>" +
-        "</tr>" +
-        "</table>");
+function insertHeader(input) {
+    var header = document.getElementById("headerContent");
+    if (header) header.innerHTML = input;
 }
 
-function insertHeaderAndFooterNoOptions() {
-	
-    $("#headerInclude").append(
-        "<table id='logoTable' style='width:100%;'>" +
-        "<tr>" +
-        "<td style='width:33%;'><img  style='width:100%;' id='av7IconImg'   src='images/Av7BarIcon.png' onclick='goToTitleScreen()'/></td>" +
-        "<td style='width:50%;'><img id='invitationImg' style='width:100%;'  src='images/tib-logo.jpg' onclick='goToTableOfContents()'/></td>" +
-        "</tr>" +
-        "</table>");
-
-    $("#footerInclude").append("<table id='footerTable'>" +
-        "<tr >" +
-        "<td><a style='color: inherit; text-decoration: inherit;' href='av7toc.htm'><i style='margin-left: 15%;' class='fa fa-arrow-left'></i></a></td>" +
-        "<td><a style='color: inherit; text-decoration: inherit;' href='av7toc.htm'>Back</a></td>" +
-        "<td style='background-color:#996E43; border: 1px solid gainsboro;'><a style='color: inherit; text-decoration: inherit;' href='GoDeeperPage.htm'>Go Deeper</a></td>" +
-        "<td style='background-color:#000287; border: 1px solid gainsboro;' onclick='sendShareEmail()'>Share This</td>" +
-        "<td onclick='openHelpPage()'>Help</td>" +
-         "</tr>" +
-        "</table>");
+function insertTable(input) {
+    var table = document.getElementById("chapterSelectTable");
+    if (table) table.innerHTML = input;
 }
 
 function insertBody(input) {
-
     var textElement = document.createElement("span");
-	
-	//input = input.toString().replace("&quot;","'");
-	input = input.toString().replace(new RegExp("&quot;", 'g'), "'");
-    textElement.innerHTML = input;
-
+    textElement.innerHTML = input.toString().replace(new RegExp("&quot;", 'g'), "'");
     var mainContent = document.getElementById("mainContent");
-    //var mainContentTextNode = document.createTextNode(input);
-    //mainContent.innerHTML = input;
-    mainContent.appendChild(textElement);
-
+    if (mainContent) mainContent.appendChild(textElement);
 }
 
-function insertBefore(input) {
-    var textElement = document.createElement("span");
-    input = input.toString().replace(new RegExp("&quot;", 'g'), "'");
-    textElement.innerHTML = input;
+function insertFunction(text) {
+    insertBody(text);
+}
 
+function insertPreviousChapterAnchor() {
     var mainContent = document.getElementById("mainContent");
-    // Insert at the top using prepend
+    if (!mainContent) return;
+    var anchor = document.getElementById("previousChapterAnchor");
+    if (!anchor) {
+        anchor = document.createElement("div");
+        anchor.id = "previousChapterAnchor";
+        mainContent.prepend(anchor);
+    }
+}
+
+function insertBeforeFunction(text) {
+    var mainContent = document.getElementById("mainContent");
+    if (!mainContent) return;
+    var textElement = document.createElement("div");
+    textElement.id = "bibleText";
+    textElement.innerHTML = text.toString().replace(new RegExp("&quot;", 'g'), "'");
     mainContent.prepend(textElement);
 }
+
+function scrollToAnchor() {
+    // Basic implementation
+    window.scrollTo(0,0);
+}
+
+  $(function () {
+            $("#footer").load("file:///android_asset/pageElements/footer.html");
+  });
+

@@ -15,10 +15,11 @@ import java.sql.SQLException;
 
 class DataBaseHelper extends SQLiteOpenHelper {
 
-    //The Android's default system path of your application database.
-    private static String DB_PATH = "/data/data/com.av7bible.av7bibleappv2/databases/";
-
     private static String DB_NAME = "newDb";
+
+    private String getDatabasePath() {
+        return myContext.getDatabasePath(DB_NAME).getPath();
+    }
 
    // this.getDatabasePath("mydb");
 
@@ -75,23 +76,19 @@ class DataBaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase checkDB = null;
 
         try{
-            String myPath = DB_PATH + DB_NAME;
+            String myPath = getDatabasePath();
             Log.i("db path", myPath);
-      //      checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+            checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
 
         }catch(SQLiteException e){
-
-            //database does't exist yet.
-
+            //database doesn't exist yet.
         }
 
         if(checkDB != null){
-
             checkDB.close();
-
         }
 
-        return checkDB != null ? true : false;
+        return checkDB != null;
     }
 
     /**
@@ -105,7 +102,7 @@ class DataBaseHelper extends SQLiteOpenHelper {
         InputStream myInput = myContext.getAssets().open(DB_NAME);
 
         // Path to the just created empty db
-        String outFileName = DB_PATH + DB_NAME;
+        String outFileName = getDatabasePath();
 
         //Open the empty db as the output stream
         OutputStream myOutput = new FileOutputStream(outFileName);
@@ -125,18 +122,9 @@ class DataBaseHelper extends SQLiteOpenHelper {
     }
 
     public void openDataBase() throws SQLException {
-
         //Open the database
-        String myPath = DB_PATH + DB_NAME;
+        String myPath = getDatabasePath();
         myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
-
-        Cursor cursor = myDataBase.rawQuery("Select * from Bible", null);
-        cursor.moveToFirst();
-       /* Log.i("db path", cursor.getString(0));
-        Log.i("db path", cursor.getString(1));
-        Log.i("db path", cursor.getString(2));
-        Log.i("db path", cursor.getString(3));
-        */
     }
 
     @Override
